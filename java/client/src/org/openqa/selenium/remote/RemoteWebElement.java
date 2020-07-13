@@ -191,6 +191,7 @@ public class RemoteWebElement implements WebElement, WrapsDriver, TakesScreensho
 
   @Override
   public WebElement findElement(By by) {
+	  System.out.println("RemoteWebElement call");  
     if (by instanceof By.StandardLocator) {
       return ((By.StandardLocator) by).findElement(this, this::findElement);
     } else {

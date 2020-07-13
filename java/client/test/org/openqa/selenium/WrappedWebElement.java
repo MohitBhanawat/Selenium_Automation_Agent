@@ -88,6 +88,7 @@ public class WrappedWebElement implements WebElement, WrapsElement {
 
   @Override
   public WebElement findElement(By by) {
+	System.out.println("WrappedWebElement call");
     throw new UnsupportedOperationException();
   }
 
