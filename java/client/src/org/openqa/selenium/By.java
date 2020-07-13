@@ -122,9 +122,24 @@ public abstract class By {
    * @return The WebElement that matches the selector.
    */
   public WebElement findElement(SearchContext context) {
-    List<WebElement> allElements = findElements(context);
+	  
+    // Research on SearchContext to check what all info is coming here to identify element.
+	  List<WebElement> allElements = findElements(context);
     if (allElements == null || allElements.isEmpty()) {
-
+    	
+    	System.out.println("code to search the element goes here ...");
+    	
+    	// 1. Identify the element
+    	// 2. fetch the element properties
+    	
+    	// 3 .check the element properties in object repository
+    	// 4. if property not found in object repository 
+    	// throw no such element exceptiom
+    	
+    	// 5. else 
+    	// set the element property found from object repository and return 
+    	// the element 
+    	
       throw new NoSuchElementException("Cannot locate an element using " + toString());
     }
     return allElements.get(0);
