@@ -306,6 +306,7 @@ public class RemoteWebDriver implements WebDriver, JavascriptExecutor,
 
   @Override
   public WebElement findElement(By locator) {
+	  System.out.println("RemoteWebDriver Called");
     if (locator instanceof By.StandardLocator) {
       return ((By.StandardLocator) locator).findElement(this, this::findElement);
     } else {

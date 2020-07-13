@@ -191,6 +191,7 @@ public class EventFiringWebDriver implements WebDriver, JavascriptExecutor, Take
 
   @Override
   public WebElement findElement(By by) {
+	 System.out.println("EventFiringWebDriver Called");
     dispatcher.beforeFindBy(by, null, driver);
     WebElement temp = driver.findElement(by);
     dispatcher.afterFindBy(by, temp, driver);
