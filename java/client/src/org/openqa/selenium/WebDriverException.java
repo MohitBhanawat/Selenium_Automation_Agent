@@ -53,12 +53,15 @@ public class WebDriverException extends RuntimeException {
 
   @Override
   public String getMessage() {
+	System.out.println("In getMessage() webDriverException class :"+ super.getMessage());  
     return super.getCause() instanceof WebDriverException
            ? super.getMessage() : createMessage(super.getMessage());
   }
 
   private String createMessage(String originalMessageString) {
-    String supportMessage = getSupportUrl() == null ?
+   
+	  System.out.println("In createMessage() webDriverException class : originalMessageString:"+ originalMessageString);
+	  String supportMessage = getSupportUrl() == null ?
         "" : "For documentation on this error, please visit: " + getSupportUrl();
 
     return Stream.of(

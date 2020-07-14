@@ -28,10 +28,12 @@ public class NoSuchElementException extends NotFoundException {
 
   public NoSuchElementException(String reason) {
     super(reason);
+    System.out.println("Inside NoSuchelement 1 param");
   }
 
   public NoSuchElementException(String reason, Throwable cause) {
-    super(reason, cause);
+	  super(reason, cause);
+	  System.out.println("Inside NoSuchelement 2 param");  
   }
 
   @Override

@@ -54,7 +54,7 @@ public class ByIdOrName extends By implements Serializable {
   @Override
   public List<WebElement> findElements(SearchContext context) {
     List<WebElement> elements = new ArrayList<>();
-
+    
     // First: Find by id ...
     elements.addAll(idFinder.findElements(context));
     // Second: Find by name ...

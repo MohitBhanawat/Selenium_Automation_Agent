@@ -123,8 +123,11 @@ public abstract class By {
    */
   public WebElement findElement(SearchContext context) {
 	  
+	  System.out.println("Context in String :"+context.toString());
+	  
     // Research on SearchContext to check what all info is coming here to identify element.
 	  List<WebElement> allElements = findElements(context);
+	  
     if (allElements == null || allElements.isEmpty()) {
     	
     	System.out.println("code to search the element goes here ...");
