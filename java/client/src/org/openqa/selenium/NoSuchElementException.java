@@ -29,6 +29,12 @@ public class NoSuchElementException extends NotFoundException {
   public NoSuchElementException(String reason) {
     super(reason);
     System.out.println("Inside NoSuchelement 1 param");
+    StackTraceElement[] stacktrace = Thread.currentThread().getStackTrace();
+    
+    for(StackTraceElement t : stacktrace) {
+    	System.out.println(t.getClassName());
+    	System.out.println(t.getMethodName());
+    }
   }
 
   public NoSuchElementException(String reason, Throwable cause) {

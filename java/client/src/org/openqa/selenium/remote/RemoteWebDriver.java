@@ -307,13 +307,12 @@ public class RemoteWebDriver implements WebDriver, JavascriptExecutor,
   @Override
   public WebElement findElement(By locator) {
 	  System.out.println("RemoteWebDriver Called");
-
 	  System.out.println("Locator_to string :"+locator.toString());
-	  System.out.println("Locator_xpath :"+locator.xpath("//input[@name='firstname']"));
-	  
     if (locator instanceof By.StandardLocator) {
+    	System.out.println("Inside check instance of By.StandardLocator");
       return ((By.StandardLocator) locator).findElement(this, this::findElement);
     } else {
+    	System.out.println("Inside else");
       return locator.findElement(this);
     }
   }
