@@ -204,7 +204,8 @@ public class RemoteWebElement implements WebElement, WrapsDriver, TakesScreensho
 
     Object responseValue = response.getValue();
     if (responseValue == null) { // see https://github.com/SeleniumHQ/selenium/issues/5809
-      throw new NoSuchElementException(String.format("Cannot locate an element using %s=%s", using, value));
+    	System.out.println("RemoteWebElement -> findElement(String using, String value)" );
+    	throw new NoSuchElementException(String.format("Cannot locate an element using %s=%s", using, value));
     }
     WebElement element;
     try {

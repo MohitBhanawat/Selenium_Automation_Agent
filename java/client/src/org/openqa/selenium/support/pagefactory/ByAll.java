@@ -55,6 +55,7 @@ public class ByAll extends By implements Serializable {
         return elements.get(0);
       }
     }
+    System.out.println("In ByAll -> findElement(SearchContext context)");
     throw new NoSuchElementException("Cannot locate an element using " + toString());
   }
 

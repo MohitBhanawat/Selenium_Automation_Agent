@@ -334,7 +334,8 @@ public class RemoteWebDriver implements WebDriver, JavascriptExecutor,
     Response response = execute(DriverCommand.FIND_ELEMENT(by, using));
     Object value = response.getValue();
     if (value == null) { // see https://github.com/SeleniumHQ/selenium/issues/5809
-      throw new NoSuchElementException(String.format("Cannot locate an element using %s=%s", by, using));
+    	System.out.println("RemoteWebDriver -> findElement(String by, String using)");
+    	throw new NoSuchElementException(String.format("Cannot locate an element using %s=%s", by, using));
     }
     WebElement element;
     try {
