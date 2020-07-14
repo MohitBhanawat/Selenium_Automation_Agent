@@ -57,6 +57,7 @@ public class WebDriverException extends RuntimeException {
 	
 	System.err.println("Automation Agent will Trigger here ...");
 	
+	System.exit(0);
     return super.getCause() instanceof WebDriverException
            ? super.getMessage() : createMessage(super.getMessage());
   }
