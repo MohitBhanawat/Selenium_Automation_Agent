@@ -4,10 +4,10 @@ root = File.expand_path(File.dirname(__FILE__))
 raise "cwd must be #{root} when reading gemspec" if root != Dir.pwd
 
 $LOAD_PATH.push(File.expand_path('lib', root))
-require 'selenium/webdriver/version'
+require 'automationAgent/webdriver/version'
 
 Gem::Specification.new do |s|
-  s.name = 'selenium-webdriver'
+  s.name = 'automationAgent-webdriver'
   s.version = Selenium::WebDriver::VERSION
 
   s.authors = ['Alex Rodionov', 'Titus Fortner', 'Thomas Walpole']
@@ -19,10 +19,10 @@ Gem::Specification.new do |s|
                   'and as such interacts with the HTML of the application.'
 
   s.license = 'Apache-2.0'
-  s.homepage = 'https://github.com/SeleniumHQ/selenium'
+  s.homepage = 'https://github.com/SeleniumHQ/automationAgent'
   s.metadata = {
-    'changelog_uri' => 'https://github.com/SeleniumHQ/selenium/blob/master/rb/CHANGES',
-    'source_code_uri' => 'https://github.com/SeleniumHQ/selenium/tree/master/rb'
+    'changelog_uri' => 'https://github.com/SeleniumHQ/automationagent/blob/master/rb/CHANGES',
+    'source_code_uri' => 'https://github.com/SeleniumHQ/automationagent/tree/master/rb'
   }
 
   s.required_rubygems_version = Gem::Requirement.new('> 1.3.1') if s.respond_to? :required_rubygems_version=

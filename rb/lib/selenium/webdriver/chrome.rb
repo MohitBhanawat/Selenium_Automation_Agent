@@ -22,11 +22,11 @@ require 'net/http'
 module Selenium
   module WebDriver
     module Chrome
-      autoload :Bridge, 'selenium/webdriver/chrome/bridge'
-      autoload :Driver, 'selenium/webdriver/chrome/driver'
-      autoload :Profile, 'selenium/webdriver/chrome/profile'
-      autoload :Options, 'selenium/webdriver/chrome/options'
-      autoload :Service, 'selenium/webdriver/chrome/service'
+      autoload :Bridge, 'automationAgent/webdriver/chrome/bridge'
+      autoload :Driver, 'automationAgent/webdriver/chrome/driver'
+      autoload :Profile, 'automationAgent/webdriver/chrome/profile'
+      autoload :Options, 'automationAgent/webdriver/chrome/options'
+      autoload :Service, 'automationAgent/webdriver/chrome/service'
 
       def self.driver_path=(path)
         WebDriver.logger.deprecate 'Selenium::WebDriver::Chrome#driver_path=',

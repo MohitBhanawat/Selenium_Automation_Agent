@@ -17,11 +17,11 @@
 
 import pytest
 
-from selenium.common.exceptions import InvalidArgumentException
-from selenium.webdriver.common.proxy import Proxy, ProxyType
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
-from selenium.webdriver.firefox.options import Options
+from automationAgent.common.exceptions import InvalidArgumentException
+from automationAgent.webdriver.common.proxy import Proxy, ProxyType
+from automationAgent.webdriver.firefox.firefox_binary import FirefoxBinary
+from automationAgent.webdriver.firefox.firefox_profile import FirefoxProfile
+from automationAgent.webdriver.firefox.options import Options
 
 
 @pytest.fixture
@@ -153,14 +153,14 @@ def test_creates_capabilities(options):
 
 
 def test_starts_with_default_capabilities(options):
-    from selenium.webdriver import DesiredCapabilities
+    from automationAgent.webdriver import DesiredCapabilities
     caps = DesiredCapabilities.FIREFOX.copy()
     caps.update({"pageLoadStrategy": "normal"})
     assert options._caps == caps
 
 
 def test_is_a_baseoptions(options):
-    from selenium.webdriver.common.options import BaseOptions
+    from automationAgent.webdriver.common.options import BaseOptions
     assert isinstance(options, BaseOptions)
 
 

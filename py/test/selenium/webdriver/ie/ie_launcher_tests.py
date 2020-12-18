@@ -15,9 +15,9 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver import Ie
-from selenium.webdriver.ie.options import Options
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from automationAgent.webdriver import Ie
+from automationAgent.webdriver.ie.options import Options
+from automationAgent.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 def test_launch_and_close_browser():

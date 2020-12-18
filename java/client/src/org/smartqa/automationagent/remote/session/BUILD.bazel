@@ -1,0 +1,14 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "session",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/client/src/org/smartqa/automationagent/remote:__pkg__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/remote:capabilities",
+        artifact("com.google.guava:guava"),
+    ],
+)

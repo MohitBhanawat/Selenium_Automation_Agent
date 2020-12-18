@@ -1,0 +1,109 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//java:defs.bzl", "java_test_suite")
+
+filegroup(
+    name = "keystore",
+    srcs = [
+        "webserver/keystore",
+    ],
+    visibility = [
+        "//dotnet/test:__subpackages__",
+    ],
+)
+
+java_library(
+    name = "environment",
+    srcs = glob(
+        [
+            "*.java",
+            "webserver/*.java",
+        ],
+        exclude = [
+            "**/*Test.java",
+            "**/*TestBase.java",
+        ],
+    ),
+    data = [
+        "webserver/keystore",
+        "//common/src/web",
+        "//javascript/atoms",
+        "//third_party/closure/goog",
+        "//third_party/js/automationagent:webdriver_json",
+        "//third_party/js/automationagent:webdriver_xpi",
+        "//third_party/js/sizzle",
+    ],
+    javacopts = [
+        "-source",
+        "11",
+        "-target",
+        "11",
+    ],
+    visibility = [
+        "//java/client/test:__subpackages__",
+        "//java/server/test:__subpackages__",
+        "//javascript:__subpackages__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/json",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/src/org/smartqa/automationagent/remote/http",
+        "//java/client/test/org/smartqa/automationagent/build",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+        "//java/server/src/org/smartqa/automationagent/grid/server",
+        "//java/server/src/org/smartqa/automationagent/grid/web",
+        "//java/server/src/org/smartqa/automationagent/jre/server",
+        artifact("com.google.guava:guava"),
+        artifact("org.eclipse.jetty:jetty-http"),
+        artifact("org.eclipse.jetty:jetty-server"),
+        artifact("org.eclipse.jetty:jetty-servlet"),
+        artifact("org.eclipse.jetty:jetty-util"),
+        artifact("javax.servlet:javax.servlet-api"),
+    ],
+)
+
+java_binary(
+    name = "appserver",
+    main_class = "org.smartqa.automationagent.environment.webserver.JettyAppServer",
+    visibility = [
+        "//:__pkg__",
+        "//dotnet/test:__subpackages__",
+    ],
+    runtime_deps = [
+        ":environment",
+    ],
+)
+
+java_binary(
+    name = "jre-server",
+    main_class = "org.smartqa.automationagent.environment.webserver.JreAppServer",
+    visibility = [
+        "//dotnet/test:__subpackages__",
+    ],
+    runtime_deps = [
+        ":environment",
+    ],
+)
+
+java_library(
+    name = "test-base",
+    srcs = ["webserver/AppServerTestBase.java"],
+    deps = [
+        ":environment",
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/remote/http",
+        "//java/client/src/org/smartqa/automationagent/support",
+        "//java/client/test/org/smartqa/automationagent/testing/drivers",
+        artifact("junit:junit"),
+    ],
+)
+
+java_test_suite(
+    name = "MediumTests",
+    size = "medium",
+    srcs = glob(["**/*Test.java"]),
+    deps = [
+        ":environment",
+        ":test-base",
+    ],
+)

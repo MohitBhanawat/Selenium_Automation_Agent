@@ -18,10 +18,10 @@
 
 import warnings
 
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.remote.webdriver import WebDriver
-from selenium.webdriver.remote.webelement import WebElement
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.remote.webdriver import WebDriver
+from automationAgent.webdriver.remote.webelement import WebElement
 from .abstract_event_listener import AbstractEventListener
 
 
@@ -55,8 +55,8 @@ class EventFiringWebDriver(object):
 
         ::
 
-            from selenium.webdriver import Firefox
-            from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
+            from automationAgent.webdriver import Firefox
+            from automationAgent.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
 
             class MyListener(AbstractEventListener):
                 def before_navigate_to(self, url, driver):

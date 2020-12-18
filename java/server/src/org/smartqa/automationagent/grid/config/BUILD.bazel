@@ -1,0 +1,24 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "config",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/client/test/org/smartqa/automationagent/environment:__pkg__",
+        "//java/server/src/org/smartqa/automationagent/cli:__pkg__",
+        "//java/server/src/org/smartqa/automationagent/events:__subpackages__",
+        "//java/server/src/org/smartqa/automationagent/grid:__subpackages__",
+        "//java/server/src/org/smartqa/automationagent/netty/server:__pkg__",
+        "//java/server/src/org/smartqa/automationagent/server/htmlrunner:__pkg__",
+        "//java/server/test/com/smartqa/automationagent/webdriven:__pkg__",
+        "//java/server/test/org/smartqa/automationagent:__subpackages__",
+    ],
+    deps = [
+        "//java:auto-service",
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/json",
+        artifact("com.beust:jcommander"),
+        artifact("com.google.guava:guava"),
+        artifact("io.ous:jtoml"),
+    ],
+)

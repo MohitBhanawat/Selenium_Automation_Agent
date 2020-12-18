@@ -1,0 +1,24 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//java:defs.bzl", "java_selenium_test_suite")
+
+java_selenium_test_suite(
+    name = "LargeTests",
+    size = "large",
+    srcs = glob(["*.java"]),
+    browsers = [
+        "chrome",
+        "edge",
+        "ie",
+        "safari",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/test/org/smartqa/automationagent/environment",
+        "//java/client/test/org/smartqa/automationagent/testing:annotations",
+        "//java/client/test/org/smartqa/automationagent/testing:test-base",
+        "//java/client/test/org/smartqa/automationagent/testing/drivers",
+        artifact("junit:junit"),
+        artifact("org.assertj:assertj-core"),
+    ],
+)

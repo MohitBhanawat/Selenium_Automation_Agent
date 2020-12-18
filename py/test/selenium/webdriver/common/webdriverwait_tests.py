@@ -19,13 +19,13 @@ import time
 
 import pytest
 
-from selenium.common.exceptions import TimeoutException
-from selenium.common.exceptions import StaleElementReferenceException
-from selenium.common.exceptions import WebDriverException
-from selenium.common.exceptions import InvalidElementStateException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+from automationAgent.common.exceptions import TimeoutException
+from automationAgent.common.exceptions import StaleElementReferenceException
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.common.exceptions import InvalidElementStateException
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.support import expected_conditions as EC
+from automationAgent.webdriver.support.ui import WebDriverWait
 
 
 def throwSERE(driver):

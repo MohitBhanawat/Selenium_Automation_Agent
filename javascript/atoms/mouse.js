@@ -298,7 +298,7 @@ bot.Mouse.prototype.releaseButton = function(opt_force, opt_count) {
       bot.dom.isInteractable(this.getElement());
   this.fireMouseEvent_(bot.events.EventType.MOUSEUP, null, null, opt_force, opt_count);
 
-  try { // https://github.com/SeleniumHQ/selenium/issues/1509
+  try { // https://github.com/SeleniumHQ/automationagent/issues/1509
     // TODO: Middle button can also trigger click.
     if (this.buttonPressed_ == bot.Mouse.Button.LEFT &&
         this.getElement() == this.elementPressed_) {

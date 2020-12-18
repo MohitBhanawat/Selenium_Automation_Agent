@@ -19,7 +19,7 @@
 The Utils methods.
 """
 import socket
-from selenium.webdriver.common.keys import Keys
+from automationAgent.webdriver.common.keys import Keys
 
 try:
     # Python 2

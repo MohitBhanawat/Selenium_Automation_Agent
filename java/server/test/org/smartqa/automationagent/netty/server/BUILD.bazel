@@ -1,0 +1,36 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//java:defs.bzl", "java_test_suite")
+
+SMALL_TEST_SRCS = [
+    "RequestConverterTest.java",
+]
+
+java_test_suite(
+    name = "small-tests",
+    size = "small",
+    srcs = SMALL_TEST_SRCS,
+    deps = [
+        "//java/server/src/org/smartqa/automationagent/netty/server",
+        artifact("io.netty:netty-codec-http"),
+        artifact("io.netty:netty-transport"),
+        artifact("junit:junit"),
+        artifact("org.assertj:assertj-core"),
+    ],
+)
+
+java_test_suite(
+    name = "medium-tests",
+    size = "medium",
+    srcs = glob(["*.java"], exclude = SMALL_TEST_SRCS),
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/remote/http",
+        "//java/client/src/org/smartqa/automationagent/support",
+        "//java/client/test/org/smartqa/automationagent/testing:test-base",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+        "//java/server/src/org/smartqa/automationagent/netty/server",
+        artifact("com.google.guava:guava"),
+        artifact("junit:junit"),
+        artifact("org.assertj:assertj-core"),
+    ],
+)

@@ -17,4 +17,4 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require 'selenium/webdriver'
+require 'automationAgent/webdriver'

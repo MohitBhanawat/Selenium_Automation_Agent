@@ -6,31 +6,31 @@ load("//:copy_file.bzl", "copy_file")
 copy_file(
     name = "get-attribute",
     src = "//javascript/webdriver/atoms:get-attribute.js",
-    out = "selenium/webdriver/remote/getAttribute.js",
+    out = "automationAgent/webdriver/remote/getAttribute.js",
 )
 
 copy_file(
     name = "is-displayed",
     src = "//javascript/atoms/fragments:is-displayed.js",
-    out = "selenium/webdriver/remote/isDisplayed.js",
+    out = "automationAgent/webdriver/remote/isDisplayed.js",
 )
 
 copy_file(
     name = "find-elements",
     src = "//javascript/atoms/fragments:find-elements.js",
-    out = "selenium/webdriver/remote/findElements.js",
+    out = "automationAgent/webdriver/remote/findElements.js",
 )
 
 copy_file(
     name = "firefox-driver-prefs",
-    src = "//third_party/js/selenium:webdriver_json",
-    out = "selenium/webdriver/firefox/webdriver_prefs.json",
+    src = "//third_party/js/automationAgent:webdriver_json",
+    out = "automationAgent/webdriver/firefox/webdriver_prefs.json",
 )
 
 py_library(
-    name = "selenium",
+    name = "automationAgent",
     srcs = glob(
-        ["selenium/**/*.py"],
+        ["automationAgent/**/*.py"],
         exclude = ["generate.py"],
     ),
     data = [
@@ -49,26 +49,26 @@ py_library(
 )
 
 py_package(
-    name = "selenium-pkg",
+    name = "automationAgent-pkg",
     packages = [
-        "py.selenium",
-        "py.selenium.common",
-        "py.selenium.webdriver",
-        "py.selenium.webdriver.chrome",
-        "py.selenium.webdriver.chromium",
-        "py.selenium.webdriver.common",
-        "py.selenium.webdriver.common.devtools",
-        "py.selenium.webdriver.edge",
-        "py.selenium.webdriver.firefox",
-        "py.selenium.webdriver.remote",
-        "py.selenium.webdriver.safari",
+        "py.automationAgent",
+        "py.automationAgent.common",
+        "py.automationAgent.webdriver",
+        "py.automationAgent.webdriver.chrome",
+        "py.automationAgent.webdriver.chromium",
+        "py.automationAgent.webdriver.common",
+        "py.automationAgent.webdriver.common.devtools",
+        "py.automationAgent.webdriver.edge",
+        "py.automationAgent.webdriver.firefox",
+        "py.automationAgent.webdriver.remote",
+        "py.automationAgent.webdriver.safari",
     ],
-    deps = [":selenium"],
+    deps = [":automationAgent"],
 )
 
 py_wheel(
-    name = "selenium-wheel",
-    distribution = "selenium",
+    name = "automationAgent-wheel",
+    distribution = "automationAgent",
     python_tag = [
         "py2",
         "py3",
@@ -82,7 +82,7 @@ py_wheel(
     version = "4.0.0.a6",
     visibility = ["//visibility:public"],
     deps = [
-        ":selenium-pkg",
+        ":automationAgent-pkg",
     ],
 )
 
@@ -92,20 +92,20 @@ py_library(
     srcs = [
         "conftest.py",
         "test/__init__.py",
-        "test/selenium/__init__.py",
-        "test/selenium/webdriver/__init__.py",
-        "test/selenium/webdriver/chrome/__init__.py",
-        "test/selenium/webdriver/common/__init__.py",
-        "test/selenium/webdriver/common/conftest.py",
-        "test/selenium/webdriver/common/network.py",
-        "test/selenium/webdriver/common/webserver.py",
-        "test/selenium/webdriver/firefox/__init__.py",
-        "test/selenium/webdriver/firefox/conftest.py",
-        "test/selenium/webdriver/marionette/__init__.py",
-        "test/selenium/webdriver/marionette/conftest.py",
-        "test/selenium/webdriver/safari/conftest.py",
-        "test/selenium/webdriver/support/__init__.py",
-        "test/selenium/webdriver/support/conftest.py",
+        "test/automationagent/__init__.py",
+        "test/automationagent/webdriver/__init__.py",
+        "test/automationagent/webdriver/chrome/__init__.py",
+        "test/automationagent/webdriver/common/__init__.py",
+        "test/automationagent/webdriver/common/conftest.py",
+        "test/automationagent/webdriver/common/network.py",
+        "test/automationagent/webdriver/common/webserver.py",
+        "test/automationagent/webdriver/firefox/__init__.py",
+        "test/automationagent/webdriver/firefox/conftest.py",
+        "test/automationagent/webdriver/marionette/__init__.py",
+        "test/automationagent/webdriver/marionette/conftest.py",
+        "test/automationagent/webdriver/safari/conftest.py",
+        "test/automationagent/webdriver/support/__init__.py",
+        "test/automationagent/webdriver/support/conftest.py",
     ],
     data = [
         "setup.cfg",
@@ -123,7 +123,7 @@ genrule(
         ":browser_protocol",
         ":js_protocol",
     ],
-    outs = ["selenium/webdriver/common/devtools"],
+    outs = ["automationAgent/webdriver/common/devtools"],
     cmd = "python3 $(location generate.py) $(location :browser_protocol) $(location :js_protocol) $@",
     tools = [
     ],
@@ -153,7 +153,7 @@ py_test_suite(
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         "//third_party/py:pytest",
     ],
 )
@@ -162,8 +162,8 @@ py_library(
     name = "webserver",
     testonly = True,
     srcs = [
-        "test/selenium/webdriver/common/network.py",
-        "test/selenium/webdriver/common/webserver.py",
+        "test/automationagent/webdriver/common/network.py",
+        "test/automationagent/webdriver/common/webserver.py",
     ],
     data = [
         "//common/src/web",
@@ -175,9 +175,9 @@ py_test_suite(
     name = "test-chrome",
     size = "large",
     srcs = glob([
-        "test/selenium/webdriver/chrome/**/*.py",
-        "test/selenium/webdriver/common/**/*.py",
-        "test/selenium/webdriver/support/**/*.py",
+        "test/automationagent/webdriver/chrome/**/*.py",
+        "test/automationagent/webdriver/common/**/*.py",
+        "test/automationagent/webdriver/support/**/*.py",
     ]),
     args = [
         "--instafail",
@@ -188,7 +188,7 @@ py_test_suite(
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         ":webserver",
         "//third_party/py:pytest",
     ],
@@ -198,9 +198,9 @@ py_test_suite(
     name = "test-edge",
     size = "large",
     srcs = glob([
-        "test/selenium/webdriver/edge/**/*.py",
-        "test/selenium/webdriver/common/**/*.py",
-        "test/selenium/webdriver/support/**/*.py",
+        "test/automationagent/webdriver/edge/**/*.py",
+        "test/automationagent/webdriver/common/**/*.py",
+        "test/automationagent/webdriver/support/**/*.py",
     ]),
     args = [
         "--instafail",
@@ -211,7 +211,7 @@ py_test_suite(
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         ":webserver",
         "//third_party/py:pytest",
     ],
@@ -221,9 +221,9 @@ py_test_suite(
     name = "test-edge-chromium",
     size = "large",
     srcs = glob([
-        "test/selenium/webdriver/edge/**/*.py",
-        "test/selenium/webdriver/common/**/*.py",
-        "test/selenium/webdriver/support/**/*.py",
+        "test/automationagent/webdriver/edge/**/*.py",
+        "test/automationagent/webdriver/common/**/*.py",
+        "test/automationagent/webdriver/support/**/*.py",
     ]),
     args = [
         "--instafail",
@@ -234,7 +234,7 @@ py_test_suite(
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         ":webserver",
         "//third_party/py:pytest",
     ],
@@ -244,9 +244,9 @@ py_test_suite(
     name = "test-firefox",
     size = "large",
     srcs = glob([
-        "test/selenium/webdriver/common/**/*.py",
-        "test/selenium/webdriver/marionette/**/*.py",
-        "test/selenium/webdriver/support/**/*.py",
+        "test/automationagent/webdriver/common/**/*.py",
+        "test/automationagent/webdriver/marionette/**/*.py",
+        "test/automationagent/webdriver/support/**/*.py",
     ]),
     args = [
         "--instafail",
@@ -257,7 +257,7 @@ py_test_suite(
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         ":webserver",
         "//third_party/py:pytest",
     ],
@@ -267,22 +267,22 @@ py_test_suite(
     name = "test-remote",
     size = "large",
     srcs = glob([
-        "test/selenium/webdriver/common/**/*.py",
-        "test/selenium/webdriver/support/**/*.py",
+        "test/automationagent/webdriver/common/**/*.py",
+        "test/automationagent/webdriver/support/**/*.py",
     ]),
     args = [
         "--instafail",
         "--driver=Remote",
     ],
     data = [
-        "//java/server/src/org/openqa/selenium/grid:selenium_server_deploy.jar",
+        "//java/server/src/org/smartqa/automationagent/grid:selenium_server_deploy.jar",
     ],
     tags = [
         "no-sandbox",
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         ":webserver",
         "//third_party/py:pytest",
     ],
@@ -292,9 +292,9 @@ py_test_suite(
     name = "test-ie",
     size = "large",
     srcs = glob([
-        "test/selenium/webdriver/common/**/*.py",
-        "test/selenium/webdriver/ie/**/*.py",
-        "test/selenium/webdriver/support/**/*.py",
+        "test/automationagent/webdriver/common/**/*.py",
+        "test/automationagent/webdriver/ie/**/*.py",
+        "test/automationagent/webdriver/support/**/*.py",
     ]),
     args = [
         "--instafail",
@@ -305,7 +305,7 @@ py_test_suite(
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         ":webserver",
         "//third_party/py:pytest",
     ],
@@ -315,9 +315,9 @@ py_test_suite(
     name = "test-safari",
     size = "large",
     srcs = glob([
-        "test/selenium/webdriver/common/**/*.py",
-        "test/selenium/webdriver/safari/**/*.py",
-        "test/selenium/webdriver/support/**/*.py",
+        "test/automationagent/webdriver/common/**/*.py",
+        "test/automationagent/webdriver/safari/**/*.py",
+        "test/automationagent/webdriver/support/**/*.py",
     ]),
     args = [
         "--instafail",
@@ -329,7 +329,7 @@ py_test_suite(
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         ":webserver",
         "//third_party/py:pytest",
     ],
@@ -339,8 +339,8 @@ py_test_suite(
     name = "test-webkitgtk",
     size = "large",
     srcs = glob([
-        "test/selenium/webdriver/common/**/*.py",
-        "test/selenium/webdriver/support/**/*.py",
+        "test/automationagent/webdriver/common/**/*.py",
+        "test/automationagent/webdriver/support/**/*.py",
     ]),
     args = [
         "--instafail",
@@ -354,7 +354,7 @@ py_test_suite(
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         ":webserver",
         "//third_party/py:pytest",
     ],
@@ -364,8 +364,8 @@ py_test_suite(
     name = "test-wpewebkit",
     size = "large",
     srcs = glob([
-        "test/selenium/webdriver/common/**/*.py",
-        "test/selenium/webdriver/support/**/*.py",
+        "test/automationagent/webdriver/common/**/*.py",
+        "test/automationagent/webdriver/support/**/*.py",
     ]),
     args = [
         "--instafail",
@@ -379,7 +379,7 @@ py_test_suite(
     ],
     deps = [
         ":init-tree",
-        ":selenium",
+        ":automationAgent",
         ":webserver",
         "//third_party/py:pytest",
     ],

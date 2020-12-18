@@ -1,0 +1,15 @@
+load("//java:defs.bzl", "java_export")
+load("//java:version.bzl", "SE_VERSION")
+
+java_export(
+    name = "json",
+    srcs = glob(["*.java"]),
+    maven_coordinates = "org.seleniumhq.automationAgent:automationAgent-json:%s" % SE_VERSION,
+    pom_template = "//java/client/src/org/smartqa/automationagent:template-pom",
+    visibility = [
+        "//visibility:public",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+    ],
+)

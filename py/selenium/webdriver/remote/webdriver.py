@@ -33,14 +33,14 @@ from .remote_connection import RemoteConnection
 from .switch_to import SwitchTo
 from .webelement import WebElement
 
-from selenium.common.exceptions import (InvalidArgumentException,
+from automationAgent.common.exceptions import (InvalidArgumentException,
                                         WebDriverException,
                                         NoSuchCookieException,
                                         UnknownMethodException)
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.timeouts import Timeouts
-from selenium.webdriver.common.html5.application_cache import ApplicationCache
-from selenium.webdriver.support.relative_locator import RelativeBy
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.common.timeouts import Timeouts
+from automationAgent.webdriver.common.html5.application_cache import ApplicationCache
+from automationAgent.webdriver.support.relative_locator import RelativeBy
 
 from six import add_metaclass
 
@@ -104,9 +104,9 @@ def _make_w3c_caps(caps):
 
 
 def get_remote_connection(capabilities, command_executor, keep_alive):
-    from selenium.webdriver.chromium.remote_connection import ChromiumRemoteConnection
-    from selenium.webdriver.safari.remote_connection import SafariRemoteConnection
-    from selenium.webdriver.firefox.remote_connection import FirefoxRemoteConnection
+    from automationAgent.webdriver.chromium.remote_connection import ChromiumRemoteConnection
+    from automationAgent.webdriver.safari.remote_connection import SafariRemoteConnection
+    from automationAgent.webdriver.firefox.remote_connection import FirefoxRemoteConnection
 
     candidates = [RemoteConnection] + [ChromiumRemoteConnection, SafariRemoteConnection, FirefoxRemoteConnection]
     handler = next(
@@ -132,12 +132,12 @@ class WebDriver(BaseWebDriver):
     Controls a browser by sending commands to a remote server.
     This server is expected to be running the WebDriver wire protocol
     as defined at
-    https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol
+    https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol
 
     :Attributes:
      - session_id - String ID of the browser session started and controlled by this WebDriver.
      - capabilities - Dictionary of effective capabilities of this browser session as returned
-         by the remote server. See https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities
+         by the remote server. See https://github.com/SeleniumHQ/automationagent/wiki/DesiredCapabilities
      - command_executor - remote_connection.RemoteConnection object used to execute commands.
      - error_handler - errorhandler.ErrorHandler object used to handle errors.
     """
@@ -155,9 +155,9 @@ class WebDriver(BaseWebDriver):
              remote_connection.RemoteConnection object. Defaults to 'http://127.0.0.1:4444/wd/hub'.
          - desired_capabilities - A dictionary of capabilities to request when
              starting the browser session. Required parameter.
-         - browser_profile - A selenium.webdriver.firefox.firefox_profile.FirefoxProfile object.
+         - browser_profile - A automationAgent.webdriver.firefox.firefox_profile.FirefoxProfile object.
              Only used if Firefox is requested. Optional.
-         - proxy - A selenium.webdriver.common.proxy.Proxy object. The browser session will
+         - proxy - A automationAgent.webdriver.common.proxy.Proxy object. The browser session will
              be started with given proxy settings, if possible. Optional.
          - keep_alive - Whether to configure remote_connection.RemoteConnection to use
              HTTP keep-alive. Defaults to True.
@@ -266,7 +266,7 @@ class WebDriver(BaseWebDriver):
          - version - Which browser version to request.
          - platform - Which platform to request the browser on.
          - javascript_enabled - Whether the new session should support JavaScript.
-         - browser_profile - A selenium.webdriver.firefox.firefox_profile.FirefoxProfile object. Only used if Firefox is requested.
+         - browser_profile - A automationAgent.webdriver.firefox.firefox_profile.FirefoxProfile object. Only used if Firefox is requested.
         """
         if not isinstance(capabilities, dict):
             raise InvalidArgumentException("Capabilities must be a dictionary")
@@ -1128,7 +1128,7 @@ class WebDriver(BaseWebDriver):
                 value = '[name="%s"]' % value
 
         # Return empty list if driver returns null
-        # See https://github.com/SeleniumHQ/selenium/issues/4555
+        # See https://github.com/SeleniumHQ/automationagent/issues/4555
         return self.execute(Command.FIND_ELEMENTS, {
             'using': by,
             'value': value})['value'] or []
@@ -1425,7 +1425,7 @@ class WebDriver(BaseWebDriver):
     async def get_devtools_connection(self):
         assert sys.version_info >= (3, 6)
 
-        from selenium.webdriver.support import cdp
+        from automationAgent.webdriver.support import cdp
         ws_url = None
         if self.capabilities.get("se:options"):
             ws_url = self.capabilities.get("se:options").get("cdp")

@@ -1,0 +1,14 @@
+java_library(
+    name = "io",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/client/src/org/smartqa/automationagent/os:__pkg__",
+        "//java/client/src/org/smartqa/automationagent/remote:__pkg__",
+        "//java/client/src/org/smartqa/automationagent/tools/jar:__pkg__",
+        "//java/client/src/org/smartqa/automationagent/tools/javadoc:__pkg__",
+        "//java/client/src/org/smartqa/automationagent/tools/modules:__pkg__",
+        "//java/client/test/org/smartqa/automationagent/io:__pkg__",
+    ],
+    deps = [
+    ],
+)

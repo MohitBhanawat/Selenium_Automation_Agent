@@ -1,4 +1,4 @@
-selenium.webdriver.support.select
+automationAgent.webdriver.support.select
 =================================
 
-.. automodule:: selenium.webdriver.support.select
+.. automodule:: automationAgent.webdriver.support.select

@@ -1,0 +1,24 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//java:defs.bzl", "java_test_suite")
+
+java_test_suite(
+    name = "SmallTests",
+    size = "small",
+    srcs = glob(["*.java"]),
+    deps = [
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/test/org/smartqa/automationagent/remote/tracing:tracing-support",
+        "//java/server/src/org/smartqa/automationagent/events",
+        "//java/server/src/org/smartqa/automationagent/events/local",
+        "//java/server/src/org/smartqa/automationagent/grid/data",
+        "//java/server/src/org/smartqa/automationagent/grid/distributor",
+        "//java/server/src/org/smartqa/automationagent/grid/distributor/local",
+        "//java/server/src/org/smartqa/automationagent/grid/node",
+        "//java/server/src/org/smartqa/automationagent/grid/node/local",
+        "//java/server/src/org/smartqa/automationagent/grid/sessionmap/local",
+        "//java/server/test/org/smartqa/automationagent/grid/testing",
+        artifact("io.opentelemetry:opentelemetry-api"),
+        artifact("junit:junit"),
+        artifact("org.assertj:assertj-core"),
+    ],
+)

@@ -19,8 +19,8 @@
 import os
 import platform
 from subprocess import Popen, STDOUT
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common import utils
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.common import utils
 import time
 
 
@@ -49,7 +49,7 @@ class FirefoxBinary(object):
             raise WebDriverException(
                 "Failed to find firefox binary. You can set it by specifying "
                 "the path to 'firefox_binary':\n\nfrom "
-                "selenium.webdriver.firefox.firefox_binary import "
+                "automationAgent.webdriver.firefox.firefox_binary import "
                 "FirefoxBinary\n\nbinary = "
                 "FirefoxBinary('/path/to/binary')\ndriver = "
                 "webdriver.Firefox(firefox_binary=binary)")

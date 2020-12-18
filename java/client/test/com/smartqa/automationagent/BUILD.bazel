@@ -1,0 +1,79 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//java:defs.bzl", "java_test_suite")
+
+java_library(
+    name = "test-base",
+    srcs = [
+        "InternalSelenseTestBase.java",
+    ],
+    resource_strip_prefix = "java/client/test",
+    resources = [
+        "testHelpers.js",
+    ],
+    deps = [
+        "//java/client/src/com/smartqa/automationagent:leg-rc",
+        "//java/client/src/org/smartqa/automationagent/chrome",
+        "//java/client/src/org/smartqa/automationagent/edge",
+        "//java/client/src/org/smartqa/automationagent/edgehtml",
+        "//java/client/src/org/smartqa/automationagent/firefox",
+        "//java/client/src/org/smartqa/automationagent/ie",
+        "//java/client/src/org/smartqa/automationagent/opera",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/src/org/smartqa/automationagent/safari",
+        "//java/client/test/org/smartqa/automationagent/build",
+        "//java/client/test/org/smartqa/automationagent/environment",
+        "//java/client/test/org/smartqa/automationagent/testing:test-base",
+        "//java/client/test/org/smartqa/automationagent/testing/drivers",
+        artifact("com.google.guava:guava"),
+        artifact("junit:junit"),
+    ],
+)
+
+java_test_suite(
+    name = "LargeTests",
+    size = "large",
+    srcs = glob(
+        [
+            "*.java",
+            "condition/*.java",
+            "corebased/*.java",
+        ],
+        exclude = [
+            "InternalSelenseTestBase.java",
+        ],
+    ),
+    jvm_flags = [
+        "-Dselenium.browser=chrome",
+    ],
+    resource_strip_prefix = "java/client/test",
+    resources = [
+        "testHelpers.js",
+    ],
+    tags = [
+        "flaky",
+        "no-sandbox",
+    ],
+    test_identifiers = [
+        "Test",
+        "Test.java",
+    ],
+    deps = [
+        ":test-base",
+        "//java/client/src/com/smartqa/automationagent:leg-rc",
+        "//java/client/src/com/smartqa/automationagent/webdriven",
+        "//java/client/src/org/smartqa/automationagent/chrome",
+        "//java/client/src/org/smartqa/automationagent/edge",
+        "//java/client/src/org/smartqa/automationagent/firefox",
+        "//java/client/src/org/smartqa/automationagent/ie",
+        "//java/client/src/org/smartqa/automationagent/opera",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/src/org/smartqa/automationagent/safari",
+        "//java/client/test/org/smartqa/automationagent/build",
+        "//java/client/test/org/smartqa/automationagent/environment",
+        "//java/client/test/org/smartqa/automationagent/testing:test-base",
+        "//java/client/test/org/smartqa/automationagent/testing/drivers",
+        artifact("com.google.guava:guava"),
+        artifact("junit:junit"),
+        artifact("org.mockito:mockito-core"),
+    ],
+)

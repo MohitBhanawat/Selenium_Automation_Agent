@@ -34,9 +34,9 @@
 
 ### API Changes
 
-*  Export `lib/input.Origin` from the top level `selenium-webdriver` module.
+*  Export `lib/input.Origin` from the top level `automationAgent-webdriver` module.
 *  HTTP requests from this library will now include a User-Agent of the form
-   `selenium/${VERSION} (js ${PLATFORM})`.
+   `automationAgent/${VERSION} (js ${PLATFORM})`.
 
 
 ## v4.0.0-alpha.1
@@ -234,22 +234,22 @@ mode (see `example/headless.js`)
 
 ### API Changes
 
-* Added new methods to `selenium-webdriver/firefox.Options`:
+* Added new methods to `automationAgent-webdriver/firefox.Options`:
   - addArguments()
   - headless()
   - windowSize()
-* Deprecated `selenium-webdriver/firefox/binary.Binary`
-* Removed `selenium-webdriver/firefox.Options#useGeckoDriver()`
-* Removed the unused `selenium-webdriver/firefox/profile.decode()`
-* Removed methods from `selenium-webdriver/firefox/profile.Profile` that had
+* Deprecated `automationAgent-webdriver/firefox/binary.Binary`
+* Removed `automationAgent-webdriver/firefox.Options#useGeckoDriver()`
+* Removed the unused `automationAgent-webdriver/firefox/profile.decode()`
+* Removed methods from `automationAgent-webdriver/firefox/profile.Profile` that had
   no effect since support for the legacy FirefoxDriver was dropped in 3.5.0:
   - setNativeEventsEnabled
   - nativeEventsEnabled
   - getPort
   - setPort
-* Removed `selenium-webdriver/firefox.ServiceBuilder#setFirefoxBinary()`; custom
+* Removed `automationAgent-webdriver/firefox.ServiceBuilder#setFirefoxBinary()`; custom
   binaries should be configured through the `firefox.Options` class.
-* Removed `selenium-webdriver/firefox.Capability`. These hold overs from the
+* Removed `automationAgent-webdriver/firefox.Capability`. These hold overs from the
   legacy FirefoxDriver are no longer supported.
 
 ### Changes for W3C WebDriver Spec Compliance
@@ -270,8 +270,8 @@ to a remote Selenium server that supports Firefox 45.
 
 * Removed native support for Firefox 46 and older.
   - The `SELENIUM_MARIONETTE` enviornment variable no longer has an effect.
-  - `selenium-webdriver/firefox.Capability.MARIONETTE` is deprecated.
-  - `selenium-webdriver/firefox.Options#useGeckoDriver()` is deprecated and now a no-op.
+  - `automationAgent-webdriver/firefox.Capability.MARIONETTE` is deprecated.
+  - `automationAgent-webdriver/firefox.Options#useGeckoDriver()` is deprecated and now a no-op.
 * `firefox.Options` will no longer discard the `"moz:firefoxOptions"` set in
   user provided capabilities (via `Builder.withCapabilities({})`). When both
   are used, the settings in `firefox.Options` will be applied _last_.
@@ -319,7 +319,7 @@ This release requires [geckodriver 0.15.0](https://github.com/mozilla/geckodrive
   with
 
   ```js
-  const {logging} = require('selenium-webdriver');
+  const {logging} = require('automationAgent-webdriver');
   logging.installConsoleHandler();
   logging.getLogger('promise.ControlFlow').setLevel(logging.Level.WARNING);
   ```
@@ -340,9 +340,9 @@ This release requires [geckodriver 0.15.0](https://github.com/mozilla/geckodrive
   `promise.defer()` to all use native promises when the promise manager is
   disabled.
 * Properly handle W3C error responses to new session commands.
-* Updated `selenium-webdriver/testing` to export `describe.only` along with
+* Updated `automationAgent-webdriver/testing` to export `describe.only` along with
   `describe.skip`.
-* Fixed `selenium-webdriver/lib/until.ableToSwitchToFrame`. It was previously
+* Fixed `automationAgent-webdriver/lib/until.ableToSwitchToFrame`. It was previously
   dropping arguments and would never work.
 * Added the ability to use Firefox Nightly
 * If Firefox cannot be found in the default location, look for it on the PATH
@@ -374,18 +374,18 @@ This release requires [geckodriver 0.15.0](https://github.com/mozilla/geckodrive
   To use Safari 9 or older, users will have to use an older version of Selenium.
 
 * geckodriver v0.11.0 or newer is now required for Firefox.
-* Fixed potential reference errors in `selenium-webdriver/testing` when users
+* Fixed potential reference errors in `automationAgent-webdriver/testing` when users
   create a cycle with mocha by running with mocha's `--hook` flag.
 * Fixed `WebDriver.switchTo().activeElement()` to use the correct HTTP method
   for compatibility with the W3C spec.
-* Update the `selenium-webdriver/firefox` module to use geckodriver's
+* Update the `automationAgent-webdriver/firefox` module to use geckodriver's
   "moz:firefoxOptions" dictionary for Firefox-specific configuration values.
-* Extending the `selenium-webdriver/testing` module to support tests defined
+* Extending the `automationAgent-webdriver/testing` module to support tests defined
   using generator functions.
 * The promise manager can be disabled by setting an enviornment variable:
   `SELENIUM_PROMISE_MANAGER=0`. This is part of a larger plan to remove the
   promise manager, as documented at
-  <https://github.com/SeleniumHQ/selenium/issues/2969>
+  <https://github.com/SeleniumHQ/automationagent/issues/2969>
 * When communicating with a W3C-compliant remote end, use the atoms library for
   the `WebElement.getAttribute()` and `WebElement.isDisplayed()` commands. This
   behavior is consistent with the java, .net, python, and ruby clients.
@@ -439,7 +439,7 @@ This release requires [geckodriver 0.15.0](https://github.com/mozilla/geckodrive
 * Changed the signature of the `firefox.Driver` from `(config, flow, executor)`
   to `(config, executor, flow)`.
 * Exposed the `Condition` and `WebElementCondition` classes from the top-level
-  `selenium-webdriver` module (these were previously only available from
+  `automationAgent-webdriver` module (these were previously only available from
   `lib/webdriver`).
 
 
@@ -454,7 +454,7 @@ This release requires [geckodriver 0.15.0](https://github.com/mozilla/geckodrive
 
 ### API Changes
 
-* Moved the `builder.Builder` class into the main module (`selenium-webdriver`).
+* Moved the `builder.Builder` class into the main module (`automationAgent-webdriver`).
 * Removed the `builder` module.
 * Fix `webdriver.WebDriver#setFileDetector` when driving Chrome or Firefox on a
   remote machine.
@@ -492,9 +492,9 @@ This release requires [geckodriver 0.15.0](https://github.com/mozilla/geckodrive
   returned in seconds.
 * Renamed `firefox.Options#useMarionette` to `firefox.Options#useGeckoDriver`
 * Removed deprecated modules:
-   - `selenium-webdriver/error` (use `selenium-webdriver/lib/error`,\
-     or the `error` property exported by `selenium-webdriver`)
-   - `selenium-webdriver/executors` — this was not previously deprecated, but
+   - `automationAgent-webdriver/error` (use `automationAgent-webdriver/lib/error`,\
+     or the `error` property exported by `automationAgent-webdriver`)
+   - `automationAgent-webdriver/executors` — this was not previously deprecated, but
      is no longer used.
 * Removed deprecated types:
    - `command.DeferredExecutor` — this was not previously deprecated, but is no
@@ -585,10 +585,10 @@ This release requires [geckodriver 0.15.0](https://github.com/mozilla/geckodrive
 
 ### Notice
 
-Starting with v2.52.0, each release of selenium-webdriver will support the
+Starting with v2.52.0, each release of automationAgent-webdriver will support the
 latest _minor_ LTS and stable Node releases. All releases between the LTS and
 stable release will have best effort support. Further details are available in
-the selenium-webdriver package README.
+the automationAgent-webdriver package README.
 
 ### Change Summary
 
@@ -614,7 +614,7 @@ the selenium-webdriver package README.
 * Deprecated `executors.DeferredExecutor` in favor of
     `lib/command.DeferredExecutor`.
 * API documentation is no longer distributed with the npm package, but remains
-    available at <http://seleniumhq.github.io/selenium/docs/api/javascript/>
+    available at <http://seleniumhq.github.io/automationagent/docs/api/javascript/>
 * Rewrote the `error` module to export an Error subtype for each type of error
     defined in the [W3C WebDriver spec](https://w3c.github.io/webdriver/webdriver-spec.html#handling-errors).
 * Changed the `http.Request` and `http.Response` classes to store headers in
@@ -624,7 +624,7 @@ the selenium-webdriver package README.
     `testing/assert` module.
 * Wait conditions that locate an element, or that wait on an element's state,
     will return a WebElementPromise.
-* Lots of internal clean-up to break selenium-webdriver's long standing
+* Lots of internal clean-up to break automationAgent-webdriver's long standing
     dependency on Google's Closure library.
 
 ### Changes for W3C WebDriver Spec Compliance
@@ -681,7 +681,7 @@ the selenium-webdriver package README.
 
 ### Notice
 
-This is the last release for `selenium-webdriver` that will support ES5.
+This is the last release for `automationAgent-webdriver` that will support ES5.
 Subsequent releases will depend on ES6 features that are enabled by
 [default](https://nodejs.org/en/docs/es6/) in Node v4.0.0. Node v0.12.x will
 continue to be supported, but will require setting the `--harmony` flag.
@@ -746,7 +746,7 @@ continue to be supported, but will require setting the `--harmony` flag.
 
 ### Important Policy Change
 
-Starting with the 2.45.0 release, selenium-webdriver will support the last
+Starting with the 2.45.0 release, automationAgent-webdriver will support the last
 two stable minor releases for Node. For 2.45.0, this means Selenium will
 support Node 0.10.x and 0.12.x. Support for the intermediate, un-stable release
 (0.11.x) is "best-effort". This policy will be re-evaluated once Node has a
@@ -761,19 +761,19 @@ major version release (i.e. 1.0.0).
     compliant. The biggest compliance change is that promise callbacks are now
     invoked in a future turn of the JS event loop. For example:
 
-        var promise = require('selenium-webdriver').promise;
+        var promise = require('automationAgent-webdriver').promise;
         console.log('start');
         promise.fulfilled().then(function() {
           console.log('middle');
         });
         console.log('end');
 
-        // Output in selenium-webdriver@2.44.0
+        // Output in automationAgent-webdriver@2.44.0
         // start
         // middle
         // end
         //
-        // Output in selenium-webdriver@2.45.0
+        // Output in automationAgent-webdriver@2.45.0
         // start
         // end
         // middle
@@ -834,8 +834,8 @@ major version release (i.e. 1.0.0).
 * Added the `until` module, which defines common explicit wait conditions.
     Sample usage:
 
-        var firefox = require('selenium-webdriver/firefox'),
-            until = require('selenium-webdriver/until');
+        var firefox = require('automationAgent-webdriver/firefox'),
+            until = require('automationAgent-webdriver/until');
 
         var driver = new firefox.Driver();
         driver.get('http://www.google.com/ncr');
@@ -882,8 +882,8 @@ major version release (i.e. 1.0.0).
 * For consistency with the other language bindings, added browser specific
     classes that can be used to start a browser without the builder.
 
-        var webdriver = require('selenium-webdriver')
-            chrome = require('selenium-webdriver/chrome');
+        var webdriver = require('automationAgent-webdriver')
+            chrome = require('automationAgent-webdriver/chrome');
 
         // The following are equivalent.
         var driver1 = new webdriver.Builder().forBrowser('chrome').build();
@@ -986,7 +986,7 @@ major version release (i.e. 1.0.0).
 
 ## v2.34.0
 
-* Added the `selenium-webdriver/testing/assert` module. This module
+* Added the `automationAgent-webdriver/testing/assert` module. This module
     simplifies writing assertions against promised values (see
     example in module documentation).
 * Added the `webdriver.Capabilities` class.
@@ -1008,7 +1008,7 @@ major version release (i.e. 1.0.0).
             build();
 
 * Added support for configuring proxies through the builder. For examples, see
-    `selenium-webdriver/test/proxy_test`.
+    `automationAgent-webdriver/test/proxy_test`.
 * Added native support for PhantomJS.
 * Changed signature of `SeleniumServer` to `SeleniumServer(jar, options)`.
 * Tests are now included in the npm published package. See `README.md` for
@@ -1030,9 +1030,9 @@ major version release (i.e. 1.0.0).
 
 ## v2.32.0
 
-* Added the `selenium-webdriver/testing` package, which provides a basic
+* Added the `automationAgent-webdriver/testing` package, which provides a basic
     framework for writing tests using Mocha. See
-    `selenium-webdriver/example/google_search_test.js` for usage.
+    `automationAgent-webdriver/example/google_search_test.js` for usage.
 * For Promises/A+ compatibility, backing out the change in 2.30.0 that ensured
     rejections were always Error objects. Rejection reasons are now left as is.
 * Removed deprecated functions originally scheduled for removal in 2.31.0
@@ -1070,4 +1070,4 @@ available separately)
 
 * Initial release for npm:
 
-        npm install selenium-webdriver
+        npm install automationAgent-webdriver

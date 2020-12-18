@@ -17,7 +17,7 @@
 
 import pytest
 
-from selenium.webdriver import Safari
+from automationAgent.webdriver import Safari
 
 
 @pytest.fixture

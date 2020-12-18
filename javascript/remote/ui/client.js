@@ -99,11 +99,11 @@ goog.inherits(remote.ui.Client, goog.Disposable);
  *
  * TODO: It should be possible to query the server for the list of
  * supported browsers. See:
- * http://code.google.com/p/selenium/issues/detail?id=6
+ * http://code.google.com/p/automationagent/issues/detail?id=6
  *
  * @type {!Array.<string>}
  * @const
- * @see https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities
+ * @see https://github.com/SeleniumHQ/automationagent/wiki/DesiredCapabilities
  */
 remote.ui.Client.SUPPORTED_BROWSERS = [
   'android',

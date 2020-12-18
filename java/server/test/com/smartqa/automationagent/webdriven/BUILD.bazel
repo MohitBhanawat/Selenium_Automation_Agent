@@ -1,0 +1,27 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//java:defs.bzl", "java_test_suite")
+
+java_test_suite(
+    name = "MediumTests",
+    size = "medium",
+    srcs = glob(["*Test.java"]),
+    javacopts = [
+        "-source",
+        "11",
+        "-target",
+        "11",
+    ],
+    deps = [
+        "//java/client/src/com/smartqa/automationagent",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/test/org/smartqa/automationagent/environment",
+        "//java/client/test/org/smartqa/automationagent/remote/tracing:tracing-support",
+        "//java/client/test/org/smartqa/automationagent/testing:test-base",
+        "//java/server/src/com/smartqa/automationagent/webdriven",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+        "//java/server/src/org/smartqa/automationagent/jre/server",
+        "//java/server/src/org/smartqa/automationagent/remote/server",
+        artifact("io.opentelemetry:opentelemetry-api"),
+        artifact("junit:junit"),
+    ],
+)

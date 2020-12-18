@@ -1,4 +1,4 @@
-selenium.webdriver.support.wait
+automationAgent.webdriver.support.wait
 ===============================
 
-.. automodule:: selenium.webdriver.support.wait
+.. automodule:: automationAgent.webdriver.support.wait

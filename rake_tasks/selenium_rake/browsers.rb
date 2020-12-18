@@ -25,8 +25,8 @@ module SeleniumRake
         driver: 'Remote',
         deps: [
           :remote_client,
-          :'selenium-server-standalone',
-          '//java/server/test/org/openqa/selenium/remote/server/auth:server'
+          :'automationAgent-server-standalone',
+          '//java/server/test/org/smartqa/automationagent/remote/server/auth:server'
         ]
       },
       'safari' => {

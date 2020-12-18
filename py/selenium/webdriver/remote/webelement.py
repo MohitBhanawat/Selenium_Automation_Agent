@@ -24,9 +24,9 @@ import zipfile
 from abc import ABCMeta
 from io import BytesIO
 
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.utils import keys_to_typing
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.common.utils import keys_to_typing
 from .command import Command
 
 from six import add_metaclass
@@ -669,7 +669,7 @@ class WebElement(BaseWebElement):
 
     @property
     def id(self):
-        """Internal ID used by selenium.
+        """Internal ID used by automationAgent.
 
         This is mainly for internal use. Simple use cases such as checking if 2
         webelements refer to the same element, can be done using ``==``::

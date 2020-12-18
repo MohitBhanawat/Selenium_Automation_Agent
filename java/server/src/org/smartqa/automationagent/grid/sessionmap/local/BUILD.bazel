@@ -1,0 +1,18 @@
+java_library(
+    name = "local",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent/grid/commands:__pkg__",
+        "//java/server/src/org/smartqa/automationagent/grid/sessionmap/httpd:__pkg__",
+        "//java/server/test/org/smartqa/automationagent/grid:__subpackages__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/server/src/org/smartqa/automationagent/events",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+        "//java/server/src/org/smartqa/automationagent/grid/data",
+        "//java/server/src/org/smartqa/automationagent/grid/log",
+        "//java/server/src/org/smartqa/automationagent/grid/server",
+        "//java/server/src/org/smartqa/automationagent/grid/sessionmap",
+    ],
+)

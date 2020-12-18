@@ -1,0 +1,189 @@
+// Licensed to the Software Freedom Conservancy (SFC) under one
+// or more contributor license agreements.  See the NOTICE file
+// distributed with this work for additional information
+// regarding copyright ownership.  The SFC licenses this file
+// to you under the Apache License, Version 2.0 (the
+// "License"); you may not use this file except in compliance
+// with the License.  You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing,
+// software distributed under the License is distributed on an
+// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+// KIND, either express or implied.  See the License for the
+// specific language governing permissions and limitations
+// under the License.
+
+package org.smartqa.automationagent.grid.router;
+
+import com.google.common.collect.ImmutableMap;
+
+import org.smartqa.automationagent.grid.data.DistributorStatus;
+import org.smartqa.automationagent.grid.distributor.Distributor;
+import org.smartqa.automationagent.internal.Require;
+import org.smartqa.automationagent.json.Json;
+import org.smartqa.automationagent.remote.http.HttpClient;
+import org.smartqa.automationagent.remote.http.HttpHandler;
+import org.smartqa.automationagent.remote.http.HttpRequest;
+import org.smartqa.automationagent.remote.http.HttpResponse;
+import org.smartqa.automationagent.remote.tracing.HttpTracing;
+import org.smartqa.automationagent.remote.tracing.Span;
+import org.smartqa.automationagent.remote.tracing.Tracer;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeoutException;
+
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+import static java.util.concurrent.TimeUnit.SECONDS;
+import static java.util.stream.Collectors.toList;
+import static org.smartqa.automationagent.json.Json.MAP_TYPE;
+import static org.smartqa.automationagent.remote.http.Contents.asJson;
+import static org.smartqa.automationagent.remote.http.Contents.string;
+import static org.smartqa.automationagent.remote.http.HttpMethod.GET;
+import static org.smartqa.automationagent.remote.tracing.HttpTracing.newSpanAsChildOf;
+import static org.smartqa.automationagent.remote.tracing.Tags.HTTP_RESPONSE;
+
+class GridStatusHandler implements HttpHandler {
+
+  private static final ScheduledExecutorService
+      SCHEDULED_SERVICE =
+      Executors.newScheduledThreadPool(
+          1,
+          r -> {
+            Thread thread = new Thread(r, "Scheduled grid status executor");
+            thread.setDaemon(true);
+            return thread;
+          });
+
+
+  private static final ExecutorService EXECUTOR_SERVICE = Executors.newCachedThreadPool(
+      r -> {
+        Thread thread = new Thread(r, "Grid status executor");
+        thread.setDaemon(true);
+        return thread;
+      });
+
+
+  private final Json json;
+  private final Tracer tracer;
+  private final HttpClient.Factory clientFactory;
+  private final Distributor distributor;
+
+  GridStatusHandler(Json json, Tracer tracer, HttpClient.Factory clientFactory, Distributor distributor) {
+    this.json = Require.nonNull("JSON encoder", json);
+    this.tracer = Require.nonNull("Tracer", tracer);
+    this.clientFactory = Require.nonNull("HTTP client factory", clientFactory);
+    this.distributor = Require.nonNull("Distributor", distributor);
+  }
+
+  @Override
+  public HttpResponse execute(HttpRequest req) {
+    long start = System.currentTimeMillis();
+
+    try (Span span = newSpanAsChildOf(tracer, req, "router.status")) {
+      DistributorStatus status;
+      try {
+        status = EXECUTOR_SERVICE.submit(span.wrap(distributor::getStatus)).get(2, SECONDS);
+      } catch (ExecutionException | TimeoutException e) {
+        return new HttpResponse().setContent(asJson(
+          ImmutableMap.of("value", ImmutableMap.of(
+            "ready", false,
+            "message", "Unable to read distributor status."))));
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        return new HttpResponse().setContent(asJson(
+          ImmutableMap.of("value", ImmutableMap.of(
+            "ready", false,
+            "message", "Reading distributor status was interrupted."))));
+      }
+
+      boolean ready = status.hasCapacity();
+
+      long remaining = System.currentTimeMillis() + 2000 - start;
+      List<Future<Map<String, Object>>> nodeResults = status.getNodes().stream()
+        .map(summary -> {
+          ImmutableMap<String, Object> defaultResponse = ImmutableMap.of(
+            "id", summary.getNodeId(),
+            "uri", summary.getUri(),
+            "maxSessions", summary.getMaxSessionCount(),
+            "stereotypes", summary.getStereotypes(),
+            "warning", "Unable to read data from node.");
+
+          CompletableFuture<Map<String, Object>> toReturn = new CompletableFuture<>();
+
+          Future<?> future = EXECUTOR_SERVICE.submit(
+            () -> {
+              try {
+                HttpClient client = clientFactory.createClient(summary.getUri().toURL());
+                HttpRequest nodeStatusReq = new HttpRequest(GET, "/se/grid/node/status");
+                HttpTracing.inject(tracer, span, nodeStatusReq);
+                HttpResponse res = client.execute(nodeStatusReq);
+
+                toReturn.complete(res.getStatus() == 200
+                                  ? json.toType(string(res), MAP_TYPE)
+                                  : defaultResponse);
+              } catch (IOException e) {
+                toReturn.complete(defaultResponse);
+              }
+            });
+
+          SCHEDULED_SERVICE.schedule(
+            () -> {
+              if (!toReturn.isDone()) {
+                toReturn.complete(defaultResponse);
+                future.cancel(true);
+              }
+            },
+            remaining,
+            MILLISECONDS);
+
+          return toReturn;
+        })
+        .collect(toList());
+
+      ImmutableMap.Builder<String, Object> value = ImmutableMap.builder();
+      value.put("ready", ready);
+      value.put("message", ready ? "AutomationAgent Grid ready." : "AutomationAgent Grid not ready.");
+
+      value.put("nodes", nodeResults.stream()
+        .map(summary -> {
+          try {
+            return summary.get();
+          } catch (ExecutionException e) {
+            throw wrap(e);
+          } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw wrap(e);
+          }
+        })
+        .collect(toList()));
+
+      HttpResponse res = new HttpResponse().setContent(asJson(ImmutableMap.of("value", value.build())));
+      HTTP_RESPONSE.accept(span, res);
+      return res;
+    }
+  }
+
+  private RuntimeException wrap(Exception e) {
+    if (e instanceof InterruptedException) {
+      Thread.currentThread().interrupt();
+      return new RuntimeException(e);
+    }
+
+    Throwable cause = e.getCause();
+    if (cause == null) {
+      return e instanceof RuntimeException ? (RuntimeException) e : new RuntimeException(e);
+    }
+    return cause instanceof RuntimeException ? (RuntimeException) cause
+                                             : new RuntimeException(cause);
+  }
+}

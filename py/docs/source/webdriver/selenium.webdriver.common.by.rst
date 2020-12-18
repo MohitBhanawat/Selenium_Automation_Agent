@@ -1,4 +1,4 @@
-selenium.webdriver.common.by
+automationAgent.webdriver.common.by
 ============================
 
-.. automodule:: selenium.webdriver.common.by
+.. automodule:: automationAgent.webdriver.common.by

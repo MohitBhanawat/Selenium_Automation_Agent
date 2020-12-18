@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.firefox.service import Service
+from automationAgent.webdriver.firefox.service import Service
 
 
 def test_command_line_args():

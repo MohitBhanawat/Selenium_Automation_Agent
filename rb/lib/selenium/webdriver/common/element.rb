@@ -298,7 +298,7 @@ module Selenium
 
       #
       # Convert to a WebElement JSON Object for transmission over the wire.
-      # @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#basic-terms-and-concepts
+      # @see https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol#basic-terms-and-concepts
       #
       # @api private
       #

@@ -1,0 +1,32 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//java:defs.bzl", "java_test_suite")
+
+java_test_suite(
+    name = "medium-tests",
+    size = "medium",
+    srcs = glob(["*Test.java"]),
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/chrome",
+        "//java/client/src/org/smartqa/automationagent/edge",
+        "//java/client/src/org/smartqa/automationagent/firefox",
+        "//java/client/src/org/smartqa/automationagent/ie",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/src/org/smartqa/automationagent/remote/http",
+        "//java/client/src/org/smartqa/automationagent/safari",
+        "//java/client/test/org/smartqa/automationagent/remote/tracing:tracing-support",
+        "//java/server/src/org/smartqa/automationagent/events",
+        "//java/server/src/org/smartqa/automationagent/events/local",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+        "//java/server/src/org/smartqa/automationagent/grid/data",
+        "//java/server/src/org/smartqa/automationagent/grid/node",
+        "//java/server/src/org/smartqa/automationagent/grid/node/config",
+        "//java/server/src/org/smartqa/automationagent/grid/node/local",
+        "//java/server/test/org/smartqa/automationagent/grid/testing",
+        artifact("com.google.guava:guava"),
+        artifact("io.opentelemetry:opentelemetry-api"),
+        artifact("junit:junit"),
+        artifact("org.assertj:assertj-core"),
+        artifact("org.mockito:mockito-core"),
+    ],
+)

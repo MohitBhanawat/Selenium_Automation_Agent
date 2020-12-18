@@ -1,0 +1,11 @@
+java_library(
+    name = "empty",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/client/src/org/smartqa/automationagent/remote/tracing:__pkg__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/remote/tracing:tracing-lib",
+    ],
+)

@@ -15,7 +15,7 @@ genrule(
     outs = ["is-displayed.js"],
     cmd = "$(location :make_atoms_module) $< $@",
     tools = [":make_atoms_module"],
-    visibility = ["//javascript/node/selenium-webdriver:__pkg__"],
+    visibility = ["//javascript/node/automationAgent-webdriver:__pkg__"],
 )
 
 genrule(
@@ -24,7 +24,7 @@ genrule(
     outs = ["get-attribute.js"],
     cmd = "$(location :make_atoms_module) $< $@",
     tools = [":make_atoms_module"],
-    visibility = ["//javascript/node/selenium-webdriver:__pkg__"],
+    visibility = ["//javascript/node/automationAgent-webdriver:__pkg__"],
 )
 
 genrule(
@@ -33,5 +33,5 @@ genrule(
     outs = ["find-elements.js"],
     cmd = "$(location :make_atoms_module) $< $@",
     tools = [":make_atoms_module"],
-    visibility = ["//javascript/node/selenium-webdriver:__pkg__"],
+    visibility = ["//javascript/node/automationAgent-webdriver:__pkg__"],
 )

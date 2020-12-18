@@ -178,7 +178,7 @@ exports.get = function(element, attribute) {
   //
   // 2- When property is an object we fall back to the
   // actual attribute instead.
-  // See issue http://code.google.com/p/selenium/issues/detail?id=966
+  // See issue http://code.google.com/p/automationagent/issues/detail?id=966
   if (!goog.isDefAndNotNull(property) || goog.isObject(property)) {
     value = domCore.getAttribute(element, attribute);
   } else {

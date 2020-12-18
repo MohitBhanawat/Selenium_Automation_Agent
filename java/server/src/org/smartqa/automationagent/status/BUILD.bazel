@@ -1,0 +1,8 @@
+java_library(
+    name = "status",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent:__subpackages__",
+        "//java/server/test/org/smartqa/automationagent:__subpackages__",
+    ],
+)

@@ -35,4 +35,4 @@ js_fragment_java(name = "atoms",
     "//javascript/webdriver/atoms/fragments/inject:get_appcache_status:android",
   ],
   utf8 = "true",
-  package = "org.openqa.selenium.android.library")
+  package = "org.smartqa.automationagent.android.library")

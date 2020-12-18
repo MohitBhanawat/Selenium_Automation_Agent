@@ -18,14 +18,14 @@
 """Tests for advanced user interactions."""
 import pytest
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.common.keys import Keys
+from automationAgent.webdriver.common.action_chains import ActionChains
+from automationAgent.webdriver.support.ui import WebDriverWait
 
 
 def performDragAndDropWithMouse(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     pages.load("draggableLists.html")
     dragReporter = driver.find_element(By.ID, "dragging_reports")
     toDrag = driver.find_element(By.ID, "rightitem-3")
@@ -48,7 +48,7 @@ def performDragAndDropWithMouse(driver, pages):
 
 @pytest.mark.xfail_safari
 def testDraggingElementWithMouseMovesItToAnotherList(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     performDragAndDropWithMouse(driver, pages)
     dragInto = driver.find_element(By.ID, "sortable1")
     assert 6 == len(dragInto.find_elements(By.TAG_NAME, "li"))
@@ -56,14 +56,14 @@ def testDraggingElementWithMouseMovesItToAnotherList(driver, pages):
 
 @pytest.mark.xfail_safari
 def testDraggingElementWithMouseFiresEvents(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     performDragAndDropWithMouse(driver, pages)
     dragReporter = driver.find_element(By.ID, "dragging_reports")
     assert "Nothing happened. DragOut DropIn RightItem 3" == dragReporter.text
 
 
 def _isElementAvailable(driver, id):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     try:
         driver.find_element(By.ID, id)
         return True
@@ -73,7 +73,7 @@ def _isElementAvailable(driver, id):
 
 @pytest.mark.xfail_safari
 def testDragAndDrop(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     element_available_timeout = 15
     wait = WebDriverWait(driver, element_available_timeout)
     pages.load("droppableItems.html")
@@ -102,7 +102,7 @@ def testDragAndDrop(driver, pages):
 
 @pytest.mark.xfail_safari
 def testDoubleClick(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     pages.load("javascriptPage.html")
     toDoubleClick = driver.find_element(By.ID, "doubleClickField")
 
@@ -114,7 +114,7 @@ def testDoubleClick(driver, pages):
 
 
 def testContextClick(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     pages.load("javascriptPage.html")
     toContextClick = driver.find_element(By.ID, "doubleClickField")
 
@@ -126,7 +126,7 @@ def testContextClick(driver, pages):
 
 
 def testMoveAndClick(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     pages.load("javascriptPage.html")
     toClick = driver.find_element(By.ID, "clickField")
 
@@ -139,7 +139,7 @@ def testMoveAndClick(driver, pages):
 
 
 def testCannotMoveToANullLocator(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     pages.load("javascriptPage.html")
 
     with pytest.raises(AttributeError):
@@ -150,7 +150,7 @@ def testCannotMoveToANullLocator(driver, pages):
 
 @pytest.mark.xfail_safari
 def testClickingOnFormElements(driver, pages):
-    """Copied from org.openqa.selenium.interactions.CombinedInputActionsTest."""
+    """Copied from org.smartqa.automationagent.interactions.CombinedInputActionsTest."""
     pages.load("formSelectionPage.html")
     options = driver.find_elements(By.TAG_NAME, "option")
     selectThreeOptions = ActionChains(driver) \
@@ -170,7 +170,7 @@ def testClickingOnFormElements(driver, pages):
 @pytest.mark.xfail_firefox
 @pytest.mark.xfail_safari
 def testSelectingMultipleItems(driver, pages):
-    """Copied from org.openqa.selenium.interactions.CombinedInputActionsTest."""
+    """Copied from org.smartqa.automationagent.interactions.CombinedInputActionsTest."""
     pages.load("selectableItems.html")
     reportingElement = driver.find_element(By.ID, "infodiv")
     assert "no info" == reportingElement.text

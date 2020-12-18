@@ -1,4 +1,4 @@
-selenium.webdriver.webkitgtk.options
+automationAgent.webdriver.webkitgtk.options
 ====================================
 
-.. automodule:: selenium.webdriver.webkitgtk.options
+.. automodule:: automationAgent.webdriver.webkitgtk.options

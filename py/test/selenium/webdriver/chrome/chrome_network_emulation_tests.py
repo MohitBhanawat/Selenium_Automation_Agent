@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver import Chrome
+from automationAgent.webdriver import Chrome
 
 
 def test_network_conditions_emulation():

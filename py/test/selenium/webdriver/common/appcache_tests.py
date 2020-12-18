@@ -17,8 +17,8 @@
 
 import pytest
 
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common.html5.application_cache import ApplicationCache
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.common.html5.application_cache import ApplicationCache
 
 
 @pytest.mark.xfail_chrome

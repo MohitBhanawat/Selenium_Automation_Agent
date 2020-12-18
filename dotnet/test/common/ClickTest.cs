@@ -201,7 +201,7 @@ namespace OpenQA.Selenium
             Assert.AreEqual("XHTML Test Page", driver.Title);
         }
 
-        // See http://code.google.com/p/selenium/issues/attachmentText?id=2700
+        // See http://code.google.com/p/automationagent/issues/attachmentText?id=2700
         [Test]
         public void ShouldBeAbleToClickOnAnElementInTheViewport()
         {

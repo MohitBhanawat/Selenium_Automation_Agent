@@ -176,7 +176,7 @@ function Selenium(browserbot) {
      * </li>
      *
      * <li><strong>ui</strong>=<em>uiSpecifierString</em>:
-     * Locate an element by resolving the UI specifier string to another locator, and evaluating it. See the <a href="http://svn.openqa.org/fisheye/browse/~raw,r=trunk/selenium/trunk/src/main/resources/core/scripts/ui-doc.html">Selenium UI-Element Reference</a> for more details.
+     * Locate an element by resolving the UI specifier string to another locator, and evaluating it. See the <a href="http://svn.openqa.org/fisheye/browse/~raw,r=trunk/automationagent/trunk/src/main/resources/core/scripts/ui-doc.html">Selenium UI-Element Reference</a> for more details.
      * <ul class="first last simple">
      * <li>ui=loginPages::loginButton()</li>
      * <li>ui=settingsPages::toggle(label=Hide Email)</li>

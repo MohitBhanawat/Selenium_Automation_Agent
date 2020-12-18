@@ -22,11 +22,11 @@ except ImportError:
 
 import pytest
 
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.actions.action_builder import ActionBuilder
+from automationAgent.common.exceptions import NoSuchElementException
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
+from automationAgent.webdriver.support.ui import WebDriverWait
+from automationAgent.webdriver.common.actions.action_builder import ActionBuilder
 
 
 @pytest.fixture

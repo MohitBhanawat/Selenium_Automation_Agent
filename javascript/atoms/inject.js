@@ -47,7 +47,7 @@ goog.require('goog.userAgent');
  * of a DOM element.
  * @typedef {{ELEMENT: string}}
  * @see bot.inject.ELEMENT_KEY
- * @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol
+ * @see https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol
  */
 bot.inject.JsonElement;
 
@@ -66,7 +66,7 @@ bot.inject.JsonWindow;
  * Key used to identify DOM elements in the WebDriver wire protocol.
  * @type {string}
  * @const
- * @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol
+ * @see https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol
  */
 bot.inject.ELEMENT_KEY = 'ELEMENT';
 
@@ -97,7 +97,7 @@ bot.inject.WINDOW_KEY = 'WINDOW';
  *
  * @param {*} value The value to make JSON friendly.
  * @return {*} The JSON friendly value.
- * @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol
+ * @see https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol
  */
 bot.inject.wrapValue = function(value) {
   var _wrap = function(value, seen) {
@@ -393,7 +393,7 @@ bot.inject.executeAsyncScript = function(fn, args, timeout, onDone,
  * script.
  * @param {*} value The script result.
  * @return {{status:bot.ErrorCode,value:*}} The wrapped value.
- * @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#responses
+ * @see https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol#responses
  */
 bot.inject.wrapResponse = function(value) {
   return {
@@ -408,7 +408,7 @@ bot.inject.wrapResponse = function(value) {
  * for transmission to the process that injected this script.
  * @param {Error} err The error to wrap.
  * @return {{status:bot.ErrorCode,value:*}} The wrapped error object.
- * @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#failed-commands
+ * @see https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol#failed-commands
  */
 bot.inject.wrapError = function(err) {
   // TODO: Parse stackTrace

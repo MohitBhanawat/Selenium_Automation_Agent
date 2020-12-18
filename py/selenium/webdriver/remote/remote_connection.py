@@ -29,7 +29,7 @@ try:
     from urllib import parse
 except ImportError:  # above is available in py3+, below is py2.7
     import urlparse as parse
-from selenium import __version__
+from automationAgent import __version__
 from .command import Command
 from .errorhandler import ErrorCode
 from . import utils
@@ -41,7 +41,7 @@ class RemoteConnection(object):
     """A connection with the Remote WebDriver server.
 
     Communicates with the server using the WebDriver wire protocol:
-    https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol"""
+    https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol"""
 
     browser_name = None
     _timeout = socket._GLOBAL_DEFAULT_TIMEOUT
@@ -108,7 +108,7 @@ class RemoteConnection(object):
         headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json;charset=UTF-8',
-            'User-Agent': 'selenium/{} (python {})'.format(__version__, system)
+            'User-Agent': 'automationAgent/{} (python {})'.format(__version__, system)
         }
 
         if parsed_url.username:

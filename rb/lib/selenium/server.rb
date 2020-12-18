@@ -18,7 +18,7 @@
 # under the License.
 
 require 'childprocess'
-require 'selenium/webdriver/common/socket_poller'
+require 'automationAgent/webdriver/common/socket_poller'
 require 'net/http'
 
 module Selenium
@@ -27,7 +27,7 @@ module Selenium
   #
   # Usage:
   #
-  #   server = Selenium::Server.new('/path/to/selenium-server-standalone.jar')
+  #   server = Selenium::Server.new('/path/to/automationAgent-server-standalone.jar')
   #   server.start
   #
   # Automatically download the given version:
@@ -62,19 +62,19 @@ module Selenium
     end
 
     #
-    # Download the given version of the selenium-server-standalone jar.
+    # Download the given version of the automationAgent-server-standalone jar.
     #
 
     class << self
       def download(required_version)
         required_version = latest if required_version == :latest
-        download_file_name = "selenium-server-standalone-#{required_version}.jar"
+        download_file_name = "automationAgent-server-standalone-#{required_version}.jar"
 
         return download_file_name if File.exist? download_file_name
 
         begin
           File.open(download_file_name, 'wb') do |destination|
-            net_http_start('selenium-release.storage.googleapis.com') do |http|
+            net_http_start('automationAgent-release.storage.googleapis.com') do |http|
               resp = http.request_get("/#{required_version[/(\d+\.\d+)\./, 1]}/#{download_file_name}") do |response|
                 total = response.content_length
                 progress = 0
@@ -106,14 +106,14 @@ module Selenium
       end
 
       #
-      # Ask Google Code what the latest selenium-server-standalone version is.
+      # Ask Google Code what the latest automationAgent-server-standalone version is.
       #
 
       def latest
         require 'rexml/document'
-        net_http_start('selenium-release.storage.googleapis.com') do |http|
+        net_http_start('automationAgent-release.storage.googleapis.com') do |http|
           versions = REXML::Document.new(http.get('/').body).root.get_elements('//Contents/Key').map do |e|
-            e.text[/selenium-server-standalone-(\d+\.\d+\.\d+)\.jar/, 1]
+            e.text[/automationAgent-server-standalone-(\d+\.\d+\.\d+)\.jar/, 1]
           end
 
           versions.compact.map { |version| Gem::Version.new(version) }.max.version
@@ -192,7 +192,7 @@ module Selenium
 
     def stop
       begin
-        Net::HTTP.get(@host, '/selenium-server/driver/?cmd=shutDownSeleniumServer', @port)
+        Net::HTTP.get(@host, '/automationAgent-server/driver/?cmd=shutDownSeleniumServer', @port)
       rescue Errno::ECONNREFUSED
       end
 

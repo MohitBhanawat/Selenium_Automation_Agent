@@ -85,9 +85,9 @@ def selenium_java_deps():
             "io.netty:netty-all",  # Depend on the actual things you need
         ],
         override_targets = {
-            "org.seleniumhq.selenium:selenium-api": "@//java/client/src/org/openqa/selenium:core",
-            "org.seleniumhq.selenium:selenium-remote-driver": "@//java/client/src/org/openqa/selenium/remote:remote",
-            "org.seleniumhq.selenium:selenium-support": "@//java/client/src/org/openqa/selenium/support",
+            "org.seleniumhq.selenium:selenium-api": "@//java/client/src/org/smartqa/selenium:core",
+            "org.seleniumhq.selenium:selenium-remote-driver": "@//java/client/src/org/smartqa/selenium/remote:remote",
+            "org.seleniumhq.selenium:selenium-support": "@//java/client/src/org/smartqa/selenium/support",
         },
         fail_on_missing_checksum = True,
         fetch_sources = True,
@@ -97,5 +97,4 @@ def selenium_java_deps():
             "https://jcenter.bintray.com/",
             "https://maven.google.com",
         ],
-        maven_install_json = "@selenium//java:maven_install.json",
     )

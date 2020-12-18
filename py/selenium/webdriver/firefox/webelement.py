@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.remote.webelement import WebElement as RemoteWebElement
+from automationAgent.webdriver.remote.webelement import WebElement as RemoteWebElement
 
 
 class FirefoxWebElement(RemoteWebElement):

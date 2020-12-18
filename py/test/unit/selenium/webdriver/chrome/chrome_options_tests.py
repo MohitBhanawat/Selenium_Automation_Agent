@@ -19,7 +19,7 @@ from os import path
 
 import pytest
 
-from selenium.webdriver.chrome.options import Options
+from automationAgent.webdriver.chrome.options import Options
 
 
 @pytest.fixture
@@ -92,7 +92,7 @@ def test_add_encoded_extension(options):
 def test_get_extensions_from_extension_files(options, mocker):
     null = 'NUL' if platform.system().lower() == 'windows' else '/dev/null'
     mocker.patch(
-        'selenium.webdriver.chromium.options.open'.format(__name__)).return_value = open(null)
+        'automationAgent.webdriver.chromium.options.open'.format(__name__)).return_value = open(null)
     mocker.patch('base64.b64encode').return_value = 'foo'.encode()
     options._extension_files = ['foo']
     assert 'foo' in options.extensions
@@ -146,12 +146,12 @@ def test_creates_capabilities(options):
 
 
 def test_starts_with_default_capabilities(options):
-    from selenium.webdriver import DesiredCapabilities
+    from automationAgent.webdriver import DesiredCapabilities
     caps = DesiredCapabilities.CHROME.copy()
     caps.update({"pageLoadStrategy": "normal"})
     assert options._caps == caps
 
 
 def test_is_a_baseoptions(options):
-    from selenium.webdriver.common.options import BaseOptions
+    from automationAgent.webdriver.common.options import BaseOptions
     assert isinstance(options, BaseOptions)

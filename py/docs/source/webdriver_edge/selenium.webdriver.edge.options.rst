@@ -1,4 +1,4 @@
-selenium.webdriver.edge.options
+automationAgent.webdriver.edge.options
 ===============================
 
-.. automodule:: selenium.webdriver.edge.options
+.. automodule:: automationAgent.webdriver.edge.options

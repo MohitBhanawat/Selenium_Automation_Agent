@@ -192,7 +192,7 @@
         // Disabled on Chrome due to
         // https://code.google.com/p/chromedriver/issues/detail?id=1073
         // Disabled on Safari due to
-        // https://github.com/SeleniumHQ/selenium/issues/461
+        // https://github.com/SeleniumHQ/automationagent/issues/461
         (goog.userAgent.product.CHROME || goog.userAgent.product.SAFARI) ?
         goog.nullFunction :
         goog.partial(canToggleOptionsInAMultiSelect, bot.action.click);
@@ -201,7 +201,7 @@
         // Disabled on Chrome due to
         // https://code.google.com/p/chromedriver/issues/detail?id=1073
         // Disabled on Safari due to
-        // https://github.com/SeleniumHQ/selenium/issues/461
+        // https://github.com/SeleniumHQ/automationagent/issues/461
         (goog.userAgent.product.CHROME || goog.userAgent.product.SAFARI) ?
         goog.nullFunction :
         goog.partial(canToggleOptionsInAMultiSelect, bot.action.tap);
@@ -334,7 +334,7 @@
 
     var testClickCanSelectOptionWhenDefaultPrevented =
         // Disabled on Safari due to
-        // https://github.com/SeleniumHQ/selenium/issues/461
+        // https://github.com/SeleniumHQ/automationagent/issues/461
         goog.userAgent.product.SAFARI ?
         goog.nullFunction :
         goog.partial(canSelectOptionWhenDefaultPrevented, bot.action.click);
@@ -343,7 +343,7 @@
         // Disabled on Chrome due to
         // https://code.google.com/p/chromedriver/issues/detail?id=1073
         // Disabled on Safari due to
-        // https://github.com/SeleniumHQ/selenium/issues/461
+        // https://github.com/SeleniumHQ/automationagent/issues/461
         (goog.userAgent.product.CHROME || goog.userAgent.product.SAFARI) ?
         goog.nullFunction :
         goog.partial(canSelectOptionWhenDefaultPrevented, bot.action.tap);
@@ -421,7 +421,7 @@
         goog.partial(maybeSelectRadioButtonWhenDefaultPrevented,
                      bot.action.tap);
 
-    /** @see http://code.google.com/p/selenium/issues/detail?id=1941 */
+    /** @see http://code.google.com/p/automationagent/issues/detail?id=1941 */
     function canSelectOptionFromTransparentSelect(action) {
       if (!checkActionCompatibility(action)) {
         return;
@@ -550,7 +550,7 @@
 
     var testClickTogglesByTheTimeChangeEventFires =
         // Disabled on Safari due to
-        // https://github.com/SeleniumHQ/selenium/issues/461
+        // https://github.com/SeleniumHQ/automationagent/issues/461
         goog.userAgent.product.SAFARI ?
         goog.nullFunction :
         goog.partial(togglesByTheTimeChangeEventFires, bot.action.click);
@@ -559,7 +559,7 @@
         // Disabled on Chrome due to
         // https://code.google.com/p/chromedriver/issues/detail?id=1073
         // Disabled on Safari due to
-        // https://github.com/SeleniumHQ/selenium/issues/461
+        // https://github.com/SeleniumHQ/automationagent/issues/461
         (goog.userAgent.product.CHROME || goog.userAgent.product.SAFARI) ?
         goog.nullFunction :
         goog.partial(togglesByTheTimeChangeEventFires, bot.action.tap);

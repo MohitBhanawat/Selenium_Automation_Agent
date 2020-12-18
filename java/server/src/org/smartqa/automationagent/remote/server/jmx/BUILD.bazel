@@ -1,0 +1,7 @@
+java_library(
+    name = "jmx",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent/grid/session:__pkg__",
+    ],
+)

@@ -31,7 +31,7 @@
  * console by simply calling {@linkplain #installConsoleHandler
  * installConsoleHandler}.
  *
- * The [remote logging API](https://github.com/SeleniumHQ/selenium/wiki/Logging)
+ * The [remote logging API](https://github.com/SeleniumHQ/automationagent/wiki/Logging)
  * allows you to retrieve logs from a remote WebDriver server. This API uses the
  * {@link Preferences} class to define desired log levels prior to creating
  * a WebDriver session:

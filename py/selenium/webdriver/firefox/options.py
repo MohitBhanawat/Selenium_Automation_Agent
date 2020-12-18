@@ -14,12 +14,12 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-from selenium.common.exceptions import InvalidArgumentException
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.common.proxy import Proxy
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
-from selenium.webdriver.common.options import ArgOptions
+from automationAgent.common.exceptions import InvalidArgumentException
+from automationAgent.webdriver.common.desired_capabilities import DesiredCapabilities
+from automationAgent.webdriver.common.proxy import Proxy
+from automationAgent.webdriver.firefox.firefox_binary import FirefoxBinary
+from automationAgent.webdriver.firefox.firefox_profile import FirefoxProfile
+from automationAgent.webdriver.common.options import ArgOptions
 
 
 class Log(object):

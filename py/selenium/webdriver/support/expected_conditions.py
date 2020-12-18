@@ -17,12 +17,12 @@
 
 import re
 
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoSuchFrameException
-from selenium.common.exceptions import StaleElementReferenceException
-from selenium.common.exceptions import WebDriverException
-from selenium.common.exceptions import NoAlertPresentException
-from selenium.webdriver.remote.webdriver import WebElement
+from automationAgent.common.exceptions import NoSuchElementException
+from automationAgent.common.exceptions import NoSuchFrameException
+from automationAgent.common.exceptions import StaleElementReferenceException
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.common.exceptions import NoAlertPresentException
+from automationAgent.webdriver.remote.webdriver import WebElement
 
 """
  * Canned "Expected Conditions" which are generally useful within webdriver

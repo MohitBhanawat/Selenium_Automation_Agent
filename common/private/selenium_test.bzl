@@ -8,17 +8,17 @@ _COMMON_TAGS = [
 
 _BROWSERS = {
     "chrome": {
-        "deps": ["//java/client/src/org/openqa/selenium/chrome"],
+        "deps": ["//java/client/src/org/smartqa/automationagent/chrome"],
         "jvm_flags": ["-Dselenium.browser=chrome"],
         "tags": _COMMON_TAGS + ["chrome"],
     },
     "edge": {
-        "deps": ["//java/client/src/org/openqa/selenium/edge"],
+        "deps": ["//java/client/src/org/smartqa/automationagent/edge"],
         "jvm_flags": ["-Dselenium.browser=edge"],
         "tags": _COMMON_TAGS + ["edge"],
     },
     "edgehtml": {
-        "deps": ["//java/client/src/org/openqa/selenium/edgehtml"],
+        "deps": ["//java/client/src/org/smartqa/automationagent/edgehtml"],
         "jvm_flags": ["-Dselenium.browser=edgehtml"] +
                      select({
                          "//common:windows": ["-Dselenium.skiptest=false"],
@@ -27,12 +27,12 @@ _BROWSERS = {
         "tags": _COMMON_TAGS + ["exclusive", "edgehtml"],
     },
     "firefox": {
-        "deps": ["//java/client/src/org/openqa/selenium/firefox"],
+        "deps": ["//java/client/src/org/smartqa/automationagent/firefox"],
         "jvm_flags": ["-Dselenium.browser=ff"],
         "tags": _COMMON_TAGS + ["firefox"],
     },
     "ie": {
-        "deps": ["//java/client/src/org/openqa/selenium/ie"],
+        "deps": ["//java/client/src/org/smartqa/automationagent/ie"],
         "jvm_flags": ["-Dselenium.browser=ie"] +
                      select({
                          "//common:windows": ["-Dselenium.skiptest=false"],
@@ -41,7 +41,7 @@ _BROWSERS = {
         "tags": _COMMON_TAGS + ["exclusive", "ie"],
     },
     "safari": {
-        "deps": ["//java/client/src/org/openqa/selenium/safari"],
+        "deps": ["//java/client/src/org/smartqa/automationagent/safari"],
         "jvm_flags": ["-Dselenium.browser=safari"] +
                      select({
                          "//common:macos": ["-Dselenium.skiptest=false"],

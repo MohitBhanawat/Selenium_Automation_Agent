@@ -19,7 +19,7 @@ Copyright 2011 Software Freedom Conservancy
     <meta content="text/html; charset=ISO-8859-1"
           http-equiv="content-type">
     <title>Select a Test Suite</title>
-    <script language="JavaScript" type="text/javascript" src="scripts/selenium-browserdetect.js"></script>
+    <script language="JavaScript" type="text/javascript" src="scripts/automationAgent-browserdetect.js"></script>
     <script language="JavaScript" type="text/javascript" src="scripts/xmlextras.js"></script>
     <script>
 
@@ -30,7 +30,7 @@ Copyright 2011 Software Freedom Conservancy
             if (/thisIsSeleniumServer/.test(window.location.search)) {
                 document.getElementById("slowResources-div").style.display = "inline";
                 if (browserVersion.isHTA || browserVersion.isChrome) {
-                    document.getElementById("test").value = "http://localhost:4444/selenium-server/tests/TestSuite.html";
+                    document.getElementById("test").value = "http://localhost:4444/automationAgent-server/tests/TestSuite.html";
                 }
             }
         }
@@ -49,7 +49,7 @@ Copyright 2011 Software Freedom Conservancy
             var slowResourcesCheckbox = document.getElementById("slowResources");
             var slowResources = slowResourcesCheckbox.checked ? true : false;
             var xhr = XmlHttp.create();
-            var driverUrl = "http://localhost:4444/selenium-server/driver/?cmd=slowResources&1=" + slowResources;
+            var driverUrl = "http://localhost:4444/automationAgent-server/driver/?cmd=slowResources&1=" + slowResources;
             xhr.open("GET", driverUrl, true);
             xhr.send(null);
         }
@@ -83,7 +83,7 @@ Copyright 2011 Software Freedom Conservancy
                 }
             }
 
-            window.parent.selenium = null;
+            window.parent.automationAgent = null;
             window.parent.htmlTestRunner.controlPanel.queryString = queryString;
             window.parent.htmlTestRunner.loadSuiteFrame();
             return false;

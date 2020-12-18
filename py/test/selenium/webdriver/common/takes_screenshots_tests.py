@@ -20,7 +20,7 @@ import imghdr
 
 import pytest
 
-from selenium.webdriver.common.by import By
+from automationAgent.webdriver.common.by import By
 
 
 def test_get_screenshot_as_base64(driver, pages):

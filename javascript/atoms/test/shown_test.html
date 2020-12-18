@@ -289,7 +289,7 @@
       assertTrue('Should still be considered shown', isShown(root));
     }
 
-    /** @see http://code.google.com/p/selenium/issues/detail?id=2922 */
+    /** @see http://code.google.com/p/automationagent/issues/detail?id=2922 */
     function testOptionsInInvisibleSelectAreStillShown() {
       var select = goog.dom.$('invisiSelect');
       assertEquals(0, bot.dom.getOpacity(select));
@@ -299,7 +299,7 @@
       assertTrue(bot.dom.isShown(select.firstChild));
     }
 
-    /** @see http://code.google.com/p/selenium/issues/detail?id=1941 */
+    /** @see http://code.google.com/p/automationagent/issues/detail?id=1941 */
     function testMapsForInvisibleImagesAreShownWhenIgnoringOpacity() {
       var img = goog.dom.$('invisiImg');
       assertEquals(0, bot.dom.getOpacity(img));

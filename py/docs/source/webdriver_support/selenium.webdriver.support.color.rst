@@ -1,4 +1,4 @@
-selenium.webdriver.support.color
+automationAgent.webdriver.support.color
 ================================
 
-.. automodule:: selenium.webdriver.support.color
+.. automodule:: automationAgent.webdriver.support.color

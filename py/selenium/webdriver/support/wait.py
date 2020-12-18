@@ -16,8 +16,8 @@
 # under the License.
 
 import time
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import TimeoutException
+from automationAgent.common.exceptions import NoSuchElementException
+from automationAgent.common.exceptions import TimeoutException
 
 POLL_FREQUENCY = 0.5  # How long to sleep inbetween calls to the method
 IGNORED_EXCEPTIONS = (NoSuchElementException,)  # exceptions ignored during calls to the method
@@ -37,7 +37,7 @@ class WebDriverWait(object):
 
            Example::
 
-            from selenium.webdriver.support.wait import WebDriverWait \n
+            from automationAgent.webdriver.support.wait import WebDriverWait \n
             element = WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "someId")) \n
             is_disappeared = WebDriverWait(driver, 30, 1, (ElementNotVisibleException)).\\ \n
                         until_not(lambda x: x.find_element(By.ID, "someId").is_displayed())
@@ -67,7 +67,7 @@ class WebDriverWait(object):
         :param method: callable(WebDriver)
         :param message: optional message for :exc:`TimeoutException`
         :returns: the result of the last call to `method`
-        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        :raises: :exc:`automationAgent.common.exceptions.TimeoutException` if timeout occurs
         """
         screen = None
         stacktrace = None
@@ -94,7 +94,7 @@ class WebDriverWait(object):
         :param message: optional message for :exc:`TimeoutException`
         :returns: the result of the last call to `method`, or
                   ``True`` if `method` has raised one of the ignored exceptions
-        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        :raises: :exc:`automationAgent.common.exceptions.TimeoutException` if timeout occurs
         """
         end_time = time.time() + self._timeout
         while True:

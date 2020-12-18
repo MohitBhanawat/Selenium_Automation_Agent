@@ -21,13 +21,13 @@ from importlib import import_module
 
 import pytest
 
-from selenium.webdriver import DesiredCapabilities
-from selenium.webdriver.remote.command import Command
-from selenium.webdriver.remote.webdriver import WebDriver
+from automationAgent.webdriver import DesiredCapabilities
+from automationAgent.webdriver.remote.command import Command
+from automationAgent.webdriver.remote.webdriver import WebDriver
 
 
 def test_converts_oss_capabilities_to_w3c(mocker):
-    mock = mocker.patch('selenium.webdriver.remote.webdriver.WebDriver.execute')
+    mock = mocker.patch('automationAgent.webdriver.remote.webdriver.WebDriver.execute')
     oss_caps = {'platform': 'WINDOWS', 'version': '11', 'acceptSslCerts': True}
     w3c_caps = {'platformName': 'windows', 'browserVersion': '11', 'acceptInsecureCerts': True}
     WebDriver(desired_capabilities=deepcopy(oss_caps))
@@ -37,7 +37,7 @@ def test_converts_oss_capabilities_to_w3c(mocker):
 
 
 def test_converts_proxy_type_value_to_lowercase_for_w3c(mocker):
-    mock = mocker.patch('selenium.webdriver.remote.webdriver.WebDriver.execute')
+    mock = mocker.patch('automationAgent.webdriver.remote.webdriver.WebDriver.execute')
     oss_caps = {'proxy': {'proxyType': 'MANUAL', 'httpProxy': 'foo'}}
     w3c_caps = {'proxy': {'proxyType': 'manual', 'httpProxy': 'foo'}}
     WebDriver(desired_capabilities=deepcopy(oss_caps))
@@ -47,8 +47,8 @@ def test_converts_proxy_type_value_to_lowercase_for_w3c(mocker):
 
 
 def test_works_as_context_manager(mocker):
-    mocker.patch('selenium.webdriver.remote.webdriver.WebDriver.execute')
-    quit_ = mocker.patch('selenium.webdriver.remote.webdriver.WebDriver.quit')
+    mocker.patch('automationAgent.webdriver.remote.webdriver.WebDriver.execute')
+    quit_ = mocker.patch('automationAgent.webdriver.remote.webdriver.WebDriver.quit')
 
     with WebDriver() as driver:
         assert isinstance(driver, WebDriver)
@@ -58,9 +58,9 @@ def test_works_as_context_manager(mocker):
 
 @pytest.mark.parametrize('browser_name', ['firefox', 'chrome', 'ie', 'opera'])
 def test_accepts_firefox_options_to_remote_driver(mocker, browser_name):
-    options = import_module('selenium.webdriver.{}.options'.format(browser_name))
+    options = import_module('automationAgent.webdriver.{}.options'.format(browser_name))
     caps_name = browser_name.upper() if browser_name != 'ie' else 'INTERNETEXPLORER'
-    mock = mocker.patch('selenium.webdriver.remote.webdriver.WebDriver.start_session')
+    mock = mocker.patch('automationAgent.webdriver.remote.webdriver.WebDriver.start_session')
 
     opts = options.Options()
     opts.add_argument('foo')

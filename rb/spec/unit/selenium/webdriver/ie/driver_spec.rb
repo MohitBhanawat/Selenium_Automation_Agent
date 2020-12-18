@@ -218,9 +218,9 @@ module Selenium
             end
 
             it 'with Options instance' do
-              browser_opts = {start_page: 'http://selenium.dev'}
+              browser_opts = {start_page: 'http://automationAgent.dev'}
               expect_request(body: {capabilities: {firstMatch: [browserName: "internet_explorer",
-                                                                'se:ieOptions': {"startPage": 'http://selenium.dev',
+                                                                'se:ieOptions': {"startPage": 'http://automationAgent.dev',
                                                                                  'nativeEvents': true}]}})
 
               expect { Driver.new(capabilities: [Options.new(**browser_opts)]) }.not_to raise_exception
@@ -243,10 +243,10 @@ module Selenium
 
             it 'with Options instance, Capabilities instance and instance of a custom object responding to #as_json' do
               capabilities = Remote::Capabilities.new(browser_name: 'internet explorer', invalid: 'foobar')
-              options = Options.new(start_page: 'http://selenium.dev')
+              options = Options.new(start_page: 'http://automationAgent.dev')
               expect_request(body: {capabilities: {firstMatch: [browserName: "internet_explorer",
                                                                 invalid: 'foobar',
-                                                                'se:ieOptions': {"startPage": 'http://selenium.dev',
+                                                                'se:ieOptions': {"startPage": 'http://automationAgent.dev',
                                                                                  'nativeEvents': true},
                                                                 'company:key': 'value']}})
 

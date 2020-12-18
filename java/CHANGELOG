@@ -1402,7 +1402,7 @@ WebDriver:
    handling a Selenium 3 style "sessionId" in a Command received by a
    Selenium 2 server.
  * Implemented support for switching context as described here:
-   http://code.google.com/p/selenium/source/browse/spec-draft.md?repo=mobile#133.
+   http://code.google.com/p/automationagent/source/browse/spec-draft.md?repo=mobile#133.
    This feature will be used by mobile WebDriver users to switch
    between different contexts like the native or the webview UI element
    tree. The feature is end to end tested with latest Selendroid
@@ -2239,7 +2239,7 @@ WebDriver:
 
 Grid:
   * Significant changes in the timeout strategy0 between hub, nodes and browser.
-    See http://code.google.com/p/selenium/wiki/Grid2 section on timeouts.
+    See http://code.google.com/p/automationagent/wiki/Grid2 section on timeouts.
     Compatibility note: It is recommended to at least update the nodes
     to 2.21. Upgrading only the hub will effectively disable the
     browser-death timeout and is *not* recommended.
@@ -2255,7 +2255,7 @@ Server:
     differentiate between browser hang and client gone (which is
     -timeout <timeout>)
     - System property -Dselenium.server.timeout removed, use -timeout instead.
-    See http://code.google.com/p/selenium/wiki/RemoteWebDriverServer
+    See http://code.google.com/p/automationagent/wiki/RemoteWebDriverServer
     for further details.
     * Issue 3577
 

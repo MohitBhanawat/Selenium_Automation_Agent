@@ -1,0 +1,29 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "server",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent/grid:__subpackages__",
+        "//java/server/src/org/smartqa/automationagent/netty/server:__pkg__",
+        "//java/server/src/org/smartqa/automationagent/remote/server:__pkg__",
+        "//java/server/test/org/smartqa/automationagent:__subpackages__",
+    ],
+    exports = [
+        "//java/client/src/org/smartqa/automationagent/remote/http",
+        "//java/server/src/org/smartqa/automationagent/grid/server",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/json",
+        "//java/client/src/org/smartqa/automationagent/remote/http",
+        "//java/server/src/org/smartqa/automationagent/grid/server",
+        "//java/server/src/org/smartqa/automationagent/grid/web",
+        artifact("com.google.guava:guava"),
+        artifact("io.netty:netty-buffer"),
+        artifact("io.netty:netty-codec-http"),
+        artifact("io.netty:netty-common"),
+        artifact("io.netty:netty-handler"),
+        artifact("io.netty:netty-transport"),
+    ],
+)

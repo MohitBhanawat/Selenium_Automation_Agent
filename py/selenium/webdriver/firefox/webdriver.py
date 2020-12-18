@@ -24,8 +24,8 @@ import shutil
 import warnings
 from contextlib import contextmanager
 
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver, WebElement
+from automationAgent.webdriver.common.desired_capabilities import DesiredCapabilities
+from automationAgent.webdriver.remote.webdriver import WebDriver as RemoteWebDriver, WebElement
 
 from .firefox_binary import FirefoxBinary
 from .firefox_profile import FirefoxProfile
@@ -233,7 +233,7 @@ class WebDriver(RemoteWebDriver):
 
         Usage example::
 
-            with selenium.context(selenium.CONTEXT_CHROME):
+            with automationAgent.context(automationAgent.CONTEXT_CHROME):
                 # chrome scope
                 ... do stuff ...
         """

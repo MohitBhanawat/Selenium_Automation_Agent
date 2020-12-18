@@ -17,10 +17,10 @@
 
 import pytest
 
-from selenium.common.exceptions import (
+from automationAgent.common.exceptions import (
     WebDriverException,
     NoSuchElementException)
-from selenium.webdriver.common.by import By
+from automationAgent.webdriver.common.by import By
 
 
 def test_should_find_element_by_xpath(driver, pages):

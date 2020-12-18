@@ -17,8 +17,8 @@
 from .input_device import InputDevice
 from .interaction import POINTER, POINTER_KINDS
 
-from selenium.common.exceptions import InvalidArgumentException
-from selenium.webdriver.remote.webelement import WebElement
+from automationAgent.common.exceptions import InvalidArgumentException
+from automationAgent.webdriver.remote.webelement import WebElement
 
 
 class PointerInput(InputDevice):

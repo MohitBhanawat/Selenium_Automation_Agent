@@ -4552,14 +4552,14 @@
                     "org.hamcrest:hamcrest-core",
                     "io.netty:netty-all"
                 ],
-                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar",
+                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar",
                 "mirror_urls": [
-                    "https://repo1.maven.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar",
-                    "https://jcenter.bintray.com/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar",
-                    "https://maven.google.com/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar"
+                    "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar",
+                    "https://jcenter.bintray.com/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar",
+                    "https://maven.google.com/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar"
                 ],
                 "sha256": "ddb1783d4cb4cf0329cfb313b1fa7ccea74cec0ae1befcd8c2a934def4c33862",
-                "url": "https://repo1.maven.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar"
+                "url": "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0.jar"
             },
             {
                 "coord": "org.seleniumhq.selenium:htmlunit-driver:jar:sources:2.39.0",
@@ -4618,14 +4618,14 @@
                     "org.hamcrest:hamcrest-core",
                     "io.netty:netty-all"
                 ],
-                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar",
+                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar",
                 "mirror_urls": [
-                    "https://repo1.maven.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar",
-                    "https://jcenter.bintray.com/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar",
-                    "https://maven.google.com/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar"
+                    "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar",
+                    "https://jcenter.bintray.com/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar",
+                    "https://maven.google.com/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar"
                 ],
                 "sha256": "51dbc1f2717d7ffd857434e5a6bb2683b1607ea88987363d9b4031bfa74c97c1",
-                "url": "https://repo1.maven.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar"
+                "url": "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/htmlunit-driver/2.39.0/htmlunit-driver-2.39.0-sources.jar"
             },
             {
                 "coord": "org.seleniumhq.selenium:selenium-api:3.141.59",
@@ -4636,14 +4636,14 @@
                     "org.hamcrest:hamcrest-core",
                     "io.netty:netty-all"
                 ],
-                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar",
+                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59.jar",
                 "mirror_urls": [
-                    "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar",
-                    "https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar",
-                    "https://maven.google.com/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar"
+                    "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59.jar",
+                    "https://jcenter.bintray.com/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59.jar",
+                    "https://maven.google.com/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59.jar"
                 ],
                 "sha256": "8bfd5a736eccfc08866301ffc9b7f529e55976355c5799bed8392486df64dee5",
-                "url": "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar"
+                "url": "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59.jar"
             },
             {
                 "coord": "org.seleniumhq.selenium:selenium-api:jar:sources:3.141.59",
@@ -4654,14 +4654,14 @@
                     "org.hamcrest:hamcrest-core",
                     "io.netty:netty-all"
                 ],
-                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar",
+                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar",
                 "mirror_urls": [
-                    "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar",
-                    "https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar",
-                    "https://maven.google.com/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar"
+                    "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar",
+                    "https://jcenter.bintray.com/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar",
+                    "https://maven.google.com/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar"
                 ],
                 "sha256": "91e6c542fbb9b78082a149c8fb012dd439a18b36e69ff25d12279a0392d4c541",
-                "url": "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar"
+                "url": "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-api/3.141.59/selenium-api-3.141.59-sources.jar"
             },
             {
                 "coord": "org.seleniumhq.selenium:selenium-remote-driver:3.141.59",
@@ -4695,14 +4695,14 @@
                     "org.hamcrest:hamcrest-core",
                     "io.netty:netty-all"
                 ],
-                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar",
+                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar",
                 "mirror_urls": [
-                    "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar",
-                    "https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar",
-                    "https://maven.google.com/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar"
+                    "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar",
+                    "https://jcenter.bintray.com/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar",
+                    "https://maven.google.com/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar"
                 ],
                 "sha256": "9829fe57adf36743d785d0c2e7db504ba3ba0a3aacac652b8867cc854d2dfc45",
-                "url": "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar"
+                "url": "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar"
             },
             {
                 "coord": "org.seleniumhq.selenium:selenium-remote-driver:jar:sources:3.141.59",
@@ -4736,14 +4736,14 @@
                     "org.hamcrest:hamcrest-core",
                     "io.netty:netty-all"
                 ],
-                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar",
+                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar",
                 "mirror_urls": [
-                    "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar",
-                    "https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar",
-                    "https://maven.google.com/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar"
+                    "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar",
+                    "https://jcenter.bintray.com/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar",
+                    "https://maven.google.com/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar"
                 ],
                 "sha256": "aad98064715728567784c00915692b3075c0c1aad80ca14518340868c8296597",
-                "url": "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar"
+                "url": "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59-sources.jar"
             },
             {
                 "coord": "org.seleniumhq.selenium:selenium-support:3.141.59",
@@ -4779,14 +4779,14 @@
                     "org.hamcrest:hamcrest-core",
                     "io.netty:netty-all"
                 ],
-                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar",
+                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59.jar",
                 "mirror_urls": [
-                    "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar",
-                    "https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar",
-                    "https://maven.google.com/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar"
+                    "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59.jar",
+                    "https://jcenter.bintray.com/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59.jar",
+                    "https://maven.google.com/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59.jar"
                 ],
                 "sha256": "2c74196d15277ce6003454d72fc3434091dbf3ba65060942719ba551509404d8",
-                "url": "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar"
+                "url": "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59.jar"
             },
             {
                 "coord": "org.seleniumhq.selenium:selenium-support:jar:sources:3.141.59",
@@ -4822,14 +4822,14 @@
                     "org.hamcrest:hamcrest-core",
                     "io.netty:netty-all"
                 ],
-                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar",
+                "file": "v1/https/repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar",
                 "mirror_urls": [
-                    "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar",
-                    "https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar",
-                    "https://maven.google.com/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar"
+                    "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar",
+                    "https://jcenter.bintray.com/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar",
+                    "https://maven.google.com/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar"
                 ],
                 "sha256": "70112a60fd5750918a4ee45e7487f6bea9a6b500eeabf93e141b36541f51d096",
-                "url": "https://repo1.maven.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar"
+                "url": "https://repo1.maven.org/maven2/org/seleniumhq/automationagent/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar"
             },
             {
                 "coord": "org.slf4j:slf4j-api:1.7.30",

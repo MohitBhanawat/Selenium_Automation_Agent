@@ -17,7 +17,7 @@
 
 import pytest
 
-from selenium.webdriver import Firefox
+from automationAgent.webdriver import Firefox
 
 
 @pytest.fixture

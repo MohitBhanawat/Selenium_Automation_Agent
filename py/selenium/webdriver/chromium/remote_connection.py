@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.remote.remote_connection import RemoteConnection
+from automationAgent.webdriver.remote.remote_connection import RemoteConnection
 
 
 class ChromiumRemoteConnection(RemoteConnection):

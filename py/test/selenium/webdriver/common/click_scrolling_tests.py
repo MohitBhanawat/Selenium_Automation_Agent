@@ -17,10 +17,10 @@
 
 import pytest
 
-from selenium.common.exceptions import MoveTargetOutOfBoundsException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+from automationAgent.common.exceptions import MoveTargetOutOfBoundsException
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.support import expected_conditions as EC
+from automationAgent.webdriver.support.ui import WebDriverWait
 
 
 def testClickingOnAnchorScrollsPage(driver, pages):

@@ -25,9 +25,9 @@ require 'json'
 require 'set'
 require 'websocket'
 
-require 'selenium/webdriver/common'
-require 'selenium/webdriver/atoms'
-require 'selenium/webdriver/version'
+require 'automationAgent/webdriver/common'
+require 'automationAgent/webdriver/atoms'
+require 'automationAgent/webdriver/version'
 
 module Selenium
   module WebDriver
@@ -36,16 +36,16 @@ module Selenium
     Rectangle = Struct.new(:x, :y, :width, :height)
     Location  = Struct.new(:latitude, :longitude, :altitude)
 
-    autoload :Chrome,     'selenium/webdriver/chrome'
-    autoload :DevTools,   'selenium/webdriver/devtools'
-    autoload :Edge,       'selenium/webdriver/edge'
-    autoload :EdgeHtml,   'selenium/webdriver/edge'
-    autoload :EdgeChrome, 'selenium/webdriver/edge'
-    autoload :Firefox,    'selenium/webdriver/firefox'
-    autoload :IE,         'selenium/webdriver/ie'
-    autoload :Remote,     'selenium/webdriver/remote'
-    autoload :Safari,     'selenium/webdriver/safari'
-    autoload :Support,    'selenium/webdriver/support'
+    autoload :Chrome,     'automationAgent/webdriver/chrome'
+    autoload :DevTools,   'automationAgent/webdriver/devtools'
+    autoload :Edge,       'automationAgent/webdriver/edge'
+    autoload :EdgeHtml,   'automationAgent/webdriver/edge'
+    autoload :EdgeChrome, 'automationAgent/webdriver/edge'
+    autoload :Firefox,    'automationAgent/webdriver/firefox'
+    autoload :IE,         'automationAgent/webdriver/ie'
+    autoload :Remote,     'automationAgent/webdriver/remote'
+    autoload :Safari,     'automationAgent/webdriver/safari'
+    autoload :Support,    'automationAgent/webdriver/support'
 
     # @api private
 

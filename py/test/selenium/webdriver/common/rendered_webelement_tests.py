@@ -17,9 +17,9 @@
 
 import pytest
 
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.color import Color
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.support.color import Color
 
 
 def testShouldPickUpStyleOfAnElement(driver, pages):

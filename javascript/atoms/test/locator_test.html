@@ -108,13 +108,13 @@ limitations under the License.
           bot.locators.findElements({className: 'cats'}, root).length);
     }
 
-    /** @bug http://code.google.com/p/selenium/issues/detail?id=1918 */
+    /** @bug http://code.google.com/p/automationagent/issues/detail?id=1918 */
     function testFindSingleByClassName_targetClassHasDots() {
       var found = bot.locators.findElement({className: 'name.with.dots'});
       assertEquals(goog.dom.$('dotted_1'), found);
     }
 
-    /** @bug http://code.google.com/p/selenium/issues/detail?id=1918 */
+    /** @bug http://code.google.com/p/automationagent/issues/detail?id=1918 */
     function testFindManyByClassName_targetClassHasDot() {
       var found = bot.locators.findElements({className: 'name.with.dots'});
       assertEquals(2, found.length);

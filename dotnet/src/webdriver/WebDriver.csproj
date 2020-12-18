@@ -115,7 +115,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(OS)' != 'WINDOWS_NT'">
-    <EmbeddedResource Include="$(ProjectDir)../../../third_party/js/selenium/webdriver.json">
+    <EmbeddedResource Include="$(ProjectDir)../../../third_party/js/automationagent/webdriver.json">
       <Visible>False</Visible>
       <LogicalName>webdriver_prefs.json</LogicalName>
     </EmbeddedResource>

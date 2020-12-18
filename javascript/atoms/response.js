@@ -17,7 +17,7 @@
 
 /**
  * @fileoverview Utilities for working with WebDriver response objects.
- * @see: hhttps://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#responses
+ * @see: hhttps://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol#responses
  */
 
 goog.provide('bot.response');
@@ -30,7 +30,7 @@ goog.require('bot.ErrorCode');
 /**
  * Type definition for a response object, as defined by the JSON wire protocol.
  * @typedef {{status: bot.ErrorCode, value: (*|{message: string})}}
- * @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#responses
+ * @see https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol#responses
  */
 bot.response.ResponseObject;
 
@@ -90,7 +90,7 @@ bot.response.createErrorResponse = function(error) {
  *     check.
  * @return {!bot.response.ResponseObject} The checked response object.
  * @throws {bot.Error} If the response describes an error.
- * @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#failed-commands
+ * @see https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol#failed-commands
  */
 bot.response.checkResponse = function(responseObj) {
   var status = responseObj['status'];

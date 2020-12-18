@@ -17,13 +17,13 @@ SRC_FILES = [
 ])
 
 pkg_npm(
-    name = "selenium-webdriver",
+    name = "automationAgent-webdriver",
     srcs = SRC_FILES,
     deps = [
         ":license",
-        "//javascript/node/selenium-webdriver/lib/atoms:find-elements",
-        "//javascript/node/selenium-webdriver/lib/atoms:get_attribute",
-        "//javascript/node/selenium-webdriver/lib/atoms:is_displayed",
+        "//javascript/node/automationAgent-webdriver/lib/atoms:find-elements",
+        "//javascript/node/automationAgent-webdriver/lib/atoms:get_attribute",
+        "//javascript/node/automationAgent-webdriver/lib/atoms:is_displayed",
     ],
 )
 
@@ -47,9 +47,9 @@ nodejs_binary(
         "@npm//tmp",
         "@npm//jszip",
         "@npm//rimraf",
-        "//javascript/node/selenium-webdriver/lib/atoms:get_attribute",
-        "//javascript/node/selenium-webdriver/lib/atoms:is_displayed",
-        "//javascript/node/selenium-webdriver/lib/atoms:find-elements",
+        "//javascript/node/automationAgent-webdriver/lib/atoms:get_attribute",
+        "//javascript/node/automationAgent-webdriver/lib/atoms:is_displayed",
+        "//javascript/node/automationAgent-webdriver/lib/atoms:find-elements",
     ],
     entry_point = "lib/test/fileserver.ts",
 )
@@ -71,9 +71,9 @@ jasmine_node_test(
     local = True,
     templated_args = ["--node_options=--require=$$(rlocation $(rootpath :tools/init_jasmine.js))"],
     deps = [
-        "//javascript/node/selenium-webdriver/lib/atoms:find-elements",
-        "//javascript/node/selenium-webdriver/lib/atoms:get_attribute",
-        "//javascript/node/selenium-webdriver/lib/atoms:is_displayed",
+        "//javascript/node/automationAgent-webdriver/lib/atoms:find-elements",
+        "//javascript/node/automationAgent-webdriver/lib/atoms:get_attribute",
+        "//javascript/node/automationAgent-webdriver/lib/atoms:is_displayed",
         "@npm//jasmine",
     ],
 )

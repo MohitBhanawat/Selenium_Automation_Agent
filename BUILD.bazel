@@ -9,12 +9,12 @@ filegroup(
 
 alias(
     name = "grid",
-    actual = "//java/server/src/org/openqa/selenium/grid:executable-grid",
+    actual = "//java/server/src/org/smartqa/automationagent/grid:executable-grid",
 )
 
 alias(
     name = "debug-server",
-    actual = "//java/client/test/org/openqa/selenium/environment:appserver",
+    actual = "//java/client/test/org/smartqa/automationagent/environment:appserver",
 )
 
 alias(
@@ -24,5 +24,5 @@ alias(
 
 alias(
     name = "selenium-server-standalone",
-    actual = "//java/server/src/org/openqa/selenium/grid:selenium_server_deploy.jar",
+    actual = "//java/server/src/org/smartqa/automationagent/grid:selenium_server_deploy.jar",
 )

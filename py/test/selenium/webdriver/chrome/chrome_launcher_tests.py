@@ -15,8 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver import Chrome
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from automationAgent.webdriver import Chrome
+from automationAgent.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 def test_launch_and_close_browser():

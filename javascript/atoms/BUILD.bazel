@@ -14,8 +14,8 @@ filegroup(
     ]),
     visibility = [
         "//dotnet/test:__subpackages__",
-        "//java/client/test/org/openqa/selenium/environment:__pkg__",
-        "//javascript/node/selenium-webdriver:__pkg__",
+        "//java/client/test/org/smartqa/automationagent/environment:__pkg__",
+        "//javascript/node/automationAgent-webdriver:__pkg__",
     ],
 )
 
@@ -29,7 +29,7 @@ closure_js_library(
     ],
     visibility = [
         "//javascript/atoms/fragments:__pkg__",
-        "//javascript/selenium-atoms:__pkg__",
+        "//javascript/automationAgent-atoms:__pkg__",
         "//javascript/webdriver/atoms:__pkg__",
         "//javascript/webdriver/atoms/inject:__pkg__",
     ],
@@ -197,7 +197,7 @@ closure_js_library(
     ],
     visibility = [
         "//javascript/atoms/fragments:__pkg__",
-        "//javascript/selenium-atoms:__pkg__",
+        "//javascript/automationAgent-atoms:__pkg__",
         "//javascript/webdriver/atoms/inject:__pkg__",
     ],
     deps = [

@@ -1,4 +1,4 @@
-selenium.webdriver.common.alert
+automationAgent.webdriver.common.alert
 ===============================
 
-.. automodule:: selenium.webdriver.common.alert
+.. automodule:: automationAgent.webdriver.common.alert

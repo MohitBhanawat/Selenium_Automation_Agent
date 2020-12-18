@@ -17,12 +17,12 @@
 
 import pytest
 
-from selenium.common.exceptions import (
+from automationAgent.common.exceptions import (
     ElementNotSelectableException,
     NoSuchElementException,
     UnexpectedTagNameException)
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.by import By
+from automationAgent.webdriver.support.ui import Select
+from automationAgent.webdriver.common.by import By
 
 disabledSelect = {'name': 'no-select', 'values': ['Foo']}
 singleSelectValues1 = {'name': 'selectomatic', 'values': ['One', 'Two', 'Four', 'Still learning how to count, apparently']}

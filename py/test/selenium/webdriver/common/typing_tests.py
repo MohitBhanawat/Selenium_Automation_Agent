@@ -15,8 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.common.keys import Keys
 
 import pytest
 

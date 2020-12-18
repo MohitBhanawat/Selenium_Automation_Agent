@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export PATH=$PATH:/opt/selenium/bin
+export PATH=$PATH:/opt/automationagent/bin
 
 mkdir -p ${HOME}/.vnc && x11vnc -storepasswd secret ${HOME}/.vnc/passwd
 
@@ -37,5 +37,5 @@ x11vnc ${X11VNC_OPTS} -forever -shared -rfbport 5900 -display ${DISPLAY} -noxrec
 
 # Now start the Node
 
-echo /opt/selenium/bin/selenium $@
-/opt/selenium/bin/selenium $@
+echo /opt/automationagent/bin/selenium $@
+/opt/automationagent/bin/selenium $@

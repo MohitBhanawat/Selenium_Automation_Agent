@@ -17,7 +17,7 @@
 
 import pytest
 
-from selenium.webdriver.common.by import By
+from automationAgent.webdriver.common.by import By
 
 
 @pytest.mark.xfail_ie

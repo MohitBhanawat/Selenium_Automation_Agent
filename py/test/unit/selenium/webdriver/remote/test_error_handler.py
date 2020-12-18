@@ -17,8 +17,8 @@
 
 import pytest
 
-from selenium.common import exceptions
-from selenium.webdriver.remote.errorhandler import ErrorCode, ErrorHandler
+from automationAgent.common import exceptions
+from automationAgent.webdriver.remote.errorhandler import ErrorCode, ErrorHandler
 
 
 @pytest.fixture

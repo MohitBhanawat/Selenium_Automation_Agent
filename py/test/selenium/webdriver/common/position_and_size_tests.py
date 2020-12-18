@@ -17,7 +17,7 @@
 
 import pytest
 
-from selenium.webdriver.common.by import By
+from automationAgent.webdriver.common.by import By
 
 
 def testShouldBeAbleToDetermineTheLocationOfAnElement(driver, pages):

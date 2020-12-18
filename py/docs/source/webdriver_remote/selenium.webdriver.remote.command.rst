@@ -1,4 +1,4 @@
-selenium.webdriver.remote.command
+automationAgent.webdriver.remote.command
 =================================
 
-.. automodule:: selenium.webdriver.remote.command
+.. automodule:: automationAgent.webdriver.remote.command

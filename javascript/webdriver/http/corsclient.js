@@ -62,7 +62,7 @@ goog.require('webdriver.http.Response');
  * @constructor
  * @implements {webdriver.http.Client}
  * @see <a href="http://www.w3.org/TR/cors/">CORS Spec</a>
- * @see <a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol">
+ * @see <a href="https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol">
  *     JSON wire protocol</a>
  */
 webdriver.http.CorsClient = function(url) {

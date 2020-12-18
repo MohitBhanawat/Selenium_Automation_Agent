@@ -1,0 +1,126 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//:copy_file.bzl", "copy_file")
+load("//java:defs.bzl", "java_dist_zip", "java_export", "javadoc")
+load("//java:version.bzl", "SE_VERSION")
+
+genrule(
+    name = "executable-grid",
+    srcs = [
+        "zip-preamble.sh",
+        ":selenium_server_deploy.jar",
+    ],
+    outs = ["automationAgent"],
+    cmd = "cat $(location :zip-preamble.sh) $(location :selenium_server_deploy.jar) > $@",
+    executable = True,
+    visibility = [
+        "//:__pkg__",
+        "//deploys/docker:__pkg__",
+    ],
+)
+
+BASE_COMMAND_SRCS = [
+    "TemplateGridCommand.java",
+]
+
+java_library(
+    name = "base-command",
+    srcs = BASE_COMMAND_SRCS,
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent/grid:__subpackages__",
+    ],
+    deps = [
+        "//java/server/src/org/smartqa/automationagent/cli",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+        "//java/server/src/org/smartqa/automationagent/grid/log",
+        "//java/server/src/org/smartqa/automationagent/grid/server",
+        artifact("com.beust:jcommander"),
+        artifact("com.google.guava:guava"),
+    ],
+)
+
+java_export(
+    name = "grid",
+    srcs = glob(
+        ["*.java"],
+        exclude = BASE_COMMAND_SRCS,
+    ),
+    maven_coordinates = "org.seleniumhq.automationAgent:automationAgent-grid:%s" % SE_VERSION,
+    pom_template = "//java/client/src/org/smartqa/automationagent:template-pom",
+    uses = [
+        "org.smartqa.automationagent.WebDriverInfo",
+        "org.smartqa.automationagent.cli.CliCommand",
+        "org.smartqa.automationagent.grid.config.HasRoles",
+        "org.smartqa.automationagent.remote.service.DriverService$Builder",
+    ],
+    visibility = [
+        "//visibility:public",
+    ],
+    runtime_deps = [
+        "//java/client/src/org/smartqa/automationagent/chrome",
+        "//java/client/src/org/smartqa/automationagent/edge",
+        "//java/client/src/org/smartqa/automationagent/firefox",
+        "//java/client/src/org/smartqa/automationagent/ie",
+        "//java/client/src/org/smartqa/automationagent/opera",
+        "//java/client/src/org/smartqa/automationagent/safari",
+        "//java/server/src/org/smartqa/automationagent/events/local",
+        "//java/server/src/org/smartqa/automationagent/events/zeromq",
+        "//java/server/src/org/smartqa/automationagent/grid/commands",
+        "//java/server/src/org/smartqa/automationagent/grid/distributor/httpd",
+        "//java/server/src/org/smartqa/automationagent/grid/node/httpd",
+        "//java/server/src/org/smartqa/automationagent/grid/router/httpd",
+        "//java/server/src/org/smartqa/automationagent/grid/sessionmap/httpd",
+    ],
+    deps = [
+        ":base-command",
+        "//java/server/src/org/smartqa/automationagent/cli",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+    ],
+)
+
+java_binary(
+    name = "selenium_server",
+    main_class = "org.smartqa.automationagent.grid.Main",
+    visibility = [
+        "//:__pkg__",
+        "//deploys/docker:__pkg__",
+        "//py:__pkg__",
+    ],
+    runtime_deps = [
+        ":grid",
+        artifact("org.slf4j:slf4j-jdk14"),
+    ],
+)
+
+copy_file(
+    name = "server-binary",
+    src = ":selenium_server_deploy.jar",
+    out = "automationAgent-server-%s.jar" % SE_VERSION,
+)
+
+java_dist_zip(
+    name = "server-zip",
+    files = [
+        ":server-binary",
+        "//:license",
+        "//java:CHANGELOG",
+    ],
+    third_party_prefixes = [
+        "@maven//",
+        "//third_party",
+    ],
+    deps = [
+        ":grid",
+    ],
+)
+
+javadoc(
+    name = "all-javadocs",
+    third_party_prefixes = [
+        "@maven//",
+        "//third_party",
+    ],
+    transitive = True,
+    deps = [
+        ":grid",
+    ],
+)

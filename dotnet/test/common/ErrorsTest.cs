@@ -7,7 +7,7 @@ namespace OpenQA.Selenium
     {
         /// <summary>
         /// Regression test for Selenium RC issue 363.
-        /// http://code.google.com/p/selenium/issues/detail?id=363
+        /// http://code.google.com/p/automationagent/issues/detail?id=363
         /// This will trivially pass on browsers that do not support the onerror
         /// handler (e.g. Internet Explorer).
         /// </summary>

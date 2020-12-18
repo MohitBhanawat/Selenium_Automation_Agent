@@ -16,7 +16,7 @@
 # under the License.
 
 
-from selenium.webdriver.ie.options import Options, ElementScrollBehavior
+from automationAgent.webdriver.ie.options import Options, ElementScrollBehavior
 import pytest
 
 TIMEOUT = 30
@@ -101,7 +101,7 @@ def test_ignore_zoom_level(opts):
 
 
 def test_initial_browser_url(opts):
-    url = 'http://www.selenium.dev'
+    url = 'http://www.automationAgent.dev'
     opts.initial_browser_url = url
     assert opts.initial_browser_url == url
     assert opts.options.get(Options.INITIAL_BROWSER_URL) == url
@@ -175,12 +175,12 @@ def test_to_capabilities_should_not_modify_set_options(opts):
 
 
 def test_starts_with_default_capabilities(opts):
-    from selenium.webdriver import DesiredCapabilities
+    from automationAgent.webdriver import DesiredCapabilities
     caps = DesiredCapabilities.INTERNETEXPLORER.copy()
     caps.update({"pageLoadStrategy": "normal"})
     assert opts._caps == caps
 
 
 def test_is_a_baseoptions(opts):
-    from selenium.webdriver.common.options import BaseOptions
+    from automationAgent.webdriver.common.options import BaseOptions
     assert isinstance(opts, BaseOptions)

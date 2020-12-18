@@ -74,7 +74,7 @@ class NoSuchElementException(WebDriverException):
     If you encounter this exception, you may want to check the following:
         * Check your selector used in your find_by...
         * Element may not yet be on the screen at the time of the find operation,
-          (webpage is still loading) see selenium.webdriver.support.wait.WebDriverWait()
+          (webpage is still loading) see automationAgent.webdriver.support.wait.WebDriverWait()
           for how to write a wait wrapper to wait for an element to appear.
     """
     pass

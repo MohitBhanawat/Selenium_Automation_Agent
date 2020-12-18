@@ -17,8 +17,8 @@
 
 import pytest
 
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.by import By
+from automationAgent.common.exceptions import NoSuchElementException
+from automationAgent.webdriver.common.by import By
 
 
 def testShouldImplicitlyWaitForASingleElement(driver, pages):

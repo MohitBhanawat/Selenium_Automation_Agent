@@ -1,0 +1,25 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//java:defs.bzl", "java_export")
+load("//java:version.bzl", "SE_VERSION")
+load("//:copy_file.bzl", "copy_file")
+
+java_export(
+    name = "firefox",
+    srcs = glob(["*.java"]),
+    maven_coordinates = "org.seleniumhq.automationAgent:automationAgent-firefox-driver:%s" % SE_VERSION,
+    pom_template = "//java/client/src/org/smartqa/automationagent:template-pom",
+    resources = [":prefs"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//java:auto-service",
+        "//java/client/src/org/smartqa/automationagent/json",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        artifact("com.google.guava:guava"),
+    ],
+)
+
+copy_file(
+    name = "prefs",
+    src = "//third_party/js/automationagent:webdriver_json",
+    out = "webdriver_prefs.json",
+)

@@ -17,7 +17,7 @@
 
 import pytest
 
-from selenium.webdriver.common.proxy import Proxy, ProxyType
+from automationAgent.webdriver.common.proxy import Proxy, ProxyType
 
 
 MANUAL_PROXY = {

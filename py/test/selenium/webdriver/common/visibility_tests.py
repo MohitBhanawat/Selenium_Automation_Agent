@@ -18,10 +18,10 @@
 import pytest
 
 
-from selenium.common.exceptions import (
+from automationAgent.common.exceptions import (
     ElementNotVisibleException,
     ElementNotInteractableException)
-from selenium.webdriver.common.by import By
+from automationAgent.webdriver.common.by import By
 
 
 def testShouldAllowTheUserToTellIfAnElementIsDisplayedOrNot(driver, pages):

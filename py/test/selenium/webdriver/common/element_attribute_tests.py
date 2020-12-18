@@ -17,8 +17,8 @@
 
 import pytest
 
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common.by import By
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.common.by import By
 
 
 def testShouldReturnNullWhenGettingTheValueOfAnAttributeThatIsNotListed(driver, pages):

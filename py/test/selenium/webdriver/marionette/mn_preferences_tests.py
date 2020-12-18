@@ -17,7 +17,7 @@
 
 import pytest
 
-from selenium.webdriver.firefox.options import Options
+from automationAgent.webdriver.firefox.options import Options
 
 
 @pytest.fixture

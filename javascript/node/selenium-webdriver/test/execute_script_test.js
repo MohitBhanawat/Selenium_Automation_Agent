@@ -243,7 +243,7 @@ suite(function(env) {
       });
     });
 
-    // See https://code.google.com/p/selenium/issues/detail?id=8223.
+    // See https://code.google.com/p/automationagent/issues/detail?id=8223.
     describe('issue 8223;', function() {
       describe('using for..in loops;', function() {
         it('can return array built from for-loop index', function() {

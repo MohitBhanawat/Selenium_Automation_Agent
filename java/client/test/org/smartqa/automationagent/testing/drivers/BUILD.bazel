@@ -1,0 +1,62 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "browser",
+    srcs = [
+        "Browser.java",
+    ],
+    visibility = [
+        "//java/client/test/org/smartqa/automationagent/testing:__pkg__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/chrome",
+        "//java/client/src/org/smartqa/automationagent/edge",
+        "//java/client/src/org/smartqa/automationagent/edgehtml",
+        "//java/client/src/org/smartqa/automationagent/firefox",
+        "//java/client/src/org/smartqa/automationagent/ie",
+        "//java/client/src/org/smartqa/automationagent/opera",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/src/org/smartqa/automationagent/safari",
+    ],
+)
+
+java_library(
+    name = "drivers",
+    srcs = glob([
+        "*Driver.java",
+        "*Supplier.java",
+    ]) + [
+        "OutOfProcessSeleniumServer.java",
+        "WebDriverBuilder.java",
+    ],
+    visibility = [
+        "//java/client/test:__subpackages__",
+        "//java/server/test:__subpackages__",
+    ],
+    exports = [
+        ":browser",
+    ],
+    deps = [
+        ":browser",
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/chrome",
+        "//java/client/src/org/smartqa/automationagent/edge",
+        "//java/client/src/org/smartqa/automationagent/edgehtml",
+        "//java/client/src/org/smartqa/automationagent/firefox",
+        "//java/client/src/org/smartqa/automationagent/ie",
+        "//java/client/src/org/smartqa/automationagent/json",
+        "//java/client/src/org/smartqa/automationagent/opera",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/src/org/smartqa/automationagent/remote/http",
+        "//java/client/src/org/smartqa/automationagent/safari",
+        "//java/client/src/org/smartqa/automationagent/support",
+        "//java/client/test/org/smartqa/automationagent:helpers",
+        "//java/client/test/org/smartqa/automationagent/build",
+        "//java/client/test/org/smartqa/automationagent/testing:annotations",
+        artifact("com.google.guava:guava"),
+        artifact("com.squareup.okhttp3:okhttp"),
+        artifact("junit:junit"),
+        artifact("org.seleniumhq.automationAgent:htmlunit-driver"),
+    ],
+)

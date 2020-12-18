@@ -42,7 +42,7 @@ pkg_tar(
 ENTRY_POINT = [
     "java",
     "-jar",
-    "/opt/selenium/bin/selenium",
+    "/opt/automationagent/bin/selenium",
 ]
 
 container_layer(
@@ -136,9 +136,9 @@ container_image(
 
 container_layer(
     name = "grid-binary",
-    directory = "/opt/selenium/bin",
+    directory = "/opt/automationagent/bin",
     files = [
-        "//java/server/src/org/openqa/selenium/grid:executable-grid",
+        "//java/server/src/org/smartqa/automationagent/grid:executable-grid",
     ],
 )
 
@@ -146,13 +146,13 @@ container_layer(
     name = "one-shot",
     directory = "/opt/selenium",
     files = [
-        "//java/server/src/org/openqa/selenium/grid/node/k8s",
+        "//java/server/src/org/smartqa/automationagent/grid/node/k8s",
     ],
 )
 
 container_layer(
     name = "start-scripts",
-    directory = "/opt/selenium/bin",
+    directory = "/opt/automationagent/bin",
     files = [
         ":selenium.sh",
     ],
@@ -162,7 +162,7 @@ container_image(
     name = "chrome-node",
     base = "@chrome_standalone//image",
     entrypoint = [
-        "/opt/selenium/bin/selenium.sh",
+        "/opt/automationagent/bin/selenium.sh",
         "node",
     ],
     layers = [
@@ -189,7 +189,7 @@ container_image(
     name = "firefox-node",
     base = "@firefox_standalone//image",
     entrypoint = [
-        "/opt/selenium/bin/selenium.sh",
+        "/opt/automationagent/bin/selenium.sh",
         "node",
     ],
     layers = [

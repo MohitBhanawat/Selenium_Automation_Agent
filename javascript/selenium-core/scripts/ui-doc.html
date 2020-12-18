@@ -116,7 +116,7 @@ th, td {
 
 <p>UI-Element is now fully integrated with Selenium. The only additional file that needs to be specified is your map definitions file. In the IDE, add it to the comma-delimited <em>Selenium Core extensions</em> field of the IDE options. A sample definition file created for the website <a href="http://alistapart.com">alistapart.com</a> is included in the distribution and is available here:</p>
 
-<pre><a href="chrome://selenium-ide/content/selenium-core/scripts/ui-map-sample.js">chrome://selenium-ide/content/selenium-core/scripts/ui-map-sample.js</a></pre>
+<pre><a href="chrome://automationAgent-ide/content/automationAgent-core/scripts/ui-map-sample.js">chrome://automationAgent-ide/content/automationAgent-core/scripts/ui-map-sample.js</a></pre>
 
 <p>You might want to experiment with the sample map to get a feel for UI-Element. For the Selenium RC, you have two options. The map file may be included in the <code>user-extensions.js</code> file specified at startup with the <code>-userExtensions</code> switch. Or, you may load it dynamically with the variant of the <code>setUserExtensionJs</code> command in your driver language, before the browser is started.</p>
 
@@ -185,7 +185,7 @@ map.addPageset({
     <ul>
     <li>http://www.example.com/<span class="highlight">articles/index.php</span></li>
     <li>http://www.example.com/<span class="highlight">articles/2579</span>?lang=en_US</li>
-    <li>http://www.example.com/<span class="highlight">articles/selenium</span>/</li>
+    <li>http://www.example.com/<span class="highlight">articles/automationAgent</span>/</li>
     </ul>
      The entire path must match (however, <code>pathPrefix</code> is taken into account if specified). If specified as a regular expression, the two regular expression characters <code>^</code> and <code>$</code> marking the start and end of the matched string are included implicitly, and should not be specified in this string. Please notice too that backslashes must be backslash-escaped in javascript strings.</td>
     <td><pre>paths: [
@@ -800,7 +800,7 @@ updateArgs: function(command, args) {
 
 <h2>Final Thoughts</h2>
 
-<p>Catch UI-Element news in the <a href="http://ttwhy.org/home/blog/category/selenium/">Selenium category of my blog</a>. You can also find me on the <a href="http://clearspace.openqa.org/people/gyrm">OpenQA Forums</a>.</p>
+<p>Catch UI-Element news in the <a href="http://ttwhy.org/home/blog/category/automationagent/">Selenium category of my blog</a>. You can also find me on the <a href="http://clearspace.openqa.org/people/gyrm">OpenQA Forums</a>.</p>
 
 <p><em>- Haw-Bin Chai</em></p>
 

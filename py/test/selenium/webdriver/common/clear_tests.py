@@ -17,8 +17,8 @@
 
 import pytest
 
-from selenium.common.exceptions import InvalidElementStateException
-from selenium.webdriver.common.by import By
+from automationAgent.common.exceptions import InvalidElementStateException
+from automationAgent.webdriver.common.by import By
 
 
 def testWritableTextInputShouldClear(driver, pages):

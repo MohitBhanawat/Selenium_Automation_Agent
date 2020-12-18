@@ -7,6 +7,6 @@ filegroup(
     ]),
     visibility = [
         "//dotnet/test:__subpackages__",
-        "//java/client/test/org/openqa/selenium/environment:__pkg__",
+        "//java/client/test/org/smartqa/automationagent/environment:__pkg__",
     ],
 )

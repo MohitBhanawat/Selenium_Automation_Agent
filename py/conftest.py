@@ -24,10 +24,10 @@ import time
 import pytest
 from _pytest.skipping import MarkEvaluator
 
-from selenium import webdriver
-from selenium.webdriver import DesiredCapabilities
-from test.selenium.webdriver.common.webserver import SimpleWebServer
-from test.selenium.webdriver.common.network import get_lan_ip
+from automationAgent import webdriver
+from automationAgent.webdriver import DesiredCapabilities
+from test.automationAgent.webdriver.common.webserver import SimpleWebServer
+from test.automationAgent.webdriver.common.network import get_lan_ip
 
 if sys.version_info[0] == 3:
     from urllib.request import urlopen
@@ -194,7 +194,7 @@ def server(request):
     _host = 'localhost'
     _port = 4444
     _path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                         'java/server/src/org/openqa/selenium/grid/selenium_server_deploy.jar')
+                         'java/server/src/org/smartqa/automationagent/grid/selenium_server_deploy.jar')
 
     def wait_for_server(url, timeout):
         start = time.time()

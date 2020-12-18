@@ -1,0 +1,12 @@
+java_library(
+    name = "component",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent/grid:__subpackages__",
+        "//java/server/src/org/smartqa/automationagent/netty/server:__pkg__",
+        "//java/server/test/org/smartqa/automationagent/grid:__subpackages__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+    ],
+)

@@ -1,4 +1,4 @@
-selenium.webdriver.firefox.options
+automationAgent.webdriver.firefox.options
 ==================================
 
-.. automodule:: selenium.webdriver.firefox.options
+.. automodule:: automationAgent.webdriver.firefox.options

@@ -17,11 +17,11 @@
 
 import pytest
 
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.webdriver.remote.webelement import WebElement
+from automationAgent.common.exceptions import TimeoutException
+from automationAgent.webdriver.support.wait import WebDriverWait
+from automationAgent.webdriver.support import expected_conditions as EC
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.remote.webelement import WebElement
 
 
 def test_any_of_true(driver, pages):

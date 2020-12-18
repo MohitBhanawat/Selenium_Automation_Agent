@@ -1,4 +1,4 @@
-selenium.webdriver.support.expected_conditions
+automationAgent.webdriver.support.expected_conditions
 ==============================================
 
-.. automodule:: selenium.webdriver.support.expected_conditions
+.. automodule:: automationAgent.webdriver.support.expected_conditions

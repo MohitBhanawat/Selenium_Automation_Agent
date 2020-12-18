@@ -17,7 +17,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require 'selenium/webdriver/chrome/options'
+require 'automationAgent/webdriver/chrome/options'
 
 module Selenium
   module WebDriver

@@ -11,7 +11,7 @@ module SeleniumRake
       <<~HEREDOC
         /* AUTO GENERATED - Do not edit by hand. */
         /* See rake-tasks/selenium_rake/java_formatter.rb instead. */
-        package org.openqa.selenium.ie;
+        package org.smartqa.automationagent.ie;
         public class IeReturnTypes {
       HEREDOC
     end

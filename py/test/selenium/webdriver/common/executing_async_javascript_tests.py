@@ -17,10 +17,10 @@
 
 import pytest
 
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import WebDriverException
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.remote.webelement import WebElement
+from automationAgent.webdriver.common.by import By
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.common.exceptions import TimeoutException
+from automationAgent.webdriver.remote.webelement import WebElement
 
 
 @pytest.fixture(autouse=True)

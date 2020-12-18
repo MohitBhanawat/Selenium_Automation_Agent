@@ -22,7 +22,7 @@
  * and place it on your
  * [PATH](http://en.wikipedia.org/wiki/PATH_%28variable%29). You must also apply
  * the system configuration outlined on the Selenium project
- * [wiki](https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver)
+ * [wiki](https://github.com/SeleniumHQ/automationagent/wiki/InternetExplorerDriver)
  */
 
 'use strict';
@@ -59,7 +59,7 @@ const Level = {
 
 /**
  * Option keys:
- * https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities#ie-specific
+ * https://github.com/SeleniumHQ/automationagent/wiki/DesiredCapabilities#ie-specific
  * @enum {string}
  */
 const Key = {
@@ -436,7 +436,7 @@ function createServiceFromCapabilities(capabilities) {
 
 /**
  * Creates {@link selenium-webdriver/remote.DriverService} instances that manage
- * an [IEDriverServer](https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver)
+ * an [IEDriverServer](https://github.com/SeleniumHQ/automationagent/wiki/InternetExplorerDriver)
  * server in a child process.
  */
 class ServiceBuilder extends remote.DriverService.Builder {

@@ -17,12 +17,12 @@
 
 import pytest
 
-from selenium.common.exceptions import NoSuchWindowException
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.window import WindowTypes
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+from automationAgent.common.exceptions import NoSuchWindowException
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.common.window import WindowTypes
+from automationAgent.webdriver.support import expected_conditions as EC
+from automationAgent.webdriver.support.ui import WebDriverWait
 
 
 @pytest.fixture(autouse=True)

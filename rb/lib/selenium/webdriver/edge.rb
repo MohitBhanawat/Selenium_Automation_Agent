@@ -22,9 +22,9 @@ require 'net/http'
 module Selenium
   module WebDriver
     module EdgeHtml
-      autoload :Driver, 'selenium/webdriver/edge_html/driver'
-      autoload :Options, 'selenium/webdriver/edge_html/options'
-      autoload :Service, 'selenium/webdriver/edge_html/service'
+      autoload :Driver, 'automationAgent/webdriver/edge_html/driver'
+      autoload :Options, 'automationAgent/webdriver/edge_html/options'
+      autoload :Service, 'automationAgent/webdriver/edge_html/service'
 
       def self.driver_path=(path)
         WebDriver.logger.deprecate 'Selenium::WebDriver::Edge#driver_path=',
@@ -42,11 +42,11 @@ module Selenium
     end # EdgeHtml
 
     module EdgeChrome
-      autoload :Bridge, 'selenium/webdriver/edge_chrome/bridge'
-      autoload :Driver, 'selenium/webdriver/edge_chrome/driver'
-      autoload :Profile, 'selenium/webdriver/edge_chrome/profile'
-      autoload :Options, 'selenium/webdriver/edge_chrome/options'
-      autoload :Service, 'selenium/webdriver/edge_chrome/service'
+      autoload :Bridge, 'automationAgent/webdriver/edge_chrome/bridge'
+      autoload :Driver, 'automationAgent/webdriver/edge_chrome/driver'
+      autoload :Profile, 'automationAgent/webdriver/edge_chrome/profile'
+      autoload :Options, 'automationAgent/webdriver/edge_chrome/options'
+      autoload :Service, 'automationAgent/webdriver/edge_chrome/service'
 
       def self.path=(path)
         Platform.assert_executable path

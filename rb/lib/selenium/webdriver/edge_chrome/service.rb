@@ -17,7 +17,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require 'selenium/webdriver/chrome/service'
+require 'automationAgent/webdriver/chrome/service'
 
 module Selenium
   module WebDriver

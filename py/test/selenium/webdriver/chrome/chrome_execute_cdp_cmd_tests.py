@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver import Chrome
+from automationAgent.webdriver import Chrome
 
 
 def test_execute_cdp_cmd():
@@ -28,7 +28,7 @@ def test_execute_cdp_cmd():
 async def test_devtools():
     driver = Chrome()
     async with driver.get_devtools_connection() as devtools:
-        import selenium.webdriver.common.devtools.performance as perf
+        import automationAgent.webdriver.common.devtools.performance as perf
         await devtools.execute(perf.enable())
         results = await devtools.execute(perf.get_metrics())
         assert isinstance(results, list)

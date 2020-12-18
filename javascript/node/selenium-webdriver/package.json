@@ -12,7 +12,7 @@
   ],
   "homepage": "https://github.com/SeleniumHQ/selenium",
   "bugs": {
-    "url": "https://github.com/SeleniumHQ/selenium/issues"
+    "url": "https://github.com/SeleniumHQ/automationagent/issues"
   },
   "main": "./index",
   "repository": {

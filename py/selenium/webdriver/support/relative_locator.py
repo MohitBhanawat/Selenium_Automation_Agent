@@ -16,7 +16,7 @@
 # under the License.
 
 
-from selenium.common.exceptions import WebDriverException
+from automationAgent.common.exceptions import WebDriverException
 
 
 def with_tag_name(tag_name):

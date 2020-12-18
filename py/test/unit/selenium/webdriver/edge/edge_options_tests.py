@@ -17,7 +17,7 @@
 
 import pytest
 
-from selenium.webdriver.edge.options import Options
+from automationAgent.webdriver.edge.options import Options
 
 
 @pytest.fixture
@@ -48,14 +48,14 @@ def test_creates_capabilities(options):
 
 
 def test_starts_with_default_capabilities(options):
-    from selenium.webdriver import DesiredCapabilities
+    from automationAgent.webdriver import DesiredCapabilities
     caps = DesiredCapabilities.EDGE.copy()
     caps.update({"pageLoadStrategy": "normal"})
     assert options._caps == caps
 
 
 def test_is_a_baseoptions(options):
-    from selenium.webdriver.common.options import BaseOptions
+    from automationAgent.webdriver.common.options import BaseOptions
     assert isinstance(options, BaseOptions)
 
 

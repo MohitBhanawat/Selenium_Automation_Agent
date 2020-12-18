@@ -18,9 +18,9 @@
 import sys
 import warnings
 
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.chromium.remote_connection import ChromiumRemoteConnection
-from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.chromium.remote_connection import ChromiumRemoteConnection
+from automationAgent.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
 
 DEFAULT_PORT = 0
 DEFAULT_SERVICE_LOG_PATH = None

@@ -20,9 +20,9 @@ spec:
           image: "selenium/chrome-node:latest"
           imagePullPolicy: Always
           command:
-            - /opt/selenium/bin/selenium.sh
+            - /opt/automationagent/bin/selenium.sh
             - --ext
-            - /opt/selenium/libk8s.jar
+            - /opt/automationagent/libk8s.jar
             - node
             - -p
             - "5555"

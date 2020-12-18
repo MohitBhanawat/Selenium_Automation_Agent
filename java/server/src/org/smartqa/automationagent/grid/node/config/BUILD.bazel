@@ -1,0 +1,19 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "config",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent/grid:__subpackages__",
+        "//java/server/test/org/smartqa/automationagent/grid/node/config:__subpackages__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent/chromium",
+        "//java/client/src/org/smartqa/automationagent/json",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+        "//java/server/src/org/smartqa/automationagent/grid/data",
+        "//java/server/src/org/smartqa/automationagent/grid/node",
+        artifact("com.google.guava:guava"),
+    ],
+)

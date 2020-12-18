@@ -27,7 +27,7 @@ Selenium 4.0 Alpha 6
 * verify command_executor ssl certificate by default (#6536)
 * Correct documentation for ChromiumDriver
 * Deprecating find_element(s)_* calls in event firing webdriver
-* Fixing path to selenium server for remote tests
+* Fixing path to automationAgent server for remote tests
 * Fixing relative locator constructor
 * Changing environment variable we use to check if the tests are running on travis
 * Fixing HSL to RGBa color converter
@@ -155,11 +155,11 @@ Selenium 3.12.0
 * Add support for Safari extension command
 * Deprecate Options `set_headless` methods in favor of property setter
 * Only set --disable-gpu for Chrome headless when on Windows
-* Add selenium User-Agent header (#5696)
+* Add automationAgent User-Agent header (#5696)
 * Remote webdriver can now be started when passing options
 * All Options.to_capabilities now start with default DesiredCapabilities
 * Improve the error message that is raised when safaridriver cannot be found (#5739)
-* IeOptions class is now imported to selenium.webdriver
+* IeOptions class is now imported to automationAgent.webdriver
 * Remove the beta `authenticate` methods from `Alert`
 
 Selenium 3.11.0
@@ -193,7 +193,7 @@ Selenium 3.8.1
 
 Selenium 3.8.0
 
-* Firefox options can now be imported from selenium.webdriver as FirefoxOptions (#5120)
+* Firefox options can now be imported from automationAgent.webdriver as FirefoxOptions (#5120)
 * Headless mode can now be set in Chrome Options using `set_headless`
 * Headless mode can now be set in Firefox Options using `set_headless`
 * Add the WebKitGTK WebDriver and options class (#4635)
@@ -492,7 +492,7 @@ Selenium 2.43.0
 * Remove unused import subprocess.PIPE
 * Redirect Firefox output to /dev/null by default Fixes Issue #7677
 * More flexible management of http timeouts in Selenium RC python client
-* Generate Python API docs for selenium.webdriver.chrome.options. Fixes issue #7471
+* Generate Python API docs for automationAgent.webdriver.chrome.options. Fixes issue #7471
 * Use 127.0.0.1 as localhost name resolving might fail on some systems
 
 Selenium 2.42.1
@@ -639,7 +639,7 @@ Selenium 2.25
 
 Selenium 2.24
 * Removing the ctypes approach of invoking IEDriver, you will need to download the IEDriverServer from
-  https://code.google.com/p/selenium/downloads/list
+  https://code.google.com/p/automationagent/downloads/list
 
 Selenium 2.23
 * Support for FF13 native events
@@ -772,7 +772,7 @@ Selenium 2 Beta 3
 
 Selenium 2 Beta 2
 
-* New bindings landed. Change webdriver namespace to "selenium.webdriver"
+* New bindings landed. Change webdriver namespace to "automationAgent.webdriver"
 * Ability to move to default content
 * Implicit Waits
 * Change the API to use properties instead of get_x

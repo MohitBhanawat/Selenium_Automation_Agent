@@ -29,7 +29,7 @@ module Selenium
       let(:new_window) { driver.window_handles.find { |handle| handle != driver.window_handle } }
 
       # Safari is using GET instead of POST (W3C vs JWP)
-      # Server - https://github.com/SeleniumHQ/selenium/issues/1795
+      # Server - https://github.com/SeleniumHQ/automationagent/issues/1795
       it 'should find the active element', except: {driver: :remote, browser: :edge} do
         driver.navigate.to url_for('xhtmlTest.html')
         expect(driver.switch_to.active_element).to be_an_instance_of(WebDriver::Element)

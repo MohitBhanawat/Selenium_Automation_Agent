@@ -20,7 +20,7 @@ from .interaction import Interaction
 from .mouse_button import MouseButton
 from .pointer_input import PointerInput
 
-from selenium.webdriver.remote.webelement import WebElement
+from automationAgent.webdriver.remote.webelement import WebElement
 
 
 class PointerActions(Interaction):

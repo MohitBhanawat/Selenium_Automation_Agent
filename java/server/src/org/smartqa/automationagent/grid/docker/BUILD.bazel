@@ -1,0 +1,23 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "docker",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent/grid/commands:__pkg__",
+        "//java/server/src/org/smartqa/automationagent/grid/node/httpd:__pkg__",
+        "//java/server/src/org/smartqa/automationagent/grid/node/local:__pkg__",
+    ],
+    deps = [
+        "//java:auto-service",
+        "//java/client/src/org/smartqa/automationagent/json",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/client/src/org/smartqa/automationagent/support",
+        "//java/server/src/org/smartqa/automationagent/docker",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+        "//java/server/src/org/smartqa/automationagent/grid/data",
+        "//java/server/src/org/smartqa/automationagent/grid/node",
+        artifact("com.beust:jcommander"),
+        artifact("com.google.guava:guava"),
+    ],
+)

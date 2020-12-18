@@ -16,7 +16,7 @@
 # under the License.
 
 
-from selenium.webdriver.common.by import By
+from automationAgent.webdriver.common.by import By
 
 
 class ResultsPage(object):

@@ -20,10 +20,10 @@
 module Selenium
   module WebDriver
     module Safari
-      autoload :Bridge, 'selenium/webdriver/safari/bridge'
-      autoload :Driver, 'selenium/webdriver/safari/driver'
-      autoload :Options, 'selenium/webdriver/safari/options'
-      autoload :Service, 'selenium/webdriver/safari/service'
+      autoload :Bridge, 'automationAgent/webdriver/safari/bridge'
+      autoload :Driver, 'automationAgent/webdriver/safari/driver'
+      autoload :Options, 'automationAgent/webdriver/safari/options'
+      autoload :Service, 'automationAgent/webdriver/safari/service'
 
       class << self
         def technology_preview

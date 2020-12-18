@@ -134,7 +134,7 @@ webdriver.atoms.element.getText = function(element) {
  * @param {boolean=} opt_persistModifiers Whether modifier keys should remain
  *     pressed when this function ends.
  * @see bot.action.type
- * @see https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol
+ * @see https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol
  * @suppress {reportUnknownTypes}
  */
 webdriver.atoms.element.type = function(

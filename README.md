@@ -1,4 +1,4 @@
-Selenium [![Travis Status](https://travis-ci.com/SeleniumHQ/selenium.svg?branch=master)](//travis-ci.com/SeleniumHQ/selenium/builds) [![AppVeyor Status](https://ci.appveyor.com/api/projects/status/pg1f99p1aetp9mk9/branch/master?svg=true)](https://ci.appveyor.com/project/SeleniumHQ/selenium/branch/master)
+AutomationAgent [![Travis Status](https://travis-ci.com/SeleniumHQ/selenium.svg?branch=master)](//travis-ci.com/SeleniumHQ/selenium/builds) [![AppVeyor Status](https://ci.appveyor.com/api/projects/status/pg1f99p1aetp9mk9/branch/master?svg=true)](https://ci.appveyor.com/project/SeleniumHQ/selenium/branch/master)
 ========
 <a href="https://selenium.dev"><img src="https://selenium.dev/images/selenium_logo_square_green.png" width="180" alt="Selenium"/></a>
 
@@ -203,13 +203,13 @@ under that relative to the target name. Which is probably best
 described with an example.  For the target:
 
 ```sh
-./go //java/client/src/org/openqa/selenium:selenium-api
+./go //java/client/src/org/ax360/automationagent:selenium-api
 ```
 
 The output is found under:
 
 ```sh
-build/java/client/src/org/openqa/selenium/selenium-api.jar
+build/java/client/src/org/ax360/automationagent/selenium-api.jar
 ```
 
 If you watch the build, each step should print where its output is

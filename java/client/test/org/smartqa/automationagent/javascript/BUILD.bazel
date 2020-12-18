@@ -1,0 +1,18 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "javascript",
+    testonly = 1,
+    srcs = glob(["*.java"]),
+    visibility = ["//javascript:__subpackages__"],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/test/org/smartqa/automationagent/build",
+        "//java/client/test/org/smartqa/automationagent/environment",
+        "//java/client/test/org/smartqa/automationagent/testing:test-base",
+        "//java/client/test/org/smartqa/automationagent/testing/drivers",
+        artifact("com.google.guava:guava"),
+        artifact("junit:junit"),
+        artifact("org.assertj:assertj-core"),
+    ],
+)

@@ -16,8 +16,8 @@
 # under the License.
 
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.support.wait import WebDriverWait
 
 
 def testShouldImplementReprForWebDriver(driver):

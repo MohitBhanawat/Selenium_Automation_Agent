@@ -25,11 +25,11 @@ class DesiredCapabilities(object):
     Set of default supported desired capabilities.
 
     Use this as a starting point for creating a desired capabilities object for
-    requesting remote webdrivers for connecting to selenium server or selenium grid.
+    requesting remote webdrivers for connecting to automationAgent server or automationAgent grid.
 
     Usage Example::
 
-        from selenium import webdriver
+        from automationAgent import webdriver
 
         selenium_grid_url = "http://198.0.0.1:4444/wd/hub"
 

@@ -18,7 +18,7 @@
 
 import pytest
 
-from selenium.webdriver.common.timeouts import Timeouts
+from automationAgent.webdriver.common.timeouts import Timeouts
 
 
 def test_should_create_timeouts_object():

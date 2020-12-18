@@ -1,0 +1,19 @@
+java_library(
+    name = "remote",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent/grid:__subpackages__",
+        "//java/server/test/org/smartqa/automationagent/grid:__subpackages__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent/json",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        "//java/server/src/org/smartqa/automationagent/grid/config",
+        "//java/server/src/org/smartqa/automationagent/grid/data",
+        "//java/server/src/org/smartqa/automationagent/grid/log",
+        "//java/server/src/org/smartqa/automationagent/grid/server",
+        "//java/server/src/org/smartqa/automationagent/grid/sessionmap",
+        "//java/server/src/org/smartqa/automationagent/grid/sessionmap/config",
+        "//java/server/src/org/smartqa/automationagent/grid/web",
+    ],
+)

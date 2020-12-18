@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.common.exceptions import (ElementClickInterceptedException,
+from automationAgent.common.exceptions import (ElementClickInterceptedException,
                                         ElementNotInteractableException,
                                         ElementNotSelectableException,
                                         ElementNotVisibleException,
@@ -54,7 +54,7 @@ class ErrorCode(object):
     """
     Error codes defined in the WebDriver wire protocol.
     """
-    # Keep in sync with org.openqa.selenium.remote.ErrorCodes and errorcodes.h
+    # Keep in sync with org.smartqa.automationagent.remote.ErrorCodes and errorcodes.h
     SUCCESS = 0
     NO_SUCH_ELEMENT = [7, 'no such element']
     NO_SUCH_FRAME = [8, 'no such frame']

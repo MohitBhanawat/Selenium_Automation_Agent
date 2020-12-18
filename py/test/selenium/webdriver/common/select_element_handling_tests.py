@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.common.by import By
+from automationAgent.webdriver.common.by import By
 
 
 def testShouldBePossibleToDeselectASingleOptionFromASelectWhichAllowsMultipleChoice(driver, pages):

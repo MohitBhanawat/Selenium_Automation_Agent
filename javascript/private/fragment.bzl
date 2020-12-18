@@ -56,7 +56,7 @@ def closure_fragment(
     # navigator and document are defined on goog.global. Normally, this
     # would be window, but we are explicitly defining the fragment so that
     # goog.global is _not_ window.
-    #     See http://code.google.com/p/selenium/issues/detail?id=1333
+    #     See http://code.google.com/p/automationagent/issues/detail?id=1333
     wrapper = (
         "function(){" +
         "return (function(){%output%; return this._.apply(null,arguments);}).apply({" +

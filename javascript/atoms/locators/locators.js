@@ -48,7 +48,7 @@ bot.locators.strategy;
  *
  * Note that the versions with spaces are synonyms for those without spaces,
  * and are specified at:
- * https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol
+ * https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol
  * @private {Object.<string,bot.locators.strategy>}
  * @const
  */

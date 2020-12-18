@@ -17,7 +17,7 @@
 
 import pytest
 import urllib3
-from selenium import webdriver
+from automationAgent import webdriver
 
 
 def test_command_executor_ssl_certificate_is_verified():

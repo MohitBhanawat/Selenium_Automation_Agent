@@ -1,4 +1,4 @@
-selenium.webdriver.webkitgtk.service
+automationAgent.webdriver.webkitgtk.service
 ====================================
 
-.. automodule:: selenium.webdriver.webkitgtk.service
+.. automodule:: automationAgent.webdriver.webkitgtk.service

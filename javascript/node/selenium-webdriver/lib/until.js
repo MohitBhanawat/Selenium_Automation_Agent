@@ -110,7 +110,7 @@ exports.alertIsPresent = function alertIsPresent() {
       if (!(e instanceof error.NoSuchAlertError
         // XXX: Workaround for GeckoDriver error `TypeError: can't convert null
         // to object`. For more details, see
-        // https://github.com/SeleniumHQ/selenium/pull/2137
+        // https://github.com/SeleniumHQ/automationagent/pull/2137
         || (e instanceof error.WebDriverError
           && e.message === `can't convert null to object`)
         )) {

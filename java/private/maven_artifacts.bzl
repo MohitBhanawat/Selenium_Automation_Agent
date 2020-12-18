@@ -91,20 +91,20 @@ maven_artifacts = rule(
             ],
         ),
         "_javadoc": attr.label(
-            default = "//java/client/src/org/openqa/selenium/tools/javadoc",
+            default = "//java/client/src/org/smartqa/automationagent/tools/javadoc",
             cfg = "host",
             executable = True,
         ),
         "_singlejar": attr.label(
             executable = True,
             cfg = "host",
-            default = "//java/client/src/org/openqa/selenium/tools/jar:MergeJars",
+            default = "//java/client/src/org/smartqa/automationagent/tools/jar:MergeJars",
             allow_files = True,
         ),
         "_uploader": attr.label(
             executable = True,
             cfg = "host",
-            default = "//java/client/src/org/openqa/selenium/tools/maven:MavenPublisher",
+            default = "//java/client/src/org/smartqa/automationagent/tools/maven:MavenPublisher",
             allow_files = True,
         ),
     },

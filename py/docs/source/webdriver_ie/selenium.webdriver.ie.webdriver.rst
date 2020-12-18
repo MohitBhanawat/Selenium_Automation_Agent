@@ -1,4 +1,4 @@
-selenium.webdriver.ie.webdriver
+automationAgent.webdriver.ie.webdriver
 ===============================
 
-.. automodule:: selenium.webdriver.ie.webdriver
+.. automodule:: automationAgent.webdriver.ie.webdriver

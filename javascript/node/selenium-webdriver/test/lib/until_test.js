@@ -162,7 +162,7 @@ describe('until', function() {
     });
 
     // TODO: Remove once GeckoDriver doesn't throw this unwanted error.
-    // See https://github.com/SeleniumHQ/selenium/pull/2137
+    // See https://github.com/SeleniumHQ/automationagent/pull/2137
     describe('workaround for GeckoDriver', function() {
       it('doesNotFailWhenCannotConvertNullToObject', function() {
         var count = 0;

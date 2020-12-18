@@ -15,8 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.relative_locator import with_tag_name
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.support.relative_locator import with_tag_name
 
 
 def test_should_be_able_to_find_elements_above_another(driver, pages):

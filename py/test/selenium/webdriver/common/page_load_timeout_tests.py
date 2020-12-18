@@ -17,8 +17,8 @@
 
 import pytest
 
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.by import By
+from automationAgent.common.exceptions import TimeoutException
+from automationAgent.webdriver.common.by import By
 
 
 @pytest.fixture(autouse=True)

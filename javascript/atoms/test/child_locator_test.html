@@ -29,14 +29,14 @@
       assertEquals('Child 3', goog.dom.getTextContent(children[2]));
     }
 
-    /** @bug http://code.google.com/p/selenium/issues/detail?id=1918 */
+    /** @bug http://code.google.com/p/automationagent/issues/detail?id=1918 */
     function testFindSingleByClassName_targetClassHasDots() {
       var parent = bot.locators.findElement({id: 'parent'});
       var found = bot.locators.findElement({className: 'name.with.dots'}, parent);
       assertEquals(goog.dom.$('dotted_1'), found);
     }
 
-    /** @bug http://code.google.com/p/selenium/issues/detail?id=1918 */
+    /** @bug http://code.google.com/p/automationagent/issues/detail?id=1918 */
     function testFindManyByClassName_targetClassHasDot() {
       var parent = bot.locators.findElement({id: 'parent'});
       var found = bot.locators.findElements({className: 'name.with.dots'}, parent);

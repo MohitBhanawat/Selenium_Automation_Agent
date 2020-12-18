@@ -17,10 +17,10 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require 'selenium/webdriver/support/event_firing_bridge'
-require 'selenium/webdriver/support/abstract_event_listener'
-require 'selenium/webdriver/support/block_event_listener'
-require 'selenium/webdriver/support/escaper'
-require 'selenium/webdriver/support/select'
-require 'selenium/webdriver/support/color'
-require 'selenium/webdriver/support/relative_locator'
+require 'automationAgent/webdriver/support/event_firing_bridge'
+require 'automationAgent/webdriver/support/abstract_event_listener'
+require 'automationAgent/webdriver/support/block_event_listener'
+require 'automationAgent/webdriver/support/escaper'
+require 'automationAgent/webdriver/support/select'
+require 'automationAgent/webdriver/support/color'
+require 'automationAgent/webdriver/support/relative_locator'

@@ -1,0 +1,14 @@
+java_library(
+    name = "events",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/server/src/org/smartqa/automationagent/events:__subpackages__",
+        "//java/server/src/org/smartqa/automationagent/grid:__subpackages__",
+        "//java/server/test/org/smartqa/automationagent/grid:__subpackages__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/json",
+        "//java/server/src/org/smartqa/automationagent/status",
+    ],
+)

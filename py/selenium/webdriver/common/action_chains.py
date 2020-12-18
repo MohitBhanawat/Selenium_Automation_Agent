@@ -21,7 +21,7 @@ The ActionChains implementation,
 
 import time
 
-from selenium.webdriver.remote.command import Command
+from automationAgent.webdriver.remote.command import Command
 
 from .utils import keys_to_typing
 from .actions.action_builder import ActionBuilder

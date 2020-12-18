@@ -22,7 +22,7 @@ def testSearch(driver):
     """This example shows how to use the page object pattern.
 
     For more information about this pattern, see:
-    https://github.com/SeleniumHQ/selenium/wiki/PageObjects"""
+    https://github.com/SeleniumHQ/automationagent/wiki/PageObjects"""
     google = GoogleOneBox(driver, "http://www.google.com")
     res = google.search_for("cheese")
     assert res.link_contains_match_for("Wikipedia")

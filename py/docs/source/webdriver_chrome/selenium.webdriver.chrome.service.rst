@@ -1,4 +1,4 @@
-selenium.webdriver.chrome.service
+automationAgent.webdriver.chrome.service
 =================================
 
-.. automodule:: selenium.webdriver.chrome.service
+.. automodule:: automationAgent.webdriver.chrome.service

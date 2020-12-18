@@ -17,7 +17,7 @@
 
 import pytest
 
-from selenium.webdriver.wpewebkit.options import Options
+from automationAgent.webdriver.wpewebkit.options import Options
 
 
 @pytest.fixture
@@ -46,6 +46,6 @@ def test_creates_capabilities(options):
 
 
 def test_is_a_baseoptions(options):
-    from selenium.webdriver.common.options import BaseOptions
+    from automationAgent.webdriver.common.options import BaseOptions
     assert isinstance(options, BaseOptions)
 

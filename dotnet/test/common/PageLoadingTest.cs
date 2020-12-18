@@ -304,7 +304,7 @@ namespace OpenQA.Selenium
         }
 
         /// <summary>
-        /// see <a href="http://code.google.com/p/selenium/issues/detail?id=208">Issue 208</a>
+        /// see <a href="http://code.google.com/p/automationagent/issues/detail?id=208">Issue 208</a>
         /// </summary>
         [Test]
         [IgnoreBrowser(Browser.IE, "Browser does, in fact, hang in this case.")]

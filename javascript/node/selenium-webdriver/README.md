@@ -1,4 +1,4 @@
-# selenium-webdriver
+# automationAgent-webdriver
 
 Selenium is a browser automation library. Most often used for testing
 web-applications, Selenium may be used for any task that requires automating
@@ -8,7 +8,7 @@ interaction with the browser.
 
 Selenium may be installed via npm with
 
-    npm install selenium-webdriver
+    npm install automationAgent-webdriver
 
 You will need to download additional components to work with each of the major
 browsers. The drivers for Chrome, Firefox, and Microsoft's IE and Edge web
@@ -30,10 +30,10 @@ Safari 10 before testing.
 ## Usage
 
 The sample below and others are included in the `example` directory. You may
-also find the tests for selenium-webdriver informative.
+also find the tests for automationAgent-webdriver informative.
 
 ```javascript
-const {Builder, By, Key, until} = require('selenium-webdriver');
+const {Builder, By, Key, until} = require('automationAgent-webdriver');
 
 (async function example() {
   let driver = await new Builder().forBrowser('firefox').build();
@@ -55,9 +55,9 @@ the builder lets you set all options in one flow. When you call
 `Builder#build()`, all options irrelevant to the selected browser are dropped:
 
 ```javascript
-const webdriver = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
-const firefox = require('selenium-webdriver/firefox');
+const webdriver = require('automationAgent-webdriver');
+const chrome = require('automationAgent-webdriver/chrome');
+const firefox = require('automationAgent-webdriver/firefox');
 
 let driver = new webdriver.Builder()
     .forBrowser('firefox')
@@ -73,7 +73,7 @@ example, the `example/google_search.js` script is configured to run against
 Firefox. You can run the example against other browsers just by changing the
 runtime environment
 
-    # cd node_modules/selenium-webdriver
+    # cd node_modules/automationAgent-webdriver
     node example/google_search
     SELENIUM_BROWSER=chrome node example/google_search
     SELENIUM_BROWSER=safari node example/google_search
@@ -92,7 +92,7 @@ To use the Selenium Server, you will need to install the
 download the latest server from [Selenium][release]. Once downloaded, run the
 server with
 
-    java -jar selenium-server-standalone-2.45.0.jar
+    java -jar automationAgent-server-standalone-2.45.0.jar
 
 You may configure your tests to run against a remote server through the Builder
 API:
@@ -109,16 +109,16 @@ environment variable:
     SELENIUM_REMOTE_URL="http://localhost:4444/wd/hub" node script.js
 
 You can experiment with these options using the `example/google_search.js`
-script provided with `selenium-webdriver`.
+script provided with `automationAgent-webdriver`.
 
 ## Documentation
 
 API documentation is available online from the [Selenium project][api].
 Additional resources include
 
-- the #selenium channel on freenode IRC
-- the [selenium-users@googlegroups.com][users] list
-- [SeleniumHQ](https://selenium.dev/documentation/) documentation
+- the #automationAgent channel on freenode IRC
+- the [automationAgent-users@googlegroups.com][users] list
+- [SeleniumHQ](https://automationAgent.dev/documentation/) documentation
 
 ## Contributing
 
@@ -127,7 +127,7 @@ via the [Selenium issue tracker][issues].
 
 ## Node Support Policy
 
-Each version of selenium-webdriver will support the latest _semver-minor_
+Each version of automationAgent-webdriver will support the latest _semver-minor_
 version of the [LTS] and stable Node releases. All _semver-major_ &
 _semver-minor_ versions between the LTS and stable release will have "best
 effort" support. Following a Selenium release, any _semver-minor_ Node releases
@@ -149,7 +149,7 @@ respectively. Then a Selenium release would have the following support levels:
 
 ### Support Level Definitions
 
-- _supported:_ A selenium-webdriver release will be API compatible with the
+- _supported:_ A automationAgent-webdriver release will be API compatible with the
     platform API, without the use of runtime flags.
 
 - _best effort:_ Bugs will be investigated as time permits. API compatibility is
@@ -163,7 +163,7 @@ respectively. Then a Selenium release would have the following support levels:
 ### Projected Support Schedule
 
 If Node releases a new [LTS] each October and a new major version every 6
-months, the support window for selenium-webdriver will be roughly:
+months, the support window for automationAgent-webdriver will be roughly:
 
 | Date      | LTS  | Stable |
 | --------- | ---: | -----: |
@@ -187,7 +187,7 @@ the issue tracker
     look into. Expect your bug report to be closed if you do not provide enough
     information for us to investigate.
 - __Do not__ use the issue tracker to submit basic help requests. All help
-    inquiries should be directed to the [user forum][users] or #selenium IRC
+    inquiries should be directed to the [user forum][users] or #automationAgent IRC
     channel.
 - __Do not__ post empty "I see this too" or "Any updates?" comments. These
     provide no additional information and clutter the log.
@@ -216,14 +216,14 @@ under the License.
 
 [LTS]: https://github.com/nodejs/LTS
 [PATH]: http://en.wikipedia.org/wiki/PATH_%28variable%29
-[api]: http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/
+[api]: http://seleniumhq.github.io/automationagent/docs/api/javascript/module/automationAgent-webdriver/
 [chrome]: http://chromedriver.storage.googleapis.com/index.html
-[gh]: https://github.com/SeleniumHQ/selenium/
-[issues]: https://github.com/SeleniumHQ/selenium/issues
+[gh]: https://github.com/SeleniumHQ/automationagent/
+[issues]: https://github.com/SeleniumHQ/automationagent/issues
 [edge]: http://go.microsoft.com/fwlink/?LinkId=619687
 [geckodriver]: https://github.com/mozilla/geckodriver/releases/
 [reduction]: http://www.webkit.org/quality/reduction.html
-[release]: http://selenium-release.storage.googleapis.com/index.html
-[users]: https://groups.google.com/forum/#!forum/selenium-users
+[release]: http://automationAgent-release.storage.googleapis.com/index.html
+[users]: https://groups.google.com/forum/#!forum/automationAgent-users
 [safaridriver]: https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_28
 [operadriver]: https://github.com/operasoftware/operachromiumdriver/releases

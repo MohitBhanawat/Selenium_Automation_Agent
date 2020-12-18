@@ -18,7 +18,7 @@
 # under the License.
 
 require 'pathname'
-require 'selenium/server'
+require 'automationAgent/server'
 require_relative 'spec_support/test_environment'
 require_relative 'spec_support/guards'
 require_relative 'spec_support/guards/guard'

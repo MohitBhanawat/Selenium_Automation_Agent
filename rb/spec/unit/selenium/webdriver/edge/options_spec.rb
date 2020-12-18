@@ -41,12 +41,12 @@ module Selenium
                                set_window_rect: false,
                                in_private: true,
                                extension_paths: ['/path1', '/path2'],
-                               start_page: 'http://selenium.dev',
+                               start_page: 'http://automationAgent.dev',
                                'custom:options': {foo: 'bar'})
 
             expect(opts.in_private).to eq(true)
             expect(opts.extension_paths).to eq(['/path1', '/path2'])
-            expect(opts.start_page).to eq('http://selenium.dev')
+            expect(opts.start_page).to eq('http://automationAgent.dev')
             expect(opts.browser_name).to eq('MicrosoftEdge')
             expect(opts.browser_version).to eq('18')
             expect(opts.platform_name).to eq('win10')
@@ -96,7 +96,7 @@ module Selenium
                                set_window_rect: false,
                                in_private: true,
                                extension_paths: ['/path1', '/path2'],
-                               start_page: 'http://selenium.dev')
+                               start_page: 'http://automationAgent.dev')
 
             expect(opts.as_json).to eq('browserName' => 'MicrosoftEdge',
                                        'browserVersion' => '18',
@@ -111,7 +111,7 @@ module Selenium
                                        'setWindowRect' => false,
                                        'ms:inPrivate' => true,
                                        'ms:extensionPaths' => ['/path1', '/path2'],
-                                       'ms:startPage' => 'http://selenium.dev')
+                                       'ms:startPage' => 'http://automationAgent.dev')
           end
         end
       end # Options

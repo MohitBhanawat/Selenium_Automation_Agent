@@ -5,7 +5,7 @@ package_group(
     name = "webdriver_backed_selenium_implementations",
     packages = [
         "//dotnet/src/webdriverbackedselenium",
-        "//java/client/src/com/thoughtworks/selenium/webdriven",
+        "//java/client/src/com/smartqa/automationagent/webdriven",
     ],
 )
 
@@ -40,7 +40,7 @@ closure_js_library(
 )
 
 closure_js_binary(
-    name = "selenium-atoms",
+    name = "automationAgent-atoms",
     defs = [
         "--define=goog.NATIVE_ARRAY_PROTOTYPES=false",
     ],

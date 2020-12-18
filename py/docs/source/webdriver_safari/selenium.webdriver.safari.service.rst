@@ -1,4 +1,4 @@
-selenium.webdriver.safari.service
+automationAgent.webdriver.safari.service
 =================================
 
-.. automodule:: selenium.webdriver.safari.service
+.. automodule:: automationAgent.webdriver.safari.service

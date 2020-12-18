@@ -218,7 +218,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'selenium', 'Selenium Documentation',
+    ('index', 'automationAgent', 'Selenium Documentation',
      ['plightbo, simon.m.stewart, hbchai, jrhuggins, et al.'], 1)
 ]
 

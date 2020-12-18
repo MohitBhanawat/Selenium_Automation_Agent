@@ -17,7 +17,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require 'selenium/webdriver/common/platform'
+require 'automationAgent/webdriver/common/platform'
 require 'socket'
 
 module Selenium

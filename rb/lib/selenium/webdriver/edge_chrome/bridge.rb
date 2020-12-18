@@ -17,7 +17,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require 'selenium/webdriver/chrome/bridge'
+require 'automationAgent/webdriver/chrome/bridge'
 
 module Selenium
   module WebDriver

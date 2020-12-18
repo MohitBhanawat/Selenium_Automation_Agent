@@ -430,7 +430,7 @@ const CLIENTS =
  * [W3C wire protocol][w3c] if the remote end returns a compliant response to
  * a new session command.
  *
- * [json]: https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol
+ * [json]: https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol
  * [w3c]: https://w3c.github.io/webdriver/webdriver-spec.html
  *
  * @implements {cmd.Executor}

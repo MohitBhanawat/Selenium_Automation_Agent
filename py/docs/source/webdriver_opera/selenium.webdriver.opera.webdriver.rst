@@ -1,4 +1,4 @@
-selenium.webdriver.opera.webdriver
+automationAgent.webdriver.opera.webdriver
 ==================================
 
-.. automodule:: selenium.webdriver.opera.webdriver
+.. automodule:: automationAgent.webdriver.opera.webdriver

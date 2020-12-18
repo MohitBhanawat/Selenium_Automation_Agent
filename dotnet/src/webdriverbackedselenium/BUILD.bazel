@@ -33,8 +33,8 @@ generated_assembly_info(
     ]) + [":assembly-info"],
     out = "Selenium.WebDriverBackedSelenium",
     resources = [
-        "//java/client/src/com/thoughtworks/selenium/webdriven:htmlutils.js",
-        "//java/client/src/com/thoughtworks/selenium/webdriven:injectableSelenium.js",
+        "//java/client/src/com/smartqa/automationagent/webdriven:htmlutils.js",
+        "//java/client/src/com/smartqa/automationagent/webdriven:injectableSelenium.js",
         "//javascript/selenium-atoms:findElement.js",
         "//javascript/selenium-atoms:findOption.js",
         "//javascript/selenium-atoms:fireEvent.js",
@@ -73,8 +73,8 @@ generated_assembly_info(
     ]) + [":assembly-info"],
     out = "Selenium.WebDriverBackedSelenium",
     resources = [
-        "//java/client/src/com/thoughtworks/selenium/webdriven:htmlutils.js",
-        "//java/client/src/com/thoughtworks/selenium/webdriven:injectableSelenium.js",
+        "//java/client/src/com/smartqa/automationagent/webdriven:htmlutils.js",
+        "//java/client/src/com/smartqa/automationagent/webdriven:injectableSelenium.js",
         "//javascript/selenium-atoms:findElement.js",
         "//javascript/selenium-atoms:findOption.js",
         "//javascript/selenium-atoms:fireEvent.js",
@@ -105,8 +105,8 @@ generated_assembly_info(
     out = "strongnamed/Selenium.WebDriverBackedSelenium",
     keyfile = "//dotnet:WebDriver.snk",
     resources = [
-        "//java/client/src/com/thoughtworks/selenium/webdriven:htmlutils.js",
-        "//java/client/src/com/thoughtworks/selenium/webdriven:injectableSelenium.js",
+        "//java/client/src/com/smartqa/automationagent/webdriven:htmlutils.js",
+        "//java/client/src/com/smartqa/automationagent/webdriven:injectableSelenium.js",
         "//javascript/selenium-atoms:findElement.js",
         "//javascript/selenium-atoms:findOption.js",
         "//javascript/selenium-atoms:fireEvent.js",
@@ -146,8 +146,8 @@ generated_assembly_info(
     out = "strongnamed/Selenium.WebDriverBackedSelenium",
     keyfile = "//dotnet:WebDriver.snk",
     resources = [
-        "//java/client/src/com/thoughtworks/selenium/webdriven:htmlutils.js",
-        "//java/client/src/com/thoughtworks/selenium/webdriven:injectableSelenium.js",
+        "//java/client/src/com/smartqa/automationagent/webdriven:htmlutils.js",
+        "//java/client/src/com/smartqa/automationagent/webdriven:injectableSelenium.js",
         "//javascript/selenium-atoms:findElement.js",
         "//javascript/selenium-atoms:findOption.js",
         "//javascript/selenium-atoms:fireEvent.js",

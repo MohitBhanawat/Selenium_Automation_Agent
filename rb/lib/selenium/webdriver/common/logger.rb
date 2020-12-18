@@ -27,7 +27,7 @@ module Selenium
     #   Selenium::WebDriver.logger.level = :debug
     #
     # @example Log to file
-    #   Selenium::WebDriver.logger.output = 'selenium.log'
+    #   Selenium::WebDriver.logger.output = 'automationAgent.log'
     #
     # @example Use logger manually
     #   Selenium::WebDriver.logger.info('This is info message')

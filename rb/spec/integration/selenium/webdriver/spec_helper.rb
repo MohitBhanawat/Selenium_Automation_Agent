@@ -21,7 +21,7 @@ require 'rubygems'
 require 'time'
 require 'rspec'
 
-require 'selenium-webdriver'
+require 'automationAgent-webdriver'
 require_relative 'spec_support'
 require_relative '../../../rspec_matchers'
 

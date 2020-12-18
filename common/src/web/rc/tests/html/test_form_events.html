@@ -29,7 +29,7 @@ function recordEvent(e) {
     if (!e) e = window.event; // Handle IE
     var eventMessage;
     if (!e) {
-    	eventMessage = "{ No window.event is defined, which is expected that if this is a selenium-generated mouse event created by createEventObject under IE }";
+    	eventMessage = "{ No window.event is defined, which is expected that if this is a automationAgent-generated mouse event created by createEventObject under IE }";
     }
     else {
     	eventMessage = '{' + e.type + '(' + this.id;

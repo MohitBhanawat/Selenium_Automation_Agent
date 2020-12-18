@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver import Firefox
+from automationAgent.webdriver import Firefox
 
 
 def test_launch_and_close_browser(driver):

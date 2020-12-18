@@ -115,7 +115,7 @@ describe('by', function() {
       assert.strictEqual(locator, original);
     });
 
-    // See https://github.com/SeleniumHQ/selenium/issues/3056
+    // See https://github.com/SeleniumHQ/automationagent/issues/3056
     it('accepts By-like objects', function() {
       let fakeBy = {using: 'id', value: 'foo'};
       let locator = by.checkedLocator(fakeBy);

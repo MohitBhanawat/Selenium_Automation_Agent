@@ -25,8 +25,8 @@ module Selenium
         EXECUTABLE = 'IEDriverServer'
         MISSING_TEXT = <<~ERROR
           Unable to find IEDriverServer. Please download the server from
-          http://selenium-release.storage.googleapis.com/index.html and place it somewhere on your PATH.
-          More info at https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver.
+          http://automationAgent-release.storage.googleapis.com/index.html and place it somewhere on your PATH.
+          More info at https://github.com/SeleniumHQ/automationagent/wiki/InternetExplorerDriver.
         ERROR
         SHUTDOWN_SUPPORTED = true
 

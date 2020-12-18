@@ -24,11 +24,11 @@ class Command(object):
     used to marshal commands through a service that implements WebDriver's
     remote wire protocol:
 
-        https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol
+        https://github.com/SeleniumHQ/automationagent/wiki/JsonWireProtocol
 
     """
 
-    # Keep in sync with org.openqa.selenium.remote.DriverCommand
+    # Keep in sync with org.smartqa.automationagent.remote.DriverCommand
 
     STATUS = "status"
     NEW_SESSION = "newSession"

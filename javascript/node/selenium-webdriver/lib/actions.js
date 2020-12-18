@@ -212,7 +212,7 @@ class LegacyActionSequence {
    *     sequence.mouseMove(element).mouseDown()
    *
    * Warning: this method currently only supports the left mouse button. See
-   * [issue 4047](http://code.google.com/p/selenium/issues/detail?id=4047).
+   * [issue 4047](http://code.google.com/p/automationagent/issues/detail?id=4047).
    *
    * @param {(./webdriver.WebElement|input.Button)=} opt_elementOrButton Either
    *     the element to interact with or the button to click with.
@@ -238,7 +238,7 @@ class LegacyActionSequence {
    *     sequence.mouseMove(element).mouseUp()
    *
    * Warning: this method currently only supports the left mouse button. See
-   * [issue 4047](http://code.google.com/p/selenium/issues/detail?id=4047).
+   * [issue 4047](http://code.google.com/p/automationagent/issues/detail?id=4047).
    *
    * @param {(./webdriver.WebElement|input.Button)=} opt_elementOrButton Either
    *     the element to interact with or the button to click with.
@@ -300,7 +300,7 @@ class LegacyActionSequence {
    *     sequence.mouseMove(element).doubleClick()
    *
    * Warning: this method currently only supports the left mouse button. See
-   * [issue 4047](http://code.google.com/p/selenium/issues/detail?id=4047).
+   * [issue 4047](http://code.google.com/p/automationagent/issues/detail?id=4047).
    *
    * @param {(./webdriver.WebElement|input.Button)=} opt_elementOrButton Either
    *     the element to interact with or the button to click with.

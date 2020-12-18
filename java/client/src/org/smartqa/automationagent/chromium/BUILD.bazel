@@ -1,0 +1,23 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+load("//java:defs.bzl", "java_export")
+load("//java:version.bzl", "SE_VERSION")
+
+java_export(
+    name = "chromium",
+    srcs = glob(["*.java"]),
+    maven_coordinates = "org.seleniumhq.automationAgent:automationAgent-chromium-driver:%s" % SE_VERSION,
+    pom_template = "//java/client/src/org/smartqa/automationagent:template-pom",
+    visibility = [
+        "//visibility:public",
+    ],
+    exports = [
+        "//java/client/src/org/smartqa/automationagent/devtools",
+    ],
+    deps = [
+        "//java:auto-service",
+        "//java/client/src/org/smartqa/automationagent/devtools",
+        "//java/client/src/org/smartqa/automationagent/json",
+        "//java/client/src/org/smartqa/automationagent/remote",
+        artifact("com.google.guava:guava"),
+    ],
+)

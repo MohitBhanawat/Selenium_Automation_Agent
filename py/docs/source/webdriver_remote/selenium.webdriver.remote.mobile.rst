@@ -1,4 +1,4 @@
-selenium.webdriver.remote.mobile
+automationAgent.webdriver.remote.mobile
 ================================
 
-.. automodule:: selenium.webdriver.remote.mobile
+.. automodule:: automationAgent.webdriver.remote.mobile

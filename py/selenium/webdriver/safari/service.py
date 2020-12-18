@@ -16,7 +16,7 @@
 # under the License.
 
 import os
-from selenium.webdriver.common import service, utils
+from automationAgent.webdriver.common import service, utils
 from subprocess import PIPE
 
 

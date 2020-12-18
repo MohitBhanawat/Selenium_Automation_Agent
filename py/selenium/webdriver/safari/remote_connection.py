@@ -15,8 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.remote.remote_connection import RemoteConnection
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from automationAgent.webdriver.remote.remote_connection import RemoteConnection
+from automationAgent.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 class SafariRemoteConnection(RemoteConnection):

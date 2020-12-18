@@ -17,8 +17,8 @@
 
 import pytest
 
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import (
+from automationAgent.webdriver.common.by import By
+from automationAgent.common.exceptions import (
     InvalidSelectorException,
     NoSuchElementException)
 

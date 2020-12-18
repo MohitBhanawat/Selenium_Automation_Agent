@@ -1,5 +1,5 @@
 <component name="CopyrightManager">
-  <settings default="Selenium">
+  <settings default="SmartQA_AutomationAgent">
     <LanguageOptions name="JAVA">
       <option name="fileTypeOverride" value="3" />
       <option name="block" value="false" />

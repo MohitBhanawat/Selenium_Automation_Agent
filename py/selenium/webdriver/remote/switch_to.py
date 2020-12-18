@@ -16,9 +16,9 @@
 # under the License.
 
 from .command import Command
-from selenium.webdriver.common.alert import Alert
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException, NoSuchFrameException, NoSuchWindowException
+from automationAgent.webdriver.common.alert import Alert
+from automationAgent.webdriver.common.by import By
+from automationAgent.common.exceptions import NoSuchElementException, NoSuchFrameException, NoSuchWindowException
 
 try:
     basestring

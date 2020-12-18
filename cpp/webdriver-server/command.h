@@ -15,7 +15,7 @@
 // limitations under the License.
 
 // Defines a command for use in the JSON Wire Protocol. The protocol is
-// defined at http://code.google.com/p/selenium/wiki/JsonWireProtocol.
+// defined at http://code.google.com/p/automationagent/wiki/JsonWireProtocol.
 
 #ifndef WEBDRIVER_SERVER_COMMAND_H_
 #define WEBDRIVER_SERVER_COMMAND_H_

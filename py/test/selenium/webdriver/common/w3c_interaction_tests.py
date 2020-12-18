@@ -17,10 +17,10 @@
 
 import pytest
 
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.actions.action_builder import ActionBuilder
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
+from automationAgent.webdriver.common.keys import Keys
+from automationAgent.webdriver.common.actions.action_builder import ActionBuilder
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.support.ui import WebDriverWait
 
 
 def test_should_be_able_to_get_pointer_and_keyboard_inputs(driver, pages):
@@ -111,7 +111,7 @@ def test_move_and_click(driver, pages):
 
 @pytest.mark.xfail_firefox
 def testDragAndDrop(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     element_available_timeout = 15
     wait = WebDriverWait(driver, element_available_timeout)
     pages.load("droppableItems.html")
@@ -153,7 +153,7 @@ def test_context_click(driver, pages):
 @pytest.mark.xfail_safari
 @pytest.mark.xfail_remote(reason="Fails on Travis")
 def test_double_click(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     pages.load("javascriptPage.html")
     toDoubleClick = driver.find_element(By.ID, "doubleClickField")
 
@@ -181,7 +181,7 @@ def test_dragging_element_with_mouse_fires_events(driver, pages):
 
 
 def _performDragAndDropWithMouse(driver, pages):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     pages.load("draggableLists.html")
     dragReporter = driver.find_element(By.ID, "dragging_reports")
     toDrag = driver.find_element(By.ID, "rightitem-3")
@@ -201,7 +201,7 @@ def _performDragAndDropWithMouse(driver, pages):
 
 
 def _isElementAvailable(driver, id):
-    """Copied from org.openqa.selenium.interactions.TestBasicMouseInterface."""
+    """Copied from org.smartqa.automationagent.interactions.TestBasicMouseInterface."""
     try:
         driver.find_element(By.ID, id)
         return True

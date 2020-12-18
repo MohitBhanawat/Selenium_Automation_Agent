@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.common import service
+from automationAgent.webdriver.common import service
 
 
 class ChromiumService(service.Service):

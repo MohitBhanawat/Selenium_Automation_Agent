@@ -967,7 +967,7 @@ Firefox:
 
 * Firefox: Native events support for Firefox 26.
 * Add deprecation warning to the Android driver.
-* Make sure selenium/client doesn't require Rake (#6709)
+* Make sure automationAgent/client doesn't require Rake (#6709)
 
 2.38.0 (2013-12-05)
 ===================
@@ -980,7 +980,7 @@ Firefox:
 2.37.0 (2013-10-18)
 ===================
 
-* As of this version, selenium-webdriver no longer supports Ruby < 1.9.2
+* As of this version, automationAgent-webdriver no longer supports Ruby < 1.9.2
 * Depend on rubyzip ~> 1.0.0
 * Added SOCKS proxy support
 * Fixed support for SVG documents in the atoms.
@@ -1077,7 +1077,7 @@ Opera:
   * Treat UNSPECIFIED proxy type as a nil proxy (#5081).
 Other:
   * Add ability to pass :desired_capabilities to all the Ruby drivers, not just for :remote.
-    Direct arguments take presendence. (#5078, see also https://github.com/SeleniumHQ/selenium/pull/8, https://github.com/SeleniumHQ/selenium/pull/11)
+    Direct arguments take presendence. (#5078, see also https://github.com/SeleniumHQ/automationagent/pull/8, https://github.com/SeleniumHQ/automationagent/pull/11)
 
 2.30.0 (2013-02-20)
 ===================
@@ -1228,7 +1228,7 @@ IE:
 
 * Add Selenium::WebDriver::Window#maximize (#3489)
 * Safari:
-  * New driver! See https://github.com/SeleniumHQ/selenium/wiki/SafariDriver.
+  * New driver! See https://github.com/SeleniumHQ/automationagent/wiki/SafariDriver.
 * Firefox:
   * Significant stability improvements.
   * Native events support for Firefox 11
@@ -1574,7 +1574,7 @@ IE:
 0.2.0 (2011-04-22)
 ==================
 
-* Update Ruby bindings to use the rewritten Chrome driver (see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver).
+* Update Ruby bindings to use the rewritten Chrome driver (see https://github.com/SeleniumHQ/automationagent/wiki/ChromeDriver).
 * Add deprecation warning for WebDriver::Element#value (use Element#attribute("value") instead).
 * Change the default timeout for Wait instances to 5 seconds.
 * Fix bug where locators would fail if Object.prototype had been modified.
@@ -1630,7 +1630,7 @@ IE:
 0.1.2 (2010-12-22)
 ==================
 
-* Changed frame switching behaviour (http://groups.google.com/group/selenium-developers/browse_thread/thread/8dc7938c35bb3968)
+* Changed frame switching behaviour (http://groups.google.com/group/automationAgent-developers/browse_thread/thread/8dc7938c35bb3968)
 * IE driver rewrite landed.
 * Initial support for alerts/prompts (in Firefox).
 * Cygwin support.
@@ -1649,11 +1649,11 @@ IE:
 0.1.0 (2010-11-11)
 ===================
 
-* selenium-client code (Se1/RC client) is now included in the gem (require "selenium/client").
+* automationAgent-client code (Se1/RC client) is now included in the gem (require "automationAgent/client").
 * Add Selenium::WebDriver::Proxy, used to configure proxies for Firefox::Profile and the remote driver.
 * Tweaked Firefox profile preferences, improve logging, disabled crash reporter.
 * Reap Firefox profiles on close, not just on exit.
-* Add selenium/rake/server_task and selenium/server which wraps the Selenium server jar.
+* Add automationAgent/rake/server_task and automationAgent/server which wraps the Selenium server jar.
 * Various Firefox driver improvements (GC race conditions ++).
 * IE::Bridge#initialize now takes an options hash like the other bridges.
 * Added basic iPhone and Android driver classes.

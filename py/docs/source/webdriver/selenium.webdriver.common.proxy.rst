@@ -1,4 +1,4 @@
-selenium.webdriver.common.proxy
+automationAgent.webdriver.common.proxy
 ===============================
 
-.. automodule:: selenium.webdriver.common.proxy
+.. automodule:: automationAgent.webdriver.common.proxy

@@ -19,8 +19,8 @@
 The Alert implementation.
 """
 
-from selenium.webdriver.common.utils import keys_to_typing
-from selenium.webdriver.remote.command import Command
+from automationAgent.webdriver.common.utils import keys_to_typing
+from automationAgent.webdriver.remote.command import Command
 
 
 class Alert(object):

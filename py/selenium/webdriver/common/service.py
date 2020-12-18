@@ -21,8 +21,8 @@ import platform
 import subprocess
 from subprocess import PIPE
 import time
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common import utils
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.common import utils
 
 try:
     from subprocess import DEVNULL

@@ -7,143 +7,143 @@ Selenium Documentation
 Common
 ------
 
-.. currentmodule:: selenium.common
+.. currentmodule:: automationAgent.common
 .. autosummary::
    :toctree: common
 
-   selenium.common.exceptions
+   automationAgent.common.exceptions
 
 Webdriver.common
 ----------------
 
-.. currentmodule:: selenium.webdriver.common
+.. currentmodule:: automationAgent.webdriver.common
 .. autosummary::
    :toctree: webdriver
 
-   selenium.webdriver.common.action_chains
-   selenium.webdriver.common.alert
-   selenium.webdriver.common.by
-   selenium.webdriver.common.desired_capabilities
-   selenium.webdriver.common.keys
-   selenium.webdriver.common.touch_actions
-   selenium.webdriver.common.utils
-   selenium.webdriver.common.proxy
-   selenium.webdriver.common.service
-   selenium.webdriver.common.html5.application_cache
+   automationAgent.webdriver.common.action_chains
+   automationAgent.webdriver.common.alert
+   automationAgent.webdriver.common.by
+   automationAgent.webdriver.common.desired_capabilities
+   automationAgent.webdriver.common.keys
+   automationAgent.webdriver.common.touch_actions
+   automationAgent.webdriver.common.utils
+   automationAgent.webdriver.common.proxy
+   automationAgent.webdriver.common.service
+   automationAgent.webdriver.common.html5.application_cache
 
 Webdriver.support
 -----------------
 
-.. currentmodule:: selenium.webdriver.support
+.. currentmodule:: automationAgent.webdriver.support
 .. autosummary::
    :toctree: webdriver_support
 
-   selenium.webdriver.support.abstract_event_listener
-   selenium.webdriver.support.color
-   selenium.webdriver.support.event_firing_webdriver
-   selenium.webdriver.support.expected_conditions
-   selenium.webdriver.support.select
-   selenium.webdriver.support.wait
+   automationAgent.webdriver.support.abstract_event_listener
+   automationAgent.webdriver.support.color
+   automationAgent.webdriver.support.event_firing_webdriver
+   automationAgent.webdriver.support.expected_conditions
+   automationAgent.webdriver.support.select
+   automationAgent.webdriver.support.wait
 
 Webdriver.chrome
 ----------------
 
-.. currentmodule:: selenium.webdriver.chrome
+.. currentmodule:: automationAgent.webdriver.chrome
 .. autosummary::
    :toctree: webdriver_chrome
 
-   selenium.webdriver.chrome.options
-   selenium.webdriver.chrome.service
-   selenium.webdriver.chrome.webdriver
+   automationAgent.webdriver.chrome.options
+   automationAgent.webdriver.chrome.service
+   automationAgent.webdriver.chrome.webdriver
 
 Webdriver.chromium
 ------------------
 
-.. currentmodule:: selenium.webdriver.chromium
+.. currentmodule:: automationAgent.webdriver.chromium
 .. autosummary::
    :toctree: webdriver_chromium
 
-   selenium.webdriver.chromium.options
-   selenium.webdriver.chromium.service
-   selenium.webdriver.chromium.webdriver
+   automationAgent.webdriver.chromium.options
+   automationAgent.webdriver.chromium.service
+   automationAgent.webdriver.chromium.webdriver
 
 Webdriver.edge
 --------------
 
-.. currentmodule:: selenium.webdriver.edge
+.. currentmodule:: automationAgent.webdriver.edge
 .. autosummary::
    :toctree: webdriver_edge
 
-   selenium.webdriver.edge.options
-   selenium.webdriver.edge.service
-   selenium.webdriver.edge.webdriver
+   automationAgent.webdriver.edge.options
+   automationAgent.webdriver.edge.service
+   automationAgent.webdriver.edge.webdriver
 
 Webdriver.firefox
 -----------------
 
-.. currentmodule:: selenium.webdriver.firefox
+.. currentmodule:: automationAgent.webdriver.firefox
 .. autosummary::
    :toctree: webdriver_firefox
 
-   selenium.webdriver.firefox.extension_connection
-   selenium.webdriver.firefox.firefox_binary
-   selenium.webdriver.firefox.options
-   selenium.webdriver.firefox.firefox_profile
-   selenium.webdriver.firefox.webdriver
+   automationAgent.webdriver.firefox.extension_connection
+   automationAgent.webdriver.firefox.firefox_binary
+   automationAgent.webdriver.firefox.options
+   automationAgent.webdriver.firefox.firefox_profile
+   automationAgent.webdriver.firefox.webdriver
 
 Webdriver.ie
 ------------
 
-.. currentmodule:: selenium.webdriver.ie
+.. currentmodule:: automationAgent.webdriver.ie
 .. autosummary::
    :toctree: webdriver_ie
 
-   selenium.webdriver.ie.webdriver
+   automationAgent.webdriver.ie.webdriver
 
 Webdriver.opera
 ---------------
 
-.. currentmodule:: selenium.webdriver.opera
+.. currentmodule:: automationAgent.webdriver.opera
 .. autosummary::
    :toctree: webdriver_opera
 
-   selenium.webdriver.opera.webdriver
+   automationAgent.webdriver.opera.webdriver
 
 Webdriver.remote
 ----------------
 
-.. currentmodule:: selenium.webdriver.remote
+.. currentmodule:: automationAgent.webdriver.remote
 .. autosummary::
    :toctree: webdriver_remote
 
-   selenium.webdriver.remote.command
-   selenium.webdriver.remote.errorhandler
-   selenium.webdriver.remote.mobile
-   selenium.webdriver.remote.remote_connection
-   selenium.webdriver.remote.utils
-   selenium.webdriver.remote.webdriver
-   selenium.webdriver.remote.webelement
+   automationAgent.webdriver.remote.command
+   automationAgent.webdriver.remote.errorhandler
+   automationAgent.webdriver.remote.mobile
+   automationAgent.webdriver.remote.remote_connection
+   automationAgent.webdriver.remote.utils
+   automationAgent.webdriver.remote.webdriver
+   automationAgent.webdriver.remote.webelement
 
 Webdriver.safari
 ----------------
 
-.. currentmodule:: selenium.webdriver.safari
+.. currentmodule:: automationAgent.webdriver.safari
 .. autosummary::
   :toctree: webdriver_safari
 
-  selenium.webdriver.safari.service
-  selenium.webdriver.safari.webdriver
+  automationAgent.webdriver.safari.service
+  automationAgent.webdriver.safari.webdriver
 
 Webdriver.webkitgtk
 -------------------
 
-.. currentmodule:: selenium.webdriver.webkitgtk
+.. currentmodule:: automationAgent.webdriver.webkitgtk
 .. autosummary::
   :toctree: webdriver_webkitgtk
 
-  selenium.webdriver.webkitgtk.options
-  selenium.webdriver.webkitgtk.service
-  selenium.webdriver.webkitgtk.webdriver
+  automationAgent.webdriver.webkitgtk.options
+  automationAgent.webdriver.webkitgtk.service
+  automationAgent.webdriver.webkitgtk.webdriver
 
 Indices and tables
 

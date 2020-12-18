@@ -17,9 +17,9 @@
 
 import pytest
 
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.remote.webelement import WebElement
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.remote.webelement import WebElement
 
 try:
     str = unicode

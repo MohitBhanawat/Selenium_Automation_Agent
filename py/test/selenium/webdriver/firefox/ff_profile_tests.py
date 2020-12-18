@@ -29,8 +29,8 @@ try:
 except NameError:
     unicode = str
 
-from selenium.webdriver import Firefox, FirefoxProfile
-from selenium.webdriver.common.by import By
+from automationAgent.webdriver import Firefox, FirefoxProfile
+from automationAgent.webdriver.common.by import By
 
 
 def test_that_we_can_accept_a_profile(capabilities, webserver):
@@ -123,7 +123,7 @@ def test_add_extension_web_extension_with_id(capabilities, webserver):
     current_directory = os.path.dirname(os.path.realpath(__file__))
     root_directory = os.path.join(current_directory, '..', '..', '..', '..', '..')
     # TODO: This file should probably live in a common directory.
-    extension_path = os.path.join(root_directory, 'javascript', 'node', 'selenium-webdriver',
+    extension_path = os.path.join(root_directory, 'javascript', 'node', 'automationAgent-webdriver',
                                   'lib', 'test', 'data', 'firefox', 'webextension.xpi')
 
     profile = FirefoxProfile()
@@ -131,10 +131,10 @@ def test_add_extension_web_extension_with_id(capabilities, webserver):
 
     driver = Firefox(capabilities=capabilities, firefox_profile=profile)
     profile_path = driver.firefox_profile.path
-    extension_path_in_profile = os.path.join(profile_path, 'extensions', 'webextensions-selenium-example@example.com')
+    extension_path_in_profile = os.path.join(profile_path, 'extensions', 'webextensions-automationAgent-example@example.com')
     assert os.path.exists(extension_path_in_profile)
     driver.get(webserver.where_is('simpleTest.html'))
-    driver.find_element(By.ID, 'webextensions-selenium-example')
+    driver.find_element(By.ID, 'webextensions-automationAgent-example')
     driver.quit()
 
 

@@ -1,0 +1,7 @@
+java_library(
+    name = "zip",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/client/src/org/smartqa/automationagent/tools:__subpackages__",
+    ],
+)

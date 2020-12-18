@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.common import service
+from automationAgent.webdriver.common import service
 
 
 class Service(service.Service):
@@ -44,7 +44,7 @@ class Service(service.Service):
             self.service_args.append("--log-file=%s" % log_file)
 
         service.Service.__init__(self, executable_path, port=port,
-                                 start_error_message="Please download from http://selenium-release.storage.googleapis.com/index.html and read up at https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver")
+                                 start_error_message="Please download from http://automationAgent-release.storage.googleapis.com/index.html and read up at https://github.com/SeleniumHQ/automationagent/wiki/InternetExplorerDriver")
 
     def command_line_args(self):
         return ["--port=%d" % self.port] + self.service_args

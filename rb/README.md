@@ -1,18 +1,18 @@
-# selenium-webdriver
+# automationAgent-webdriver
 
 This gem provides Ruby bindings for WebDriver
 and has been tested to work on MRI (2.0 through 2.2),
 
 ## Install
 
-    gem install selenium-webdriver
+    gem install automationAgent-webdriver
 
 ## Links
 
-* http://rubygems.org/gems/selenium-webdriver
-* http://seleniumhq.github.io/selenium/docs/api/rb/index.html
-* https://github.com/SeleniumHQ/selenium/wiki/Ruby-Bindings
-* https://github.com/SeleniumHQ/selenium/issues
+* http://rubygems.org/gems/automationAgent-webdriver
+* http://seleniumhq.github.io/automationagent/docs/api/rb/index.html
+* https://github.com/SeleniumHQ/automationagent/wiki/Ruby-Bindings
+* https://github.com/SeleniumHQ/automationagent/issues
 
 ## License
 

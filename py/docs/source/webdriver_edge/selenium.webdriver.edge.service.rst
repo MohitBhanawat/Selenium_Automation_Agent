@@ -1,4 +1,4 @@
-selenium.webdriver.edge.service
+automationAgent.webdriver.edge.service
 ===============================
 
-.. automodule:: selenium.webdriver.edge.service
+.. automodule:: automationAgent.webdriver.edge.service

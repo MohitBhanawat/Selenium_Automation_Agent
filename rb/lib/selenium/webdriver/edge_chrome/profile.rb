@@ -17,7 +17,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-require 'selenium/webdriver/chrome/profile'
+require 'automationAgent/webdriver/chrome/profile'
 
 module Selenium
   module WebDriver

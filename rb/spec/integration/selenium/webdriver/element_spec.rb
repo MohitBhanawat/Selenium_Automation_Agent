@@ -172,7 +172,7 @@ module Selenium
         end
       end
 
-      # IE - https://github.com/SeleniumHQ/selenium/pull/4043
+      # IE - https://github.com/SeleniumHQ/automationagent/pull/4043
       it 'should drag and drop', except: {browser: :ie} do
         driver.navigate.to url_for('dragAndDropTest.html')
 

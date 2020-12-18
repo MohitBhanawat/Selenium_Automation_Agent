@@ -31,7 +31,7 @@ module Selenium
         # installed.
         #
         # @example Using Curb
-        #   require 'selenium/webdriver/remote/http/curb'
+        #   require 'automationAgent/webdriver/remote/http/curb'
         #   include Selenium
         #
         #   driver = WebDriver.for :firefox, :http_client => WebDriver::Remote::Http::Curb.new

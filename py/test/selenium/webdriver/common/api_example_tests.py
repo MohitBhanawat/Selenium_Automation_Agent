@@ -32,14 +32,14 @@
 
 import pytest
 
-from selenium.common.exceptions import (
+from automationAgent.common.exceptions import (
     NoSuchElementException,
     NoSuchWindowException,
     TimeoutException,
     WebDriverException)
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from automationAgent.webdriver.common.by import By
+from automationAgent.webdriver.support.wait import WebDriverWait
+from automationAgent.webdriver.support import expected_conditions as EC
 
 
 def testGetTitle(driver, pages):

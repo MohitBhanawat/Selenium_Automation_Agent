@@ -19,8 +19,8 @@ import os
 
 import pytest
 
-from selenium.webdriver import FirefoxProfile
-from selenium.webdriver.firefox.options import Options
+from automationAgent.webdriver import FirefoxProfile
+from automationAgent.webdriver.firefox.options import Options
 
 
 @pytest.fixture(params=['capabilities', 'firefox_profile', 'options'])

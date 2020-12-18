@@ -117,9 +117,9 @@ module Selenium
         end
 
         it 'accepts provided Options as sole parameter' do
-          opts = {start_page: 'http://selenium.dev'}
+          opts = {start_page: 'http://automationAgent.dev'}
           expect_request(body: {capabilities: {firstMatch: [browserName: "MicrosoftEdge",
-                                                            "ms:startPage": "http://selenium.dev"]}})
+                                                            "ms:startPage": "http://automationAgent.dev"]}})
 
           expect {
             expect { Driver.new(options: Options.new(**opts)) }.to have_deprecated(:browser_options)
@@ -128,11 +128,11 @@ module Selenium
 
         it 'accepts combination of Options and Capabilities' do
           caps = Remote::Capabilities.edge_html(invalid: 'foobar')
-          browser_opts = {start_page: 'http://selenium.dev'}
+          browser_opts = {start_page: 'http://automationAgent.dev'}
           expect_request(body: {capabilities: {firstMatch: [browserName: "MicrosoftEdge",
                                                             platformName: "windows",
                                                             invalid: "foobar",
-                                                            "ms:startPage": "http://selenium.dev"]}})
+                                                            "ms:startPage": "http://automationAgent.dev"]}})
 
           expect {
             expect {
@@ -211,9 +211,9 @@ module Selenium
             end
 
             it 'with Options instance' do
-              browser_opts = {start_page: 'http://selenium.dev'}
+              browser_opts = {start_page: 'http://automationAgent.dev'}
               expect_request(body: {capabilities: {firstMatch: [browserName: "MicrosoftEdge",
-                                                                'ms:startPage': 'http://selenium.dev']}})
+                                                                'ms:startPage': 'http://automationAgent.dev']}})
 
               expect { Driver.new(capabilities: [Options.new(**browser_opts)]) }.not_to raise_exception
             end
@@ -227,17 +227,17 @@ module Selenium
 
             it 'with Options instance and an instance of a custom object responding to #as_json' do
               expect_request(body: {capabilities: {firstMatch: [browserName: "MicrosoftEdge",
-                                                                # 'ms:startPage': 'http://selenium.dev',
+                                                                # 'ms:startPage': 'http://automationAgent.dev',
                                                                 'company:key': 'value']}})
               expect { Driver.new(capabilities: [Options.new, as_json_object.new]) }.not_to raise_exception
             end
 
             it 'with Options instance, Capabilities instance and instance of a custom object responding to #as_json' do
               capabilities = Remote::Capabilities.new(browser_name: 'MicrosoftEdge', invalid: 'foobar')
-              options = Options.new(start_page: 'http://selenium.dev')
+              options = Options.new(start_page: 'http://automationAgent.dev')
               expect_request(body: {capabilities: {firstMatch: [browserName: "MicrosoftEdge",
                                                                 invalid: 'foobar',
-                                                                'ms:startPage': 'http://selenium.dev',
+                                                                'ms:startPage': 'http://automationAgent.dev',
                                                                 'company:key': 'value']}})
 
               expect { Driver.new(capabilities: [capabilities, options, as_json_object.new]) }.not_to raise_exception

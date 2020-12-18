@@ -17,8 +17,8 @@
 import os
 import pytest
 
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.support.wait import WebDriverWait
+from automationAgent.common.exceptions import WebDriverException
+from automationAgent.webdriver.support.wait import WebDriverWait
 
 
 @pytest.mark.xfail_ie

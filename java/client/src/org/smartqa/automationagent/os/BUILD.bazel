@@ -1,0 +1,19 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "os",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/client/src/org/smartqa/automationagent:__pkg__",
+        "//java/client/src/org/smartqa/automationagent/remote:__pkg__",
+        "//java/client/test/org/smartqa/automationagent:__subpackages__",
+        "//java/client/test/org/smartqa/automationagent/build:__pkg__",
+        "//java/client/test/org/smartqa/automationagent/testing/drivers:__pkg__",
+    ],
+    deps = [
+        "//java/client/src/org/smartqa/automationagent:core",
+        "//java/client/src/org/smartqa/automationagent/io",
+        artifact("org.apache.commons:commons-exec"),
+        artifact("com.google.guava:guava"),
+    ],
+)

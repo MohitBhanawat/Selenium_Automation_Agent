@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.remote.command import Command
+from automationAgent.webdriver.remote.command import Command
 from . import interaction
 from .key_actions import KeyActions
 from .key_input import KeyInput

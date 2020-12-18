@@ -99,7 +99,7 @@ module Selenium
         end
 
         def remote_server_jar
-          file_name = "selenium-server-standalone-#{Selenium::Server.latest}.jar"
+          file_name = "automationAgent-server-standalone-#{Selenium::Server.latest}.jar"
           locations = ["#{root}/#{file_name}", "#{root.join('rb/')}#{file_name}"]
           @remote_server_jar = locations.find { |file| File.exist?(file) }
           return @remote_server_jar if @remote_server_jar

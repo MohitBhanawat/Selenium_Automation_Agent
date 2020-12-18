@@ -14,15 +14,15 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-from selenium.common.exceptions import WebDriverException
+from automationAgent.common.exceptions import WebDriverException
 
 try:
     import http.client as http_client
 except ImportError:
     import httplib as http_client
 
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
+from automationAgent.webdriver.common.desired_capabilities import DesiredCapabilities
+from automationAgent.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
 from .service import Service
 from .remote_connection import SafariRemoteConnection
 

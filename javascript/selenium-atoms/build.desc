@@ -6,11 +6,11 @@ js_library(name = "deps",
     "//javascript/webdriver/atoms:all_js",
   ])
 
-js_binary(name = "selenium-atoms",
+js_binary(name = "automationAgent-atoms",
   deps = [
     ":deps",
   ],
-  out = "build/javascript/selenium-atoms/selenium-atoms.js",
+  out = "build/javascript/automationAgent-atoms/automationAgent-atoms.js",
   flags = [
     "--define=goog.NATIVE_ARRAY_PROTOTYPES=false",
   ])

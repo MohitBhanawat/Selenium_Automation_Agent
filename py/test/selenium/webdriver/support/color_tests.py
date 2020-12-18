@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from selenium.webdriver.support.color import Color
+from automationAgent.webdriver.support.color import Color
 
 
 def test_rgb_to_rgb():

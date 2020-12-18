@@ -1,4 +1,4 @@
-selenium.common.exceptions
+automationAgent.common.exceptions
 ==========================
 
-.. automodule:: selenium.common.exceptions
+.. automodule:: automationAgent.common.exceptions
